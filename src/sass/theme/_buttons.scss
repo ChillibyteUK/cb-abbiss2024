@@ -1,0 +1,19 @@
+.button {
+    display: inline-block;
+    border-radius: 100vw;
+    padding: 0.75rem 3rem;
+    text-decoration: none;
+    transition: color var(--transition);
+    &:hover {
+        color: var(--col-orange-400);
+    }
+}
+
+.button-white {
+    background-color: var(--col-white);
+    color: var(--col-black);
+}
+
+.button-sm {
+    padding: 0.5rem 2rem;
+}

@@ -1,0 +1,49 @@
+:root {
+
+    --col-black: #212529;
+    --col-white: #FFFFFF;
+
+    --col-grey-400: #f2f2f2;
+    --col-grey-500: #eeeeee;
+    --col-grey-600: #999999;
+    --col-grey-900: #333333;
+
+    --col-neutral: #F1F7F8;
+
+    --col-green-400: #a4bf9d;
+
+    --col-orange-400: #ff783c;
+
+    --fs-900: 72px; // huge title
+    --fs-800: 56px; // large title
+    --fs-700: 40px; // medium title
+    --fs-600: 24px; // small title
+    --fs-500: 18px; // captions
+    --fs-400: 18px; // body
+    --fs-300: 15px; // small text
+    --fs-200: 15px; // button
+    --fs-100: 12px; // tiny text
+
+
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-900: 700;
+
+    --fw-fa-solid: 600;
+
+
+    --ff-fa: 'Font Awesome 6 Free';
+
+    --transition: 250ms ease-in-out;
+
+
+    --shadow-out: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    --shadow-in: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+    --border-radius-sm: 0.5rem;
+    --border-radius-lg: 1rem;
+
+
+    --h-top: 70px;
+
+}

@@ -1,0 +1,20 @@
+header {
+    .prenav {
+        font-size: var(--fs-200);
+        a {
+            text-decoration: none;
+        }
+        .active {
+            background-color: var(--col-black);
+            a {
+                color: var(--col-white);
+            }
+        }
+        .inactive {
+            background-color: var(--col-grey-400);
+            a {
+                color: var(--col-black);
+            }
+        }
+    }
+}
