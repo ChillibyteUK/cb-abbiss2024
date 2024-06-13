@@ -1,10 +1,10 @@
 {
-    "key": "group_6604510e3cdd6",
-    "title": "CB Text Image",
+    "key": "group_666aa57b01954",
+    "title": "CB Focus Panel",
     "fields": [
         {
-            "key": "field_6604510ef20c0",
-            "label": "CB Text Image",
+            "key": "field_666aa57b8ab0e",
+            "label": "CB Focus Panel",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,52 +21,7 @@
             "esc_html": 0
         },
         {
-            "key": "field_6604511bf20c1",
-            "label": "Presentation",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
-            "key": "field_66045124f20c2",
-            "label": "Split",
-            "name": "split",
-            "aria-label": "",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "4060": "4060",
-                "5050": "5050",
-                "6040": "6040",
-                "7030": "7030"
-            },
-            "default_value": 7030,
-            "return_format": "value",
-            "allow_null": 0,
-            "other_choice": 0,
-            "layout": "horizontal",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_66045149f20c3",
+            "key": "field_666aa5989703c",
             "label": "Order",
             "name": "order",
             "aria-label": "",
@@ -75,7 +30,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -91,7 +46,7 @@
             "save_other_choice": 0
         },
         {
-            "key": "field_66045164f20c4",
+            "key": "field_666aa59e9703d",
             "label": "Colour",
             "name": "colour",
             "aria-label": "",
@@ -100,7 +55,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -110,25 +65,32 @@
             "return_format": "slug"
         },
         {
-            "key": "field_6604516ef20c5",
-            "label": "Content",
-            "name": "",
+            "key": "field_666aa60531e04",
+            "label": "Icon",
+            "name": "icon",
             "aria-label": "",
-            "type": "tab",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
-            "endpoint": 0,
-            "selected": 0
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "svg",
+            "preview_size": "thumbnail"
         },
         {
-            "key": "field_6604517cf20c6",
+            "key": "field_666aa5a29703e",
             "label": "Title",
             "name": "title",
             "aria-label": "",
@@ -148,7 +110,7 @@
             "append": ""
         },
         {
-            "key": "field_66045182f20c7",
+            "key": "field_666aa5a59703f",
             "label": "Content",
             "name": "content",
             "aria-label": "",
@@ -168,11 +130,11 @@
             "delay": 0
         },
         {
-            "key": "field_66045189f20c8",
-            "label": "Image",
-            "name": "",
+            "key": "field_666aa5fb31e03",
+            "label": "CTA",
+            "name": "cta",
             "aria-label": "",
-            "type": "tab",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -181,12 +143,10 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
-            "endpoint": 0,
-            "selected": 0
+            "return_format": "array"
         },
         {
-            "key": "field_66045192f20c9",
+            "key": "field_666aa5a897040",
             "label": "Image",
             "name": "image",
             "aria-label": "",
@@ -216,7 +176,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-text-image"
+                "value": "acf\/cb-focus-panel"
             }
         ]
     ],
@@ -229,5 +189,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718265286
+    "modified": 1718266317
 }

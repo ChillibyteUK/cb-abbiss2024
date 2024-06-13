@@ -1,0 +1,22 @@
+.testimonial_slider {
+    &__inner {
+        background-color: var(--col-grey-500);
+    }
+    &__slider {
+        margin-bottom: 1rem;
+    }
+
+    &__logo {
+        height: 50px;
+        width: auto;
+        display: block;
+        margin-inline: auto;
+        margin-bottom: 1rem;
+    }
+    &__excerpt {
+        font-size: var(--fs-600);
+        font-style: italic;
+        text-align: center;
+        padding-inline: 3rem;
+    }
+}

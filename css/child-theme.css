@@ -20742,6 +20742,17 @@ strong {
   color: var(--col-black);
 }
 
+.button-black {
+  background-color: var(--col-black);
+  color: var(--col-white);
+}
+
+.button-outline {
+  background-color: transparent;
+  border: 2px solid var(--col-black);
+  color: var(--col-black);
+}
+
 .button-sm {
   padding: 0.5rem 2rem;
 }
@@ -20940,6 +20951,40 @@ footer .colophon .cb:hover {
     background-color: var(--col-black);
     color: var(--col-white);
   }
+}
+
+.focus_panel__icon {
+  height: 55px;
+}
+
+.testimonial_slider__inner {
+  background-color: var(--col-grey-500);
+}
+.testimonial_slider__slider {
+  margin-bottom: 1rem;
+}
+.testimonial_slider__logo {
+  height: 50px;
+  width: auto;
+  display: block;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+.testimonial_slider__excerpt {
+  font-size: var(--fs-600);
+  font-style: italic;
+  text-align: center;
+  padding-inline: 3rem;
+}
+
+.news_insights_events__grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+.news_insights_events__news_post .icon-sm {
+  width: 25px;
+  height: 25px;
 }
 
 *,

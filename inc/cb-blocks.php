@@ -21,6 +21,15 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_focus_panel',
+            'title'				=> __('CB Focus Panel'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_focus_panel.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
 
         acf_register_block_type(array(
             'name'				=> 'cb_image_icon_cta',
@@ -28,6 +37,25 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_image_icon_cta.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+
+        acf_register_block_type(array(
+            'name'				=> 'cb_testimonial_slider',
+            'title'				=> __('CB Testimonial Slider'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_testimonial_slider.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_news_insights_events',
+            'title'				=> __('CB News Insights Events'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_news_insights_events.php',
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));

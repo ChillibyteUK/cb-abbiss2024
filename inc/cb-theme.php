@@ -93,6 +93,9 @@ function cb_theme_enqueue()
     $the_theme = wp_get_theme();
     wp_deregister_script('jquery');
     wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js', array(), null, true);
+    wp_enqueue_style('swiper-style', "https://unpkg.com/swiper/swiper-bundle.min.css", array());
+    wp_enqueue_script('swiper', "https://unpkg.com/swiper/swiper-bundle.min.js", array(), null, true);
+
 }
 add_action('wp_enqueue_scripts', 'cb_theme_enqueue');
 
