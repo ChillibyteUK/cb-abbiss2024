@@ -1,18 +1,27 @@
 .hero {
+    padding-top: var(--h-top);
+
     position: relative;
     isolation: isolate;
     &.front-hero {
-        height: 600px;
+        height: 700px;
         .hero__inner {
-            height: 100%;
             display: grid;
+            height: 100%;
             gap: 1rem;
             place-content: center;
             text-align: center;
         }
     }
     &.page-hero {
-        height: 400px;
+        height: 500px;
+        .hero__inner {
+            height: 100%;
+            gap: 1rem;
+            display: grid;
+            grid-template-columns: 100px auto;
+            align-content: center;
+        }
     }
     &__icon {
         height: 100px;
@@ -34,5 +43,6 @@
     }
     &__content {
         max-width: 30ch;
+        align-self: center;
     }
 }

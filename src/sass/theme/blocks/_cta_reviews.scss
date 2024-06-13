@@ -1,0 +1,41 @@
+.cta_reviews {
+    &__card {
+        position: relative;
+        isolation: isolate;
+        text-decoration: none;
+        display: grid;
+        gap: 1rem;
+        place-content: center;
+        justify-items: center;
+        width: 100%;
+        height: 100%;
+        &:hover {
+            .overlay {
+                opacity: 1;
+            }
+            .button {
+                color: var(--col-orange-400);
+            }
+        }
+    }
+    &__background {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+    }
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0 0 0 / 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition);
+        z-index: -1;
+    }
+    &__icon {
+        height: 100px;
+    }
+}

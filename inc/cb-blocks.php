@@ -59,6 +59,25 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_latest_insights',
+            'title'				=> __('CB Latest Insights'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_latest_insights.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+
+        acf_register_block_type(array(
+            'name'				=> 'cb_cta_reviews',
+            'title'				=> __('CB CTA Reviews'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_cta_reviews.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
 
         acf_register_block_type(array(
             'name'				=> 'cb_solution_nav',
