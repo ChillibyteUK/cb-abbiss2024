@@ -28,3 +28,22 @@
 .button-sm {
     padding: 0.5rem 2rem;
 }
+
+.link-arrow-inline {
+    position: relative;
+    text-decoration: none;
+    color: var(--col-black);
+    text-transform: uppercase;
+    padding-left: 1.5rem;
+    &::before {
+        content: "\f061";
+        font-weight: 600;
+        font-family: var(--ff-fa);
+        position: absolute;
+        left: 0;
+        transition: left var(--transition);
+    }
+    &:hover::before {
+        left: 0.5rem;
+    }
+}

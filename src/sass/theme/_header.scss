@@ -17,4 +17,25 @@ header {
             }
         }
     }
+    .prenav, .navbar {
+        position: fixed;
+        width: 100%;
+
+        transition: top var(--transition);
+    }
+
+    .prenav {
+        top: 0;
+        z-index: 9999;
+    }
+    .navbar {
+        background-color: var(--col-white);
+        top: 0;
+        padding-top: 1rem;
+        z-index: 9998;
+    }
+
+    .hidden {
+        top: -115px;
+    }
 }

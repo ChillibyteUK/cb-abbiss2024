@@ -31,7 +31,7 @@ if (isset($block['anchor'])) {
 <section
     class="text_image bg-<?=$colour?> <?=$class?>">
     <div class="container-xl">
-        <div class="row g-5">
+        <div class="row g-md-5">
             <div
                 class="<?=$colText?> <?=$orderText?> d-flex flex-column justify-content-center">
                 <h2>

@@ -97,6 +97,34 @@ strong {
     font-weight: 700;
 }
 
+.fs-900 {
+    font-size: var(--fs-900);
+}
+.fs-800 {
+    font-size: var(--fs-800);
+}
+.fs-700 {
+    font-size: var(--fs-700);
+}
+.fs-600 {
+    font-size: var(--fs-600);
+}
+.fs-500 {
+    font-size: var(--fs-600);
+}
+.fs-400 {
+    font-size: var(--fs-400);
+}
+.fs-300 {
+    font-size: var(--fs-300);
+}
+.fs-200 {
+    font-size: var(--fs-200);
+}
+.fs-100 {
+    font-size: var(--fs-100);
+}
+
 
 .max-ch {
     &.text-center {
@@ -110,32 +138,8 @@ strong {
 }
 
 
-.text_imagebg ol {
-    counter-reset: mycounter;
-    list-style: none;
-    padding-left: 40px;
-    li {
-        margin: 0 0 0.5rem 0;
-        counter-increment: mycounter;
-        position: relative;
-        &::before {
-            content: counter(mycounter);
-            color: #ffffff;
-            font-size: 1.2rem;
-            font-weight: 700;
-            position: absolute;
-            --size: 32px;
-            left: calc( -1 * var(--size) - 10px);
-            line-height: var(--size);
-            width: var(--size);
-            height: var(--size);
-            top: 0;
-            border-width: 1px;
-            border-style: solid;
-            // border-image: linear-gradient(-30deg, $ps-yellow 0%, $ps-orange 100%); // can't use border-image and border-radius
-            border: 1px solid $ps-orange;
-            border-radius: 50%;
-            text-align: center;
-        }
-    }
+.overline-title {
+    border-top: 1px solid var(--col-grey-600);
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
 }

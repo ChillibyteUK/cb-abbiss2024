@@ -66,6 +66,28 @@ add_action('wp_footer', function () {
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
+        function setEqualHeight(slider) {
+            let maxHeight = 0;
+            const slides = document.querySelectorAll(slider);
+
+            // Remove existing heights to recalculate
+            slides.forEach(slide => {
+                slide.style.height = 'auto';
+            });
+
+            // Find the maximum height
+            slides.forEach(slide => {
+                if (slide.offsetHeight > maxHeight) {
+                    maxHeight = slide.offsetHeight;
+                }
+            });
+
+            // Set all slides to the maximum height
+            slides.forEach(slide => {
+                slide.style.height = `${maxHeight}px`;
+            });
+        }
+
         var latestSlider = new Swiper('.testimonial_slider__slider', {
             loop: true,
             autoplay: {

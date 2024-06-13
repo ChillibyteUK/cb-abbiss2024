@@ -20559,6 +20559,8 @@ readers do not read off random characters that represent icons */
   --col-neutral: #F1F7F8;
   --col-green-400: #a4bf9d;
   --col-orange-400: #ff783c;
+  --col-beige-400: #e7cf9f;
+  --col-blue-400: #a8cede;
   --fs-900: 72px;
   --fs-800: 56px;
   --fs-700: 40px;
@@ -20680,6 +20682,42 @@ strong {
   font-weight: 700;
 }
 
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-500 {
+  font-size: var(--fs-600);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-100 {
+  font-size: var(--fs-100);
+}
+
 .max-ch {
   max-width: 60ch;
 }
@@ -20692,38 +20730,23 @@ strong {
   margin: auto;
 }
 
-.text_imagebg ol {
-  counter-reset: mycounter;
-  list-style: none;
-  padding-left: 40px;
-}
-.text_imagebg ol li {
-  margin: 0 0 0.5rem 0;
-  counter-increment: mycounter;
-  position: relative;
-}
-.text_imagebg ol li::before {
-  content: counter(mycounter);
-  color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: 700;
-  position: absolute;
-  --size: 32px;
-  left: calc(-1 * var(--size) - 10px);
-  line-height: var(--size);
-  width: var(--size);
-  height: var(--size);
-  top: 0;
-  border-width: 1px;
-  border-style: solid;
-  border: 1px solid #e04305;
-  border-radius: 50%;
-  text-align: center;
+.overline-title {
+  border-top: 1px solid var(--col-grey-600);
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .has-grey-500-background-color,
 .bg-grey-500 {
   background-color: var(--col-grey-500);
+}
+
+.bg-beige-400 {
+  background-color: var(--col-beige-400);
+}
+
+.bg-blue-400 {
+  background-color: var(--col-blue-400);
 }
 
 .button {
@@ -20757,6 +20780,25 @@ strong {
   padding: 0.5rem 2rem;
 }
 
+.link-arrow-inline {
+  position: relative;
+  text-decoration: none;
+  color: var(--col-black);
+  text-transform: uppercase;
+  padding-left: 1.5rem;
+}
+.link-arrow-inline::before {
+  content: "\f061";
+  font-weight: 600;
+  font-family: var(--ff-fa);
+  position: absolute;
+  left: 0;
+  transition: left var(--transition);
+}
+.link-arrow-inline:hover::before {
+  left: 0.5rem;
+}
+
 header .prenav {
   font-size: var(--fs-200);
 }
@@ -20774,6 +20816,24 @@ header .prenav .inactive {
 }
 header .prenav .inactive a {
   color: var(--col-black);
+}
+header .prenav, header .navbar {
+  position: fixed;
+  width: 100%;
+  transition: top var(--transition);
+}
+header .prenav {
+  top: 0;
+  z-index: 9999;
+}
+header .navbar {
+  background-color: var(--col-white);
+  top: 0;
+  padding-top: 1rem;
+  z-index: 9998;
+}
+header .hidden {
+  top: -115px;
 }
 
 .bottom-cta {
@@ -20979,12 +21039,59 @@ footer .colophon .cb:hover {
 
 .news_insights_events__grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
   gap: 1rem;
+}
+@media (min-width: 992px) {
+  .news_insights_events__grid {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+.news_insights_events__news_post {
+  color: var(--col-black);
+  text-decoration: none;
+  position: relative;
+}
+.news_insights_events__news_post .news_insights_events__content {
+  padding: 1rem;
 }
 .news_insights_events__news_post .icon-sm {
   width: 25px;
   height: 25px;
+}
+.news_insights_events__news_post .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+.news_insights_events__news_post:hover {
+  color: var(--col-black);
+}
+.news_insights_events__news_post:hover .overlay {
+  opacity: 1;
+}
+.news_insights_events__news_post .news_insights_events__image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.news_insights_events__meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.news_insights_events__news {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: 2rem auto 2rem;
+}
+.news_insights_events__insights {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: 2rem auto auto 2rem;
 }
 
 *,

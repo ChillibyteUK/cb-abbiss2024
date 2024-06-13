@@ -120,23 +120,21 @@ $prenav_co = strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false ? 'active' 
 $home = strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false ? '/corridor/' : '/';
 ?>
     <header>
-        <nav class="prenav">
-            <div class="container-fluid px-0">
-                <div class="row g-2">
-                    <div
-                        class="col-md-6 text-center p-1 <?=$prenav_fb?>">
-                        <a href="/">For Businesses</a>
-                    </div>
-                    <div
-                        class="col-md-6 text-center p-1 <?=$prenav_co?>">
-                        <a href="/corridor/">For Professional Services</a>
-                    </div>
+        <nav class="prenav px-0">
+            <div class="d-flex w-100">
+                <div
+                    class="text-center flex-fill p-1 <?=$prenav_fb?>">
+                    <a href="/">For Businesses</a>
+                </div>
+                <div
+                    class="text-center flex-fill p-1 <?=$prenav_co?>">
+                    <a href="/corridor/">For Professional Services</a>
                 </div>
             </div>
         </nav>
 
         <nav id="navbar" class="navbar navbar-expand-lg" aria-labelledby="main-nav-label">
-            <div class="container-xl py-4">
+            <div class="container-xl pt-4 pb-3">
                 <a href="<?=$home?>"><img
                         src="<?=get_stylesheet_directory_uri()?>/img/abbiss-cadres-logo--dark.svg"
                         width=224 height=84 alt="Abbiss Cadres"></a>
