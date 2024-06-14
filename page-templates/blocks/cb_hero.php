@@ -1,9 +1,6 @@
 <?php
 $page = is_front_page() ? 'front-hero' : 'page-hero';
 $class = $block['className'] ?? 'mb-4';
-if (is_front_page()) {
-    $class = $block['className'] ?? 'mb-5';
-}
 ?>
 <section
     class="hero <?=$page?> <?=$class?>">
