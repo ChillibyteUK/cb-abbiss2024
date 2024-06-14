@@ -7,7 +7,7 @@ $class = $block['className'] ?? 'mb-4';
     <?=wp_get_attachment_image(get_field('background'), 'full', false, array('class' => 'hero__bg'))?>
     <div class="container-xl hero__inner">
         <img src="<?=get_field('icon')?>"
-            class="hero__icon">
+            class="hero__icon" alt="<?=get_the_title()?>">
         <div class="hero__content">
             <?=get_field('content')?>
         </div>
