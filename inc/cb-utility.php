@@ -47,14 +47,14 @@ function contact_email()
 add_shortcode('social_in_icon', function () {
     $s = get_field('social', 'options') ?? null;
     if ($s['linkedin_url'] ?? null) {
-        return '<a href="' . get_field('linkedin_url', 'options') . '" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>';
+        return '<a href="' . get_field('linkedin_url', 'options') . '" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>';
     }
     return;
 });
 add_shortcode('social_tw_icon', function () {
     $s = get_field('social', 'options') ?? null;
     if ($s['twitter_url'] ?? null) {
-        return '<a href="' . get_field('twitter_url', 'options') . '" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>';
+        return '<a href="' . get_field('twitter_url', 'options') . '" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>';
     }
     return;
 });
@@ -70,16 +70,16 @@ function social_icons($size = null)
 
     $output = '<div class="social_icons">';
     if ($s['linkedin_url'] ?? null) {
-        $output .= '<a href="' . $s['linkedin_url'] . '" target="_blank"><i class="fa-brands fa-linkedin-in ' . $size . '"></i></a>';
+        $output .= '<a href="' . $s['linkedin_url'] . '" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in ' . $size . '"></i></a>';
     }
     if ($s['instagram_url'] ?? null) {
-        $output .= '<a href="' . $s['instagram_url'] . '" target="_blank"><i class="fa-brands fa-instagram ' . $size . '"></i></a>';
+        $output .= '<a href="' . $s['instagram_url'] . '" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram ' . $size . '"></i></a>';
     }
     if ($s['facebook_url'] ?? null) {
-        $output .= '<a href="' . $s['facebook_url'] . '" target="_blank"><i class="fa-brands fa-facebook-f ' . $size . '"></i></a>';
+        $output .= '<a href="' . $s['facebook_url'] . '" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f ' . $size . '"></i></a>';
     }
     if ($s['twitter_url'] ?? null) {
-        $output .= '<a href="' . $s['twitter_url'] . '" target="_blank"><i class="fa-brands fa-x-twitter ' . $size . '"></i></a>';
+        $output .= '<a href="' . $s['twitter_url'] . '" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter ' . $size . '"></i></a>';
     }
     $output .= '</div>';
 
