@@ -4,7 +4,7 @@ $class = $block['className'] ?? 'mb-4';
 ?>
 <section
     class="hero <?=$page?> <?=$class?>">
-    <?=wp_get_attachment_image(get_field('background'), 'full', false, array('class' => 'hero__bg'))?>
+    <?=wp_get_attachment_image(get_field('background'), 'full', false, array('class' => 'hero__bg', 'alt' => get_the_title()))?>
     <div class="container-xl hero__inner">
         <img src="<?=get_field('icon')?>"
             class="hero__icon" alt="<?=get_the_title()?>">
