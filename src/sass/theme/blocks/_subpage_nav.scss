@@ -1,0 +1,22 @@
+.subpage_nav {
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+    a {
+        background-color: var(--col-grey-400);
+        display: block;
+        padding: 1rem;
+        flex: 1 1 100%;
+        @media (min-width:576px) {
+            flex: 1 1 calc(50% - 1rem);
+            min-width: 250px;
+            max-width: 370px;
+        }
+        @media (min-width:992px) {
+            flex: 1 1 calc(33% - 1rem);
+        }
+    }
+}

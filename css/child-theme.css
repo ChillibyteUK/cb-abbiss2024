@@ -21056,6 +21056,31 @@ footer .colophon .cb:hover {
   grid-template-rows: unset;
 }
 
+.subpage_nav__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.subpage_nav a {
+  background-color: var(--col-grey-400);
+  display: block;
+  padding: 1rem;
+  flex: 1 1 100%;
+}
+@media (min-width: 576px) {
+  .subpage_nav a {
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 250px;
+    max-width: 370px;
+  }
+}
+@media (min-width: 992px) {
+  .subpage_nav a {
+    flex: 1 1 calc(33% - 1rem);
+  }
+}
+
 .image_icon_cta {
   position: relative;
   isolation: isolate;
