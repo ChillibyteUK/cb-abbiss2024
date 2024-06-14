@@ -48,6 +48,11 @@ function widgets_init()
                 'slug' => 'grey-500',
                 'color' => '#eeeeee'
             ),
+            array(
+                'name' => 'Blue 500',
+                'slug' => 'blue-500',
+                'color' => '#64a6c3'
+            ),
         )
     );
 }

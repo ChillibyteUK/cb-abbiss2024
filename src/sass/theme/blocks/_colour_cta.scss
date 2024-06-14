@@ -1,0 +1,56 @@
+.colour_cta {
+    &__card {
+        position: relative;
+        display: block;
+        padding: 2rem;
+        text-decoration: none;
+        isolation: isolate;
+        &:hover {
+            color: inherit;
+            .overlay {
+                opacity: 1;
+            }
+            &::after {
+                padding-inline-start: 1rem;
+            }
+        }
+        &::before {
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            background-color: var(--col-white);
+            border-radius: 100%;
+            content: "";
+            right: 2rem;
+            top: 2rem;
+        }
+        &::after {
+            position: absolute;
+            content: "\f061";
+            font-weight: 600;
+            font-family: var(--ff-fa);
+            color: var(--col-black);
+            right: 2rem;
+            top: 2rem;
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            padding-inline-start: 0;
+            transition: padding var(--transition);
+        }
+    }
+    &__inner {
+        max-width: 80%;
+    }
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0 0 0 / 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition);
+        z-index: -1;
+    }
+}

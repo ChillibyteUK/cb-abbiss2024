@@ -19,7 +19,12 @@
             height: 100%;
             gap: 1rem;
             display: grid;
-            grid-template-columns: 100px auto;
+            @media (min-width:576px) {
+                grid-template-columns: 100px auto;
+                .hero__content {
+                    text-align: start;
+                }
+            }
             align-content: center;
         }
     }
@@ -44,5 +49,7 @@
     &__content {
         max-width: 30ch;
         align-self: center;
+        text-align: center;
+        text-wrap: balance;
     }
 }

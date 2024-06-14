@@ -1,0 +1,13 @@
+.two_col_lined {
+    &__grid {
+        display: grid;
+        gap: 1rem;
+        @media (min-width:768px) {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    &__card {
+        border-top: 1px solid var(--col-grey-600);
+        padding-block: 1rem 3rem;
+    }
+}

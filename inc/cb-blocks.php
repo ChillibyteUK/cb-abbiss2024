@@ -22,6 +22,15 @@ function acf_blocks()
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
+            'name'				=> 'cb_two_col_lined',
+            'title'				=> __('CB Two Col Lined'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_two_col_lined.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
             'name'				=> 'cb_focus_panel',
             'title'				=> __('CB Focus Panel'),
             'category'			=> 'layout',
@@ -78,7 +87,25 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_colour_cta',
+            'title'				=> __('CB Colour CTA'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_colour_cta.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
 
+        acf_register_block_type(array(
+            'name'				=> 'cb_services_nav',
+            'title'				=> __('CB Services Nav'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_services_nav.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
         acf_register_block_type(array(
             'name'				=> 'cb_solution_nav',
             'title'				=> __('CB Solution Nav'),

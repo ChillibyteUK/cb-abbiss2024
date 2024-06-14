@@ -3,32 +3,63 @@ $class = $block['className'] ?? 'py-5';
 $bg = get_field('grey_bg') ? 'bg-grey-500' : '';
 $style = (get_field('compact')[0] ?? null) === 'Yes' ? 'solutions_nav__compact' : '';
 
+$link = wp_make_link_relative(get_permalink());
 ?>
 <section
     class="solutions_nav <?=$bg?> <?=$class?> <?=$style?>">
     <div class="container-xl">
-        <a class="solutions_nav__card" href="/for-businesses/set-up-support">
-            <img src="/wp-content/themes/abbiss/img/icon-supplementary-hr-services.svg">
+        <?php
+        $active = $link == '/for-businesses/set-up-support/' ? 'active' : '';
+?>
+        <a class="solutions_nav__card <?=$active?>"
+            href="/for-businesses/set-up-support/">
+            <img
+                src="<?=get_stylesheet_directory_uri()?>/img/icon-supplementary-hr-services.svg">
             <div>Set up &amp;<br>Support</div>
         </a>
-        <a class="solutions_nav__card" href="/for-businesses/operational-support">
-            <img src="/wp-content/themes/abbiss/img/icon-cogs.svg">
+        <?php
+$active = $link == '/for-businesses/operational-support/' ? 'active' : '';
+?>
+        <a class="solutions_nav__card <?=$active?>"
+            href="/for-businesses/operational-support/">
+            <img
+                src="<?=get_stylesheet_directory_uri()?>/img/icon-cogs.svg">
             <div>Operational<br>Support</div>
         </a>
-        <a class="solutions_nav__card" href="/for-businesses/managing-change">
-            <img src="/wp-content/themes/abbiss/img/icon-steps.svg">
+        <?php
+$active = $link == '/for-businesses/managing-change/' ? 'active' : '';
+?>
+        <a class="solutions_nav__card <?=$active?>"
+            href="/for-businesses/managing-change/">
+            <img
+                src="<?=get_stylesheet_directory_uri()?>/img/icon-steps.svg">
             <div>Managing<br>Change</div>
         </a>
-        <a class="solutions_nav__card" href="/for-businesses/global-mobility">
-            <img src="/wp-content/themes/abbiss/img/icon-global-mobility.svg">
+        <?php
+$active = $link == '/for-businesses/global-mobility/' ? 'active' : '';
+?>
+        <a class="solutions_nav__card <?=$active?>"
+            href="/for-businesses/global-mobility/">
+            <img
+                src="<?=get_stylesheet_directory_uri()?>/img/icon-global-mobility.svg">
             <div>Global<br>Mobility</div>
         </a>
-        <a class="solutions_nav__card" href="/for-businesses/business-sales">
-            <img src="/wp-content/themes/abbiss/img/icon-building.svg">
+        <?php
+$active = $link == '/for-businesses/business-sales/' ? 'active' : '';
+?>
+        <a class="solutions_nav__card <?=$active?>"
+            href="/for-businesses/business-sales/">
+            <img
+                src="<?=get_stylesheet_directory_uri()?>/img/icon-building.svg">
             <div>Business<br>Sales</div>
         </a>
-        <a class="solutions_nav__card" href="/for-businesses/disputes">
-            <img src="/wp-content/themes/abbiss/img/icon-disputes.svg">
+        <?php
+$active = $link == '/for-businesses/disputes/' ? 'active' : '';
+?>
+        <a class="solutions_nav__card <?=$active?>"
+            href="/for-businesses/disputes/">
+            <img
+                src="<?=get_stylesheet_directory_uri()?>/img/icon-disputes.svg">
             <div>Dispute<br>Resolution</div>
         </a>
     </div>

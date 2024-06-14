@@ -43,7 +43,12 @@ a.anchor {
 }
 
 main a:not([class]) {
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: var(--fw-400);
+    color: var(--col-black);
+    &:hover {
+        color: var(--col-orange-400);
+    }
 }
 a.noline {
     text-decoration: none;
