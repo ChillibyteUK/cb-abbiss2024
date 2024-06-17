@@ -27,7 +27,7 @@ foreach ($blocks as $block) {
                 <?php
         foreach ($blocks as $block) {
             if ($block['blockName'] != 'acf/cb-hero') {
-                echo apply_filters('the_content', render_block($block));
+                echo render_block($block);
             }
         }
 ?>
