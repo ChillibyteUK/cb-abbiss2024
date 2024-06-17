@@ -4,6 +4,7 @@
 @import "buttons";
 @import "header";
 @import "footer";
+@import "forms";
 @import "blocks/blocks";
 
 
@@ -61,5 +62,13 @@ a.noline {
     }
     .cols-lg-3 {
         columns: 3;
+    }
+}
+
+
+ul:not([class]) {
+    padding-inline-start: 1.25rem;
+    li {
+        margin-bottom: 0.5rem;
     }
 }

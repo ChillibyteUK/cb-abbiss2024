@@ -1,0 +1,39 @@
+.faqs {
+    .question {
+        position: relative;
+        padding-right: 1.2em;
+        margin-bottom: 0;
+        cursor: pointer;
+
+        &.collapsed::after {
+            content: "\f067";
+            color: var(--col-black);
+        }
+
+        &::after {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-family: var(--ff-fa);
+            font-weight: 600;
+            font-style: normal;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            content: "\f068";
+            margin-right: 0.5rem;
+            color: var(--col-orange-400);
+        }
+    }
+
+    @media screen and (max-width:992px) {
+        .question::after {
+            display: none;
+        }
+    }
+    .answer {
+        max-width: 110ch;
+        p {
+            margin-bottom: 0.5rem;
+        }
+    }
+}

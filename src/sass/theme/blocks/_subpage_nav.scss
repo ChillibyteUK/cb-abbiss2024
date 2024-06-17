@@ -6,10 +6,16 @@
         justify-content: center;
     }
     a {
+        text-decoration: none;
+        color: var(--col-black);
         background-color: var(--col-grey-400);
         display: block;
         padding: 1rem;
         flex: 1 1 100%;
+        font-weight: var(--fw-400);
+        &:hover {
+            color: var(--col-orange-400);
+        }
         @media (min-width:576px) {
             flex: 1 1 calc(50% - 1rem);
             min-width: 250px;
@@ -17,6 +23,11 @@
         }
         @media (min-width:992px) {
             flex: 1 1 calc(33% - 1rem);
+        }
+
+        &.active {
+            background-color: var(--col-black);
+            color: var(--col-white);
         }
     }
 }

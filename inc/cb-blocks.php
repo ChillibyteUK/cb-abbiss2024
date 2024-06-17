@@ -60,6 +60,17 @@ function acf_blocks()
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
+            'name'				=> 'cb_faq',
+            'title'				=> __('CB FAQs'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_faq.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+
+
+        acf_register_block_type(array(
             'name'				=> 'cb_news_insights_events',
             'title'				=> __('CB News Insights Events'),
             'category'			=> 'layout',
@@ -96,6 +107,15 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_subscribe_cta',
+            'title'				=> __('CB Subscribe CTA'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_subscribe_cta.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
 
         acf_register_block_type(array(
             'name'				=> 'cb_services_nav',
@@ -121,6 +141,15 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_subpage_nav.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_sibling_nav',
+            'title'				=> __('CB Sibling Nav'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_sibling_nav.php',
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));

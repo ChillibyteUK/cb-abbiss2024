@@ -1,21 +1,27 @@
-<section class="subpage_nav py-5">
+<?php
+$class = $block['className'] ?? 'py-5';
+?>
+<section class="subpage_nav <?=$class?>">
     <div class="container-xl">
         <div class="subpage_nav__grid">
             <?php
-    $child_pages = get_pages(array(
-        'child_of' => get_the_ID(),
-        'parent' => get_the_ID(),
-        'sort_column' => 'menu_order', // Optional: you can sort by title or date as well
-        'sort_order' => 'ASC' // Optional: ASC for ascending order, DESC for descending order
-    ));
+            global $post;
+$parent_id = $post->post_parent ? $post->post_parent : $post->ID;
 
-            if (!empty($child_pages)) {
-                foreach ($child_pages as $page) {
-                    // Display the title and link of each child page
-                    echo '<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
-                }
-            }
-            ?>
+$sibling_pages = get_pages(array(
+   'child_of' => $parent_id,
+   'parent' => $parent_id,
+   'sort_column' => 'menu_order',
+   'sort_order' => 'ASC'
+));
+
+if (!empty($sibling_pages)) {
+    foreach ($sibling_pages as $page) {
+        $active = $page->ID === get_the_ID() ? 'active' : '';
+        echo '<a href="' . get_permalink($page->ID) . '" class="' . $active . '">' . $page->post_title . '</a>';
+    }
+}
+?>
         </div>
     </div>
 </section>

@@ -1,4 +1,7 @@
-<section class="two_col_lined py-5">
+<?php
+$class = $block['className'] ?? 'py-5';
+?>
+<section class="two_col_lined <?=$class?>">
     <div class="container-xl two_col_lined__grid">
         <?php
         while (have_rows('content')) {
@@ -13,6 +16,6 @@
         </div>
         <?php
         }
-        ?>
+?>
     </div>
 </section>

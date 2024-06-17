@@ -1807,7 +1807,10 @@ progress {
   color: #6c757d;
 }
 
-.form-control {
+.form-control, .gform_wrapper.gravity-theme input[type=text],
+.gform_wrapper.gravity-theme input[type=email],
+.gform_wrapper.gravity-theme input[type=tel],
+.gform_wrapper.gravity-theme textarea {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
@@ -1825,39 +1828,63 @@ progress {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-control {
+  .form-control, .gform_wrapper.gravity-theme input[type=text],
+  .gform_wrapper.gravity-theme input[type=email],
+  .gform_wrapper.gravity-theme input[type=tel],
+  .gform_wrapper.gravity-theme textarea {
     transition: none;
   }
 }
-.form-control[type=file] {
+.form-control[type=file], .gform_wrapper.gravity-theme input[type=file][type=text],
+.gform_wrapper.gravity-theme input[type=file][type=email],
+.gform_wrapper.gravity-theme input[type=file][type=tel],
+.gform_wrapper.gravity-theme textarea[type=file] {
   overflow: hidden;
 }
-.form-control[type=file]:not(:disabled):not([readonly]) {
+.form-control[type=file]:not(:disabled):not([readonly]), .gform_wrapper.gravity-theme input[type=file][type=text]:not(:disabled):not([readonly]),
+.gform_wrapper.gravity-theme input[type=file][type=email]:not(:disabled):not([readonly]),
+.gform_wrapper.gravity-theme input[type=file][type=tel]:not(:disabled):not([readonly]),
+.gform_wrapper.gravity-theme textarea[type=file]:not(:disabled):not([readonly]) {
   cursor: pointer;
 }
-.form-control:focus {
+.form-control:focus, .gform_wrapper.gravity-theme input[type=text]:focus,
+.gform_wrapper.gravity-theme input[type=email]:focus,
+.gform_wrapper.gravity-theme input[type=tel]:focus,
+.gform_wrapper.gravity-theme textarea:focus {
   color: #212529;
   background-color: #fff;
   border-color: #ffd491;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(255, 168, 35, 0.25);
 }
-.form-control::-webkit-date-and-time-value {
+.form-control::-webkit-date-and-time-value, .gform_wrapper.gravity-theme input[type=text]::-webkit-date-and-time-value,
+.gform_wrapper.gravity-theme input[type=email]::-webkit-date-and-time-value,
+.gform_wrapper.gravity-theme input[type=tel]::-webkit-date-and-time-value,
+.gform_wrapper.gravity-theme textarea::-webkit-date-and-time-value {
   height: 1.5em;
 }
-.form-control::-moz-placeholder {
+.form-control::-moz-placeholder, .gform_wrapper.gravity-theme input[type=text]::-moz-placeholder, .gform_wrapper.gravity-theme input[type=email]::-moz-placeholder, .gform_wrapper.gravity-theme input[type=tel]::-moz-placeholder, .gform_wrapper.gravity-theme textarea::-moz-placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control::placeholder {
+.form-control::placeholder, .gform_wrapper.gravity-theme input[type=text]::placeholder,
+.gform_wrapper.gravity-theme input[type=email]::placeholder,
+.gform_wrapper.gravity-theme input[type=tel]::placeholder,
+.gform_wrapper.gravity-theme textarea::placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control:disabled {
+.form-control:disabled, .gform_wrapper.gravity-theme input[type=text]:disabled,
+.gform_wrapper.gravity-theme input[type=email]:disabled,
+.gform_wrapper.gravity-theme input[type=tel]:disabled,
+.gform_wrapper.gravity-theme textarea:disabled {
   background-color: #e9ecef;
   opacity: 1;
 }
-.form-control::file-selector-button {
+.form-control::file-selector-button, .gform_wrapper.gravity-theme input[type=text]::file-selector-button,
+.gform_wrapper.gravity-theme input[type=email]::file-selector-button,
+.gform_wrapper.gravity-theme input[type=tel]::file-selector-button,
+.gform_wrapper.gravity-theme textarea::file-selector-button {
   padding: 0.375rem 0.75rem;
   margin: -0.375rem -0.75rem;
   margin-inline-end: 0.75rem;
@@ -1872,11 +1899,17 @@ progress {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-control::file-selector-button {
+  .form-control::file-selector-button, .gform_wrapper.gravity-theme input[type=text]::file-selector-button,
+  .gform_wrapper.gravity-theme input[type=email]::file-selector-button,
+  .gform_wrapper.gravity-theme input[type=tel]::file-selector-button,
+  .gform_wrapper.gravity-theme textarea::file-selector-button {
     transition: none;
   }
 }
-.form-control:hover:not(:disabled):not([readonly])::file-selector-button {
+.form-control:hover:not(:disabled):not([readonly])::file-selector-button, .gform_wrapper.gravity-theme input[type=text]:hover:not(:disabled):not([readonly])::file-selector-button,
+.gform_wrapper.gravity-theme input[type=email]:hover:not(:disabled):not([readonly])::file-selector-button,
+.gform_wrapper.gravity-theme input[type=tel]:hover:not(:disabled):not([readonly])::file-selector-button,
+.gform_wrapper.gravity-theme textarea:hover:not(:disabled):not([readonly])::file-selector-button {
   background-color: #dde0e3;
 }
 
@@ -1923,7 +1956,8 @@ progress {
   margin-inline-end: 1rem;
 }
 
-textarea.form-control {
+textarea.form-control,
+.gform_wrapper.gravity-theme textarea {
   min-height: calc(1.5em + 0.75rem + 2px);
 }
 textarea.form-control-sm {
@@ -1955,7 +1989,7 @@ textarea.form-control-lg {
   height: calc(1.5em + 1rem + 2px);
 }
 
-.form-select {
+.form-select, .gform_wrapper select {
   display: block;
   width: 100%;
   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
@@ -1977,23 +2011,23 @@ textarea.form-control-lg {
   appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-select {
+  .form-select, .gform_wrapper select {
     transition: none;
   }
 }
-.form-select:focus {
+.form-select:focus, .gform_wrapper select:focus {
   border-color: #ffd491;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(255, 168, 35, 0.25);
 }
-.form-select[multiple], .form-select[size]:not([size="1"]) {
+.form-select[multiple], .gform_wrapper select[multiple], .form-select[size]:not([size="1"]), .gform_wrapper select[size]:not([size="1"]) {
   padding-right: 0.75rem;
   background-image: none;
 }
-.form-select:disabled {
+.form-select:disabled, .gform_wrapper select:disabled {
   background-color: #e9ecef;
 }
-.form-select:-moz-focusring {
+.form-select:-moz-focusring, .gform_wrapper select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #212529;
 }
@@ -2232,9 +2266,13 @@ textarea.form-control-lg {
 .form-floating {
   position: relative;
 }
-.form-floating > .form-control,
+.form-floating > .form-control, .gform_wrapper.gravity-theme .form-floating > input[type=text],
+.gform_wrapper.gravity-theme .form-floating > input[type=email],
+.gform_wrapper.gravity-theme .form-floating > input[type=tel],
+.gform_wrapper.gravity-theme .form-floating > textarea,
 .form-floating > .form-control-plaintext,
-.form-floating > .form-select {
+.form-floating > .form-select,
+.gform_wrapper .form-floating > select {
   height: calc(3.5rem + 2px);
   line-height: 1.25;
 }
@@ -2259,48 +2297,74 @@ textarea.form-control-lg {
     transition: none;
   }
 }
-.form-floating > .form-control,
+.form-floating > .form-control, .gform_wrapper.gravity-theme .form-floating > input[type=text],
+.gform_wrapper.gravity-theme .form-floating > input[type=email],
+.gform_wrapper.gravity-theme .form-floating > input[type=tel],
+.gform_wrapper.gravity-theme .form-floating > textarea,
 .form-floating > .form-control-plaintext {
   padding: 1rem 0.75rem;
 }
-.form-floating > .form-control::-moz-placeholder, .form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating > .form-control::-moz-placeholder, .gform_wrapper.gravity-theme .form-floating > input[type=text]::-moz-placeholder, .gform_wrapper.gravity-theme .form-floating > input[type=email]::-moz-placeholder, .gform_wrapper.gravity-theme .form-floating > input[type=tel]::-moz-placeholder, .gform_wrapper.gravity-theme .form-floating > textarea::-moz-placeholder, .form-floating > .form-control-plaintext::-moz-placeholder {
   color: transparent;
 }
-.form-floating > .form-control::placeholder,
+.form-floating > .form-control::placeholder, .gform_wrapper.gravity-theme .form-floating > input[type=text]::placeholder,
+.gform_wrapper.gravity-theme .form-floating > input[type=email]::placeholder,
+.gform_wrapper.gravity-theme .form-floating > input[type=tel]::placeholder,
+.gform_wrapper.gravity-theme .form-floating > textarea::placeholder,
 .form-floating > .form-control-plaintext::placeholder {
   color: transparent;
 }
-.form-floating > .form-control:not(:-moz-placeholder-shown), .form-floating > .form-control-plaintext:not(:-moz-placeholder-shown) {
+.form-floating > .form-control:not(:-moz-placeholder-shown), .gform_wrapper.gravity-theme .form-floating > input[type=text]:not(:-moz-placeholder-shown), .gform_wrapper.gravity-theme .form-floating > input[type=email]:not(:-moz-placeholder-shown), .gform_wrapper.gravity-theme .form-floating > input[type=tel]:not(:-moz-placeholder-shown), .gform_wrapper.gravity-theme .form-floating > textarea:not(:-moz-placeholder-shown), .form-floating > .form-control-plaintext:not(:-moz-placeholder-shown) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown),
+.form-floating > .form-control:focus, .gform_wrapper.gravity-theme .form-floating > input[type=text]:focus,
+.gform_wrapper.gravity-theme .form-floating > input[type=email]:focus,
+.gform_wrapper.gravity-theme .form-floating > input[type=tel]:focus,
+.gform_wrapper.gravity-theme .form-floating > textarea:focus, .form-floating > .form-control:not(:placeholder-shown), .gform_wrapper.gravity-theme .form-floating > input[type=text]:not(:placeholder-shown),
+.gform_wrapper.gravity-theme .form-floating > input[type=email]:not(:placeholder-shown),
+.gform_wrapper.gravity-theme .form-floating > input[type=tel]:not(:placeholder-shown),
+.gform_wrapper.gravity-theme .form-floating > textarea:not(:placeholder-shown),
 .form-floating > .form-control-plaintext:focus,
 .form-floating > .form-control-plaintext:not(:placeholder-shown) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:-webkit-autofill,
+.form-floating > .form-control:-webkit-autofill, .gform_wrapper.gravity-theme .form-floating > input[type=text]:-webkit-autofill,
+.gform_wrapper.gravity-theme .form-floating > input[type=email]:-webkit-autofill,
+.gform_wrapper.gravity-theme .form-floating > input[type=tel]:-webkit-autofill,
+.gform_wrapper.gravity-theme .form-floating > textarea:-webkit-autofill,
 .form-floating > .form-control-plaintext:-webkit-autofill {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-select {
+.form-floating > .form-select, .gform_wrapper .form-floating > select {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:not(:-moz-placeholder-shown) ~ label {
+.form-floating > .form-control:not(:-moz-placeholder-shown) ~ label, .gform_wrapper.gravity-theme .form-floating > input[type=text]:not(:-moz-placeholder-shown) ~ label, .gform_wrapper.gravity-theme .form-floating > input[type=email]:not(:-moz-placeholder-shown) ~ label, .gform_wrapper.gravity-theme .form-floating > input[type=tel]:not(:-moz-placeholder-shown) ~ label, .gform_wrapper.gravity-theme .form-floating > textarea:not(:-moz-placeholder-shown) ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
-.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:focus ~ label, .gform_wrapper.gravity-theme .form-floating > input[type=text]:focus ~ label,
+.gform_wrapper.gravity-theme .form-floating > input[type=email]:focus ~ label,
+.gform_wrapper.gravity-theme .form-floating > input[type=tel]:focus ~ label,
+.gform_wrapper.gravity-theme .form-floating > textarea:focus ~ label,
 .form-floating > .form-control:not(:placeholder-shown) ~ label,
+.gform_wrapper.gravity-theme .form-floating > input[type=text]:not(:placeholder-shown) ~ label,
+.gform_wrapper.gravity-theme .form-floating > input[type=email]:not(:placeholder-shown) ~ label,
+.gform_wrapper.gravity-theme .form-floating > input[type=tel]:not(:placeholder-shown) ~ label,
+.gform_wrapper.gravity-theme .form-floating > textarea:not(:placeholder-shown) ~ label,
 .form-floating > .form-control-plaintext ~ label,
-.form-floating > .form-select ~ label {
+.form-floating > .form-select ~ label,
+.gform_wrapper .form-floating > select ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
-.form-floating > .form-control:-webkit-autofill ~ label {
+.form-floating > .form-control:-webkit-autofill ~ label, .gform_wrapper.gravity-theme .form-floating > input[type=text]:-webkit-autofill ~ label,
+.gform_wrapper.gravity-theme .form-floating > input[type=email]:-webkit-autofill ~ label,
+.gform_wrapper.gravity-theme .form-floating > input[type=tel]:-webkit-autofill ~ label,
+.gform_wrapper.gravity-theme .form-floating > textarea:-webkit-autofill ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
@@ -2315,16 +2379,24 @@ textarea.form-control-lg {
   align-items: stretch;
   width: 100%;
 }
-.input-group > .form-control,
+.input-group > .form-control, .gform_wrapper.gravity-theme .input-group > input[type=text],
+.gform_wrapper.gravity-theme .input-group > input[type=email],
+.gform_wrapper.gravity-theme .input-group > input[type=tel],
+.gform_wrapper.gravity-theme .input-group > textarea,
 .input-group > .form-select,
+.gform_wrapper .input-group > select,
 .input-group > .form-floating {
   position: relative;
   flex: 1 1 auto;
   width: 1%;
   min-width: 0;
 }
-.input-group > .form-control:focus,
+.input-group > .form-control:focus, .gform_wrapper.gravity-theme .input-group > input[type=text]:focus,
+.gform_wrapper.gravity-theme .input-group > input[type=email]:focus,
+.gform_wrapper.gravity-theme .input-group > input[type=tel]:focus,
+.gform_wrapper.gravity-theme .input-group > textarea:focus,
 .input-group > .form-select:focus,
+.gform_wrapper .input-group > select:focus,
 .input-group > .form-floating:focus-within {
   z-index: 5;
 }
@@ -2351,8 +2423,12 @@ textarea.form-control-lg {
   border-radius: 0.375rem;
 }
 
-.input-group-lg > .form-control,
+.input-group-lg > .form-control, .gform_wrapper.gravity-theme .input-group-lg > input[type=text],
+.gform_wrapper.gravity-theme .input-group-lg > input[type=email],
+.gform_wrapper.gravity-theme .input-group-lg > input[type=tel],
+.gform_wrapper.gravity-theme .input-group-lg > textarea,
 .input-group-lg > .form-select,
+.gform_wrapper .input-group-lg > select,
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn {
   padding: 0.5rem 1rem;
@@ -2360,8 +2436,12 @@ textarea.form-control-lg {
   border-radius: 0.5rem;
 }
 
-.input-group-sm > .form-control,
+.input-group-sm > .form-control, .gform_wrapper.gravity-theme .input-group-sm > input[type=text],
+.gform_wrapper.gravity-theme .input-group-sm > input[type=email],
+.gform_wrapper.gravity-theme .input-group-sm > input[type=tel],
+.gform_wrapper.gravity-theme .input-group-sm > textarea,
 .input-group-sm > .form-select,
+.gform_wrapper .input-group-sm > select,
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn {
   padding: 0.25rem 0.5rem;
@@ -2369,22 +2449,33 @@ textarea.form-control-lg {
   border-radius: 0.25rem;
 }
 
-.input-group-lg > .form-select,
-.input-group-sm > .form-select {
+.input-group-lg > .form-select, .gform_wrapper .input-group-lg > select,
+.input-group-sm > .form-select,
+.gform_wrapper .input-group-sm > select {
   padding-right: 3rem;
 }
 
 .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
 .input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3),
 .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-control,
-.input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select {
+.gform_wrapper.gravity-theme .input-group:not(.has-validation) > .form-floating:not(:last-child) > input[type=text],
+.gform_wrapper.gravity-theme .input-group:not(.has-validation) > .form-floating:not(:last-child) > input[type=email],
+.gform_wrapper.gravity-theme .input-group:not(.has-validation) > .form-floating:not(:last-child) > input[type=tel],
+.gform_wrapper.gravity-theme .input-group:not(.has-validation) > .form-floating:not(:last-child) > textarea,
+.input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select,
+.gform_wrapper .input-group:not(.has-validation) > .form-floating:not(:last-child) > select {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 .input-group.has-validation > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
 .input-group.has-validation > .dropdown-toggle:nth-last-child(n+4),
 .input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-control,
-.input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-select {
+.gform_wrapper.gravity-theme .input-group.has-validation > .form-floating:nth-last-child(n+3) > input[type=text],
+.gform_wrapper.gravity-theme .input-group.has-validation > .form-floating:nth-last-child(n+3) > input[type=email],
+.gform_wrapper.gravity-theme .input-group.has-validation > .form-floating:nth-last-child(n+3) > input[type=tel],
+.gform_wrapper.gravity-theme .input-group.has-validation > .form-floating:nth-last-child(n+3) > textarea,
+.input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-select,
+.gform_wrapper .input-group.has-validation > .form-floating:nth-last-child(n+3) > select {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -2393,8 +2484,12 @@ textarea.form-control-lg {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.input-group > .form-floating:not(:first-child) > .form-control,
-.input-group > .form-floating:not(:first-child) > .form-select {
+.input-group > .form-floating:not(:first-child) > .form-control, .gform_wrapper.gravity-theme .input-group > .form-floating:not(:first-child) > input[type=text],
+.gform_wrapper.gravity-theme .input-group > .form-floating:not(:first-child) > input[type=email],
+.gform_wrapper.gravity-theme .input-group > .form-floating:not(:first-child) > input[type=tel],
+.gform_wrapper.gravity-theme .input-group > .form-floating:not(:first-child) > textarea,
+.input-group > .form-floating:not(:first-child) > .form-select,
+.gform_wrapper .input-group > .form-floating:not(:first-child) > select {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -2428,7 +2523,16 @@ textarea.form-control-lg {
   display: block;
 }
 
-.was-validated .form-control:valid, .form-control.is-valid {
+.was-validated .form-control:valid, .was-validated .gform_wrapper.gravity-theme input[type=text]:valid, .gform_wrapper.gravity-theme .was-validated input[type=text]:valid,
+.was-validated .gform_wrapper.gravity-theme input[type=email]:valid,
+.gform_wrapper.gravity-theme .was-validated input[type=email]:valid,
+.was-validated .gform_wrapper.gravity-theme input[type=tel]:valid,
+.gform_wrapper.gravity-theme .was-validated input[type=tel]:valid,
+.was-validated .gform_wrapper.gravity-theme textarea:valid,
+.gform_wrapper.gravity-theme .was-validated textarea:valid, .form-control.is-valid, .gform_wrapper.gravity-theme input.is-valid[type=text],
+.gform_wrapper.gravity-theme input.is-valid[type=email],
+.gform_wrapper.gravity-theme input.is-valid[type=tel],
+.gform_wrapper.gravity-theme textarea.is-valid {
   border-color: #198754;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
@@ -2436,26 +2540,38 @@ textarea.form-control-lg {
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .form-control:valid:focus, .form-control.is-valid:focus {
+.was-validated .form-control:valid:focus, .was-validated .gform_wrapper.gravity-theme input[type=text]:valid:focus, .gform_wrapper.gravity-theme .was-validated input[type=text]:valid:focus,
+.was-validated .gform_wrapper.gravity-theme input[type=email]:valid:focus,
+.gform_wrapper.gravity-theme .was-validated input[type=email]:valid:focus,
+.was-validated .gform_wrapper.gravity-theme input[type=tel]:valid:focus,
+.gform_wrapper.gravity-theme .was-validated input[type=tel]:valid:focus,
+.was-validated .gform_wrapper.gravity-theme textarea:valid:focus,
+.gform_wrapper.gravity-theme .was-validated textarea:valid:focus, .form-control.is-valid:focus, .gform_wrapper.gravity-theme input.is-valid[type=text]:focus,
+.gform_wrapper.gravity-theme input.is-valid[type=email]:focus,
+.gform_wrapper.gravity-theme input.is-valid[type=tel]:focus,
+.gform_wrapper.gravity-theme textarea.is-valid:focus {
   border-color: #198754;
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
 
-.was-validated textarea.form-control:valid, textarea.form-control.is-valid {
+.was-validated textarea.form-control:valid,
+.was-validated .gform_wrapper.gravity-theme textarea:valid,
+.gform_wrapper.gravity-theme .was-validated textarea:valid, textarea.form-control.is-valid,
+.gform_wrapper.gravity-theme textarea.is-valid {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
-.was-validated .form-select:valid, .form-select.is-valid {
+.was-validated .form-select:valid, .was-validated .gform_wrapper select:valid, .gform_wrapper .was-validated select:valid, .form-select.is-valid, .gform_wrapper select.is-valid {
   border-color: #198754;
 }
-.was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"] {
+.was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .gform_wrapper select:valid:not([multiple]):not([size]), .gform_wrapper .was-validated select:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .was-validated .gform_wrapper select:valid:not([multiple])[size="1"], .gform_wrapper .was-validated select:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), .gform_wrapper select.is-valid:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"], .gform_wrapper select.is-valid:not([multiple])[size="1"] {
   padding-right: 4.125rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .form-select:valid:focus, .form-select.is-valid:focus {
+.was-validated .form-select:valid:focus, .was-validated .gform_wrapper select:valid:focus, .gform_wrapper .was-validated select:valid:focus, .form-select.is-valid:focus, .gform_wrapper select.is-valid:focus {
   border-color: #198754;
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
@@ -2481,9 +2597,21 @@ textarea.form-control-lg {
   margin-left: 0.5em;
 }
 
-.was-validated .input-group > .form-control:not(:focus):valid, .input-group > .form-control:not(:focus).is-valid,
+.was-validated .input-group > .form-control:not(:focus):valid, .was-validated .gform_wrapper.gravity-theme .input-group > input[type=text]:not(:focus):valid, .gform_wrapper.gravity-theme .was-validated .input-group > input[type=text]:not(:focus):valid,
+.was-validated .gform_wrapper.gravity-theme .input-group > input[type=email]:not(:focus):valid,
+.gform_wrapper.gravity-theme .was-validated .input-group > input[type=email]:not(:focus):valid,
+.was-validated .gform_wrapper.gravity-theme .input-group > input[type=tel]:not(:focus):valid,
+.gform_wrapper.gravity-theme .was-validated .input-group > input[type=tel]:not(:focus):valid,
+.was-validated .gform_wrapper.gravity-theme .input-group > textarea:not(:focus):valid,
+.gform_wrapper.gravity-theme .was-validated .input-group > textarea:not(:focus):valid, .input-group > .form-control:not(:focus).is-valid, .gform_wrapper.gravity-theme .input-group > input[type=text]:not(:focus).is-valid,
+.gform_wrapper.gravity-theme .input-group > input[type=email]:not(:focus).is-valid,
+.gform_wrapper.gravity-theme .input-group > input[type=tel]:not(:focus).is-valid,
+.gform_wrapper.gravity-theme .input-group > textarea:not(:focus).is-valid,
 .was-validated .input-group > .form-select:not(:focus):valid,
+.was-validated .gform_wrapper .input-group > select:not(:focus):valid,
+.gform_wrapper .was-validated .input-group > select:not(:focus):valid,
 .input-group > .form-select:not(:focus).is-valid,
+.gform_wrapper .input-group > select:not(:focus).is-valid,
 .was-validated .input-group > .form-floating:not(:focus-within):valid,
 .input-group > .form-floating:not(:focus-within).is-valid {
   z-index: 3;
@@ -2518,7 +2646,16 @@ textarea.form-control-lg {
   display: block;
 }
 
-.was-validated .form-control:invalid, .form-control.is-invalid {
+.was-validated .form-control:invalid, .was-validated .gform_wrapper.gravity-theme input[type=text]:invalid, .gform_wrapper.gravity-theme .was-validated input[type=text]:invalid,
+.was-validated .gform_wrapper.gravity-theme input[type=email]:invalid,
+.gform_wrapper.gravity-theme .was-validated input[type=email]:invalid,
+.was-validated .gform_wrapper.gravity-theme input[type=tel]:invalid,
+.gform_wrapper.gravity-theme .was-validated input[type=tel]:invalid,
+.was-validated .gform_wrapper.gravity-theme textarea:invalid,
+.gform_wrapper.gravity-theme .was-validated textarea:invalid, .form-control.is-invalid, .gform_wrapper.gravity-theme input.is-invalid[type=text],
+.gform_wrapper.gravity-theme input.is-invalid[type=email],
+.gform_wrapper.gravity-theme input.is-invalid[type=tel],
+.gform_wrapper.gravity-theme textarea.is-invalid {
   border-color: #dc3545;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
@@ -2526,26 +2663,38 @@ textarea.form-control-lg {
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
+.was-validated .form-control:invalid:focus, .was-validated .gform_wrapper.gravity-theme input[type=text]:invalid:focus, .gform_wrapper.gravity-theme .was-validated input[type=text]:invalid:focus,
+.was-validated .gform_wrapper.gravity-theme input[type=email]:invalid:focus,
+.gform_wrapper.gravity-theme .was-validated input[type=email]:invalid:focus,
+.was-validated .gform_wrapper.gravity-theme input[type=tel]:invalid:focus,
+.gform_wrapper.gravity-theme .was-validated input[type=tel]:invalid:focus,
+.was-validated .gform_wrapper.gravity-theme textarea:invalid:focus,
+.gform_wrapper.gravity-theme .was-validated textarea:invalid:focus, .form-control.is-invalid:focus, .gform_wrapper.gravity-theme input.is-invalid[type=text]:focus,
+.gform_wrapper.gravity-theme input.is-invalid[type=email]:focus,
+.gform_wrapper.gravity-theme input.is-invalid[type=tel]:focus,
+.gform_wrapper.gravity-theme textarea.is-invalid:focus {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
 
-.was-validated textarea.form-control:invalid, textarea.form-control.is-invalid {
+.was-validated textarea.form-control:invalid,
+.was-validated .gform_wrapper.gravity-theme textarea:invalid,
+.gform_wrapper.gravity-theme .was-validated textarea:invalid, textarea.form-control.is-invalid,
+.gform_wrapper.gravity-theme textarea.is-invalid {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
-.was-validated .form-select:invalid, .form-select.is-invalid {
+.was-validated .form-select:invalid, .was-validated .gform_wrapper select:invalid, .gform_wrapper .was-validated select:invalid, .form-select.is-invalid, .gform_wrapper select.is-invalid {
   border-color: #dc3545;
 }
-.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"] {
+.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .gform_wrapper select:invalid:not([multiple]):not([size]), .gform_wrapper .was-validated select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .was-validated .gform_wrapper select:invalid:not([multiple])[size="1"], .gform_wrapper .was-validated select:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .gform_wrapper select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"], .gform_wrapper select.is-invalid:not([multiple])[size="1"] {
   padding-right: 4.125rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.was-validated .form-select:invalid:focus, .form-select.is-invalid:focus {
+.was-validated .form-select:invalid:focus, .was-validated .gform_wrapper select:invalid:focus, .gform_wrapper .was-validated select:invalid:focus, .form-select.is-invalid:focus, .gform_wrapper select.is-invalid:focus {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
@@ -2571,9 +2720,21 @@ textarea.form-control-lg {
   margin-left: 0.5em;
 }
 
-.was-validated .input-group > .form-control:not(:focus):invalid, .input-group > .form-control:not(:focus).is-invalid,
+.was-validated .input-group > .form-control:not(:focus):invalid, .was-validated .gform_wrapper.gravity-theme .input-group > input[type=text]:not(:focus):invalid, .gform_wrapper.gravity-theme .was-validated .input-group > input[type=text]:not(:focus):invalid,
+.was-validated .gform_wrapper.gravity-theme .input-group > input[type=email]:not(:focus):invalid,
+.gform_wrapper.gravity-theme .was-validated .input-group > input[type=email]:not(:focus):invalid,
+.was-validated .gform_wrapper.gravity-theme .input-group > input[type=tel]:not(:focus):invalid,
+.gform_wrapper.gravity-theme .was-validated .input-group > input[type=tel]:not(:focus):invalid,
+.was-validated .gform_wrapper.gravity-theme .input-group > textarea:not(:focus):invalid,
+.gform_wrapper.gravity-theme .was-validated .input-group > textarea:not(:focus):invalid, .input-group > .form-control:not(:focus).is-invalid, .gform_wrapper.gravity-theme .input-group > input[type=text]:not(:focus).is-invalid,
+.gform_wrapper.gravity-theme .input-group > input[type=email]:not(:focus).is-invalid,
+.gform_wrapper.gravity-theme .input-group > input[type=tel]:not(:focus).is-invalid,
+.gform_wrapper.gravity-theme .input-group > textarea:not(:focus).is-invalid,
 .was-validated .input-group > .form-select:not(:focus):invalid,
+.was-validated .gform_wrapper .input-group > select:not(:focus):invalid,
+.gform_wrapper .was-validated .input-group > select:not(:focus):invalid,
 .input-group > .form-select:not(:focus).is-invalid,
+.gform_wrapper .input-group > select:not(:focus).is-invalid,
 .was-validated .input-group > .form-floating:not(:focus-within):invalid,
 .input-group > .form-floating:not(:focus-within).is-invalid {
   z-index: 4;
@@ -20758,18 +20919,18 @@ strong {
   color: var(--col-white);
 }
 
-.button {
+.button, body .gform_wrapper .gform_footer button {
   display: inline-block;
   border-radius: 100vw;
   padding: 0.75rem 3rem;
   text-decoration: none;
   transition: color var(--transition);
 }
-.button:hover {
+.button:hover, body .gform_wrapper .gform_footer button:hover {
   color: var(--col-orange-400);
 }
 
-.button-white {
+.button-white, body .gform_wrapper .gform_footer button {
   background-color: var(--col-white);
   color: var(--col-black);
 }
@@ -20900,6 +21061,76 @@ footer .colophon .cb {
 }
 footer .colophon .cb:hover {
   opacity: 1;
+}
+
+.gform_fields {
+  list-style-type: none;
+  padding: 0;
+}
+
+.gfield {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.gform_wrapper.gravity-theme input[type=text],
+.gform_wrapper.gravity-theme input[type=email],
+.gform_wrapper.gravity-theme input[type=tel] {
+  border-radius: 100vw;
+}
+
+.gform_wrapper.gravity-theme .gfield input.medium, .gform_wrapper.gravity-theme .gfield select.medium {
+  width: 100% !important;
+}
+
+.gfield {
+  margin-bottom: 1rem;
+}
+
+.gfield textarea {
+  height: 100px;
+}
+
+.validation_error,
+.gfield_error .validation_message {
+  color: crimson;
+}
+
+.validation_error,
+.gform_confirmation_message {
+  font-size: 18px;
+}
+
+.gfield_error .validation_message {
+  margin-top: 5px;
+}
+
+.gfield_error select,
+.gfield_error textarea,
+.gfield_error input {
+  border-color: crimson;
+}
+
+.gfield textarea.large {
+  height: 200px !important;
+}
+
+.gchoice {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.gform_wrapper.gravity-theme .gfield-choice-input {
+  margin-top: 0.25rem !important;
+}
+
+label {
+  display: none;
+}
+
+.gfield--type-honeypot {
+  display: none;
 }
 
 .hero {
@@ -21063,10 +21294,16 @@ footer .colophon .cb:hover {
   justify-content: center;
 }
 .subpage_nav a {
+  text-decoration: none;
+  color: var(--col-black);
   background-color: var(--col-grey-400);
   display: block;
   padding: 1rem;
   flex: 1 1 100%;
+  font-weight: var(--fw-400);
+}
+.subpage_nav a:hover {
+  color: var(--col-orange-400);
 }
 @media (min-width: 576px) {
   .subpage_nav a {
@@ -21079,6 +21316,10 @@ footer .colophon .cb:hover {
   .subpage_nav a {
     flex: 1 1 calc(33% - 1rem);
   }
+}
+.subpage_nav a.active {
+  background-color: var(--col-black);
+  color: var(--col-white);
 }
 
 .image_icon_cta {
@@ -21114,7 +21355,7 @@ footer .colophon .cb:hover {
   }
 }
 @media (max-width: 767px) {
-  .image_icon_cta .button-white {
+  .image_icon_cta .button-white, .image_icon_cta body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .image_icon_cta button {
     background-color: var(--col-black);
     color: var(--col-white);
   }
@@ -21225,7 +21466,7 @@ footer .colophon .cb:hover {
 .cta_reviews__card:hover .overlay {
   opacity: 1;
 }
-.cta_reviews__card:hover .button {
+.cta_reviews__card:hover .button, .cta_reviews__card:hover body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .cta_reviews__card:hover button {
   color: var(--col-orange-400);
 }
 .cta_reviews__background {
@@ -21261,7 +21502,7 @@ footer .colophon .cb:hover {
 }
 .two_col_lined__card {
   border-top: 1px solid var(--col-grey-600);
-  padding-block: 1rem 3rem;
+  padding-block: 1rem 2rem;
 }
 
 .colour_cta__card {
@@ -21317,6 +21558,41 @@ footer .colophon .cb:hover {
   pointer-events: none;
   transition: opacity var(--transition);
   z-index: -1;
+}
+
+.faqs .question {
+  position: relative;
+  padding-right: 1.2em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+.faqs .question.collapsed::after {
+  content: "\f067";
+  color: var(--col-black);
+}
+.faqs .question::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: var(--ff-fa);
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  content: "\f068";
+  margin-right: 0.5rem;
+  color: var(--col-orange-400);
+}
+@media screen and (max-width: 992px) {
+  .faqs .question::after {
+    display: none;
+  }
+}
+.faqs .answer {
+  max-width: 110ch;
+}
+.faqs .answer p {
+  margin-bottom: 0.5rem;
 }
 
 *,
@@ -21381,6 +21657,13 @@ a.noline {
     columns: 3;
   }
 }
+ul:not([class]) {
+  padding-inline-start: 1.25rem;
+}
+ul:not([class]) li {
+  margin-bottom: 0.5rem;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;
