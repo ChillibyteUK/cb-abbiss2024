@@ -155,7 +155,7 @@ echo get_field('contact_details');
         "@context": "https://schema.org/",
         "@type": "JobPosting",
         "title": "<?=get_the_title()?>",
-        "description": "<?=$role?>",
+        "description": "<article><?=$role?></article>",
         "hiringOrganization": {
             "@type": "Organization",
             "name": "Abbiss Cadres LLP",
