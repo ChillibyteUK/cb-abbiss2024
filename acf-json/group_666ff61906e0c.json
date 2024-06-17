@@ -1,0 +1,58 @@
+{
+    "key": "group_666ff61906e0c",
+    "title": "Sidebar Menu",
+    "fields": [
+        {
+            "key": "field_666ff62a2d499",
+            "label": "Menu",
+            "name": "sidebar_menu",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "35": "About Us",
+                "51": "Cadres Consult",
+                "30": "Colophon",
+                "34": "CORRIDOR",
+                "28": "Footer Col 1",
+                "33": "For Businesses",
+                "49": "Join Us",
+                "2": "OLD - Main menu",
+                "27": "Primary Nav"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/sidebar_page.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1718613689
+}

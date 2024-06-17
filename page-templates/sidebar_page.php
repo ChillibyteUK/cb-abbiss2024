@@ -21,7 +21,12 @@ foreach ($blocks as $block) {
     <div class="container-xl">
         <div class="row">
             <div class="col-md-3">
-                SIDEBAR
+                <?php
+            $menu_id = get_field('sidebar_menu');
+if ($menu_id) {
+    wp_nav_menu(array('menu' => $menu_id));
+}
+?>
             </div>
             <div class="col-md-9">
                 <?php

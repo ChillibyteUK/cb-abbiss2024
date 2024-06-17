@@ -372,4 +372,36 @@ function pluralise($quantity, $singular, $plural=null)
             return $singular.'s';
     }
 }
+
+function get_wp_menus()
+{
+    $menus = wp_get_nav_menus();
+    $menu_options = array();
+    
+    foreach ($menus as $menu) {
+        $menu_options[ $menu->term_id ] = $menu->name;
+    }
+    
+    return $menu_options;
+}
+
+function acf_load_menu_field_choices($field)
+{
+    // Reset choices
+    $field['choices'] = array();
+    
+    // Get menus
+    $menus = get_wp_menus();
+    
+    // Populate choices
+    if (!empty($menus)) {
+        foreach ($menus as $key => $value) {
+            $field['choices'][$key] = $value;
+        }
+    }
+    
+    return $field;
+}
+add_filter('acf/load_field/name=sidebar_menu', 'acf_load_menu_field_choices');
+
 ?>
