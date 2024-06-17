@@ -21137,13 +21137,19 @@ label.gfield_consent_label {
   display: inline;
 }
 
-.gfield--type-consent legend {
+.gfield--type-consent legend,
+.gfield--type-name legend {
   display: none;
 }
 
 .gfield--type-honeypot,
 .gfield_visibility_hidden {
   display: none;
+}
+
+.name_first {
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .sidebar_menu {
