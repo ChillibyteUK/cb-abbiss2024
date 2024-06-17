@@ -108,6 +108,16 @@ function acf_blocks()
         ));
 
         acf_register_block_type(array(
+            'name'				=> 'cb_all_testimonials',
+            'title'				=> __('CB All Testimonials'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_all_testimonials.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+
+        acf_register_block_type(array(
             'name'				=> 'cb_cta_reviews',
             'title'				=> __('CB CTA Reviews'),
             'category'			=> 'layout',
