@@ -4,12 +4,12 @@ $section = get_field('section') ?? null;
 <section class="latest_insights pb-5">
     <div class="container-xl">
         <h3 class="pt-2 border-top">
-            Latest insights</h3>
+            Latest Abbiss Cadres news</h3>
         <div class="latest_insights__grid mb-4">
             <?php
 $p = new WP_Query(
     array(
-        'post_type' => 'insights',
+        'post_type' => 'post',
         'post_status' => 'publish',
         'posts_per_page' => 3,
         'tax_query' =>     array(
@@ -23,12 +23,12 @@ while ($p->have_posts()) {
     $p->the_post();
     ?>
             <a href="<?=get_the_permalink()?>"
-                class="news_insights_events__news_post bg-blue-400">
+                class="news_insights_events__news_post bg-beige-400">
                 <div class="overlay"></div>
                 <div class="news_insights_events__content">
                     <div class="news_insights_events__meta">
-                        <img src="<?=get_stylesheet_directory_uri()?>/img/icon-insights.svg"
-                            class="icon-sm">
+                        <img src="<?=get_stylesheet_directory_uri()?>/img/icon-news.svg"
+                            class="icon-sm" alt="News">
                         <span
                             class="fs-200"><?=get_the_date()?></span>
                     </div>
@@ -42,12 +42,6 @@ while ($p->have_posts()) {
 }
 ?>
         </div>
-        <?php
-        if ($section == 'corridor') {
-            echo '<a class="link-arrow-inline" href="/corridor/knowledge/insights/">View all Corridor insights</a>';
-        } else {
-            echo '<a class="link-arrow-inline" href="/knowledge/insights/">View all insights</a>';
-        }
-?>
+        <a class="link-arrow-inline" href="/knowledge/news/">View all news</a>
     </div>
 </section>
