@@ -20841,7 +20841,7 @@ h2, .h2 {
 }
 
 strong {
-  font-weight: 700;
+  font-weight: var(--fw-400);
 }
 
 .fs-900 {
@@ -21764,6 +21764,44 @@ label.gfield_consent_label {
 }
 .single_people__contact a:hover {
   color: var(--col-orange-400);
+}
+
+.joblisting {
+  border-bottom: 1px solid #ccc;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-areas: "title" "salary" "detail";
+  text-decoration: none;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--col-black);
+}
+@media (min-width: 768px) {
+  .joblisting {
+    grid-template-areas: "title title" "detail salary";
+  }
+}
+.joblisting:hover {
+  color: var(--col-orange-400);
+}
+.joblisting__title {
+  grid-area: title;
+  font-weight: var(--fw-400);
+  font-size: var(--fs-600);
+}
+.joblisting__title::before {
+  content: "\f105";
+  font-family: var(--ff-fa);
+  font-weight: 600;
+  font-size: var(--fs-600);
+  width: var(--fs-600);
+  height: var(--fs-600);
+}
+.joblisting__detail {
+  grid-area: detail;
+}
+.joblisting__salary {
+  grid-area: salary;
 }
 
 *,

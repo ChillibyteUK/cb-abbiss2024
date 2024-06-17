@@ -155,6 +155,16 @@ function acf_blocks()
         ));
 
         acf_register_block_type(array(
+            'name'				=> 'cb_job_listings',
+            'title'				=> __('CB Job Listings'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_job_listings.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+
+        acf_register_block_type(array(
             'name'				=> 'cb_services_nav',
             'title'				=> __('CB Services Nav'),
             'category'			=> 'layout',
