@@ -1,6 +1,6 @@
 <?php
 $section = get_field('section') ?? null;
-$class = $block['className'] ?? 'py-5';
+$class = $block['className'] ?? 'pt-5';
 ?>
 <section class="latest_insights <?=$class?>">
     <div class="container-xl">
