@@ -15,9 +15,9 @@ $class = $block['className'] ?? 'mb-4';
         }
 if (get_field('content') ?? null) {
     ?>
-        <div class="hero__content">
+        <h1 class="hero__content">
             <?=get_field('content')?>
-        </div>
+        </h1>
         <?php
 }
 ?>
