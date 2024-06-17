@@ -88,6 +88,15 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_latest_news',
+            'title'				=> __('CB Latest News'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_latest_news.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
 
         acf_register_block_type(array(
             'name'				=> 'cb_cta_reviews',
