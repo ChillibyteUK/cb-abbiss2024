@@ -21133,6 +21133,10 @@ label.gfield_consent_label {
   display: inline;
 }
 
+.gfield--type-consent legend {
+  display: none;
+}
+
 .gfield--type-honeypot,
 .gfield_visibility_hidden {
   display: none;
