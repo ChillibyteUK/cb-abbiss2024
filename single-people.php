@@ -11,6 +11,16 @@ defined('ABSPATH') || exit;
 get_header();
 ?>
 <main class="single_people">
+    <section class="breadcrumbs mb-4">
+        <div class="container-xl">
+            <?php
+            if (function_exists('yoast_breadcrumb')) {
+                // yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+                yoast_breadcrumb();
+            }
+?>
+        </div>
+    </section>
     <section class="single_people__hero">
         <div class="container-xl">
             <div class="row">
@@ -29,10 +39,10 @@ get_header();
     </section>
     <div class="container-xl">
         <div class="row">
-            <div class="col-md-3">
+            <div class="d-none d-lg-block col-lg-3">
                 <div class="sidebar_menu">
                     <?php
-        $menu_id = 35;
+$menu_id = 35;
 $menu = wp_get_nav_menu_object($menu_id);
 if ($menu_id) {
     ?>
@@ -43,7 +53,7 @@ if ($menu_id) {
 ?>
                 </div>
             </div>
-            <div class=" col-md-9">
+            <div class=" col-lg-9">
                 <div class="single_people__summary mb-5">
                     <?=get_the_post_thumbnail(get_the_ID(), 'full', array('class' => 'single_people__image', 'alt' => get_the_title()))?>
                     <div class="single_people__links">
@@ -175,25 +185,6 @@ if (get_field('user_id') != '') {
         </div>
     </div>
 </main>
-<span type="button" data-bs-toggle="modal" data-bs-target="#myModal">Open Modal</span>
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="myModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script type="application/ld+json">
     {
         "@context": "http://schema.org",
@@ -235,9 +226,7 @@ $n = explode(' ', get_the_title());
                 <div class="h5 modal-title" id="modalLabel">Contact
                     <?=get_the_title()?>
                 </div>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <?=do_shortcode('[gravityform id="8" title="false" description="false" ajax="true" field_values="c=' . get_the_title() . '"]')?>

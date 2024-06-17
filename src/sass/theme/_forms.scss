@@ -90,6 +90,7 @@ label {
     display: none;
 }
 
-.gfield--type-honeypot {
+.gfield--type-honeypot,
+.gfield_visibility_hidden {
     display: none;
 }

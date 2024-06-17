@@ -9,6 +9,7 @@
     &__image {
         aspect-ratio: 1;
         width: 130px;
+        object-fit: cover;
     }
 
     &__name {
@@ -33,11 +34,11 @@
 }
 
 .single_people {
+    padding-top: var(--h-top);
     li.menu-item#menu-item-2792 a {
         font-weight: var(--fw-400) !important;
     }
     &__hero {
-        padding-top: var(--h-top);
         img {
             height: 100px;
         }
@@ -45,20 +46,33 @@
 
     &__summary {
         display: grid;
-        grid-template-areas: "image links links" "image specialisms contact";
-        grid-template-columns: auto 1fr 1fr;
-        column-gap: 1rem;
+        grid-template-areas: "image" "links" "specialisms" "contact";
+        gap: 1rem;
+        @media (min-width:768px) {
+            grid-template-areas: "image image" "links links" "specialisms contact";
+        }
+        @media (min-width:992px) {
+            grid-template-areas: "image links links" "image specialisms contact";
+            grid-template-columns: auto 1fr 1fr;
+            column-gap: 1rem;
+            row-gap: 0;
+        }
         padding: 1rem;
         background-color: var(--col-beige-400);
     }
     &__image {
         grid-area: image;
-        aspect-ratio: 1;
+        aspect-ratio: 1;    
         width: 200px;
+        object-fit: cover;
+        margin-inline: auto;
     }
     &__links {
         grid-area: links;
-        justify-self: end;
+        justify-self: center;
+        @media (min-width:992px) {
+            justify-self: end;
+        }
         .fa-stack {
             font-size: 1rem;
         }

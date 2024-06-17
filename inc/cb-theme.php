@@ -130,4 +130,26 @@ function remove_understrap_post_formats()
 {
     remove_theme_support('post-formats', array( 'aside', 'image', 'video' , 'quote' , 'link' ));
 }
+
+
+add_filter('wpseo_breadcrumb_links', 'override_yoast_breadcrumb_trail');
+
+function override_yoast_breadcrumb_trail($links)
+{
+    global $post;
+
+    if (is_singular('people')) {
+        $breadcrumb[] = array(
+            'url' => '/about-us/',
+            'text' => 'About Us',
+        );
+        $breadcrumb[] = array(
+            'url' => '/about-us/our-people/',
+            'text' => 'Our Senior People',
+        );
+        array_splice($links, 1, -2, $breadcrumb);
+    }
+
+    return $links;
+}
 ?>
