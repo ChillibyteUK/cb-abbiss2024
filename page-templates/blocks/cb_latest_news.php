@@ -1,7 +1,8 @@
 <?php
 $section = get_field('section') ?? null;
+$class = $block['className'] ?? 'py-5';
 ?>
-<section class="latest_insights pb-5">
+<section class="latest_insights <?=$class?>">
     <div class="container-xl">
         <h3 class="pt-2 border-top">
             Latest Abbiss Cadres news</h3>
