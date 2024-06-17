@@ -89,6 +89,9 @@ body .gform_wrapper .gform_footer button {
 label:not(.gfield_consent_label) {
     display: none;
 }
+label.gfield_consent_label {
+    display: inline;
+}
 
 .gfield--type-honeypot,
 .gfield_visibility_hidden {
