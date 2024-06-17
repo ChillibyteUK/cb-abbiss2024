@@ -1,0 +1,33 @@
+.people {
+    &__card {
+        background-color: var(--col-beige-400);
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: auto 1fr 1.5rem;
+        height: 100%;
+    }
+    &__image {
+        aspect-ratio: 1;
+        width: 130px;
+    }
+
+    &__name {
+        border-bottom: 1px solid var(--col-grey-900);
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    &__specialisms {
+        list-style: none;
+        padding-inline-start: 0;
+        li {
+            padding-block: 0.25rem;
+            border-bottom: 1px solid var(--col-grey-900);
+        }
+    }
+
+    &__links {
+        display: flex;
+        justify-content: space-between;
+    }
+}

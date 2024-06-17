@@ -49,10 +49,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, .h99 {
 }
 
 .font-weight-normal {
-    font-weight: 300 !important;
+    font-weight: var(--fw-300) !important;
 }
 .font-weight-bold {
-    font-weight: normal !important;
+    font-weight: var(--fw-400) !important;
 }
 
 .hero-title {
