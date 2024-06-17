@@ -14,6 +14,11 @@
     a {
         display: block;
         font-weight: var(--fw-300) !important;
+        color: var(--col-black);
+        text-decoration: none;
+        &:hover {
+            color: var(--col-orange-400);
+        }
         padding-block: 1rem;
         &[aria-current] {
             font-weight: var(--fw-400) !important;

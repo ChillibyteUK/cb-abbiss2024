@@ -31,3 +31,73 @@
         justify-content: space-between;
     }
 }
+
+.single_people {
+    li.menu-item#menu-item-2792 a {
+        font-weight: var(--fw-400) !important;
+    }
+    &__hero {
+        padding-top: var(--h-top);
+        img {
+            height: 100px;
+        }
+    }
+
+    &__summary {
+        display: grid;
+        grid-template-areas: "image links links" "image specialisms contact";
+        grid-template-columns: auto 1fr 1fr;
+        column-gap: 1rem;
+        padding: 1rem;
+        background-color: var(--col-beige-400);
+    }
+    &__image {
+        grid-area: image;
+        aspect-ratio: 1;
+        width: 200px;
+    }
+    &__links {
+        grid-area: links;
+        justify-self: end;
+        .fa-stack {
+            font-size: 1rem;
+        }
+        a, span[type="button"] {
+            color: var(--col-black);
+            transition: color var(--transition);
+            &:hover {
+                color: var(--col-orange-400);
+            }
+        }
+    }
+    &__specialisms {
+        grid-area: specialisms;
+        border-top: 1px solid var(--col-grey-900);
+        .single_people__list {
+            list-style: none;
+            padding-inline-start: 0;
+            li {
+                padding-block: 0.25rem;
+                border-bottom: 1px solid var(--col-grey-900);
+            }
+        }
+    }
+    &__contact {
+        grid-area: contact;
+        border-top: 1px solid var(--col-grey-900);
+        padding-top: 0.25rem;
+        div {
+            display: grid;
+            grid-template-columns: 2rem auto;
+            padding-bottom: 0.25rem
+        }
+        a {
+            font-weight: var(--fw-400);
+            color: var(--col-black);
+            text-decoration: none;
+            &:hover {
+                color: var(--col-orange-400);
+            }
+        }
+    }
+}
