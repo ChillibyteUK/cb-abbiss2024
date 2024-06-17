@@ -150,6 +150,46 @@ echo get_field('contact_details');
         </div>
     </div>
 </main>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "JobPosting",
+        "title": "<?=get_the_title()?>",
+        "description": "<p><?=get_the_title()?></p>",
+        "hiringOrganization": {
+            "@type": "Organization",
+            "name": "Abbiss Cadres LLP",
+            "logo": "https://abbisscadres.com/wp-content/uploads/2021/03/ac-logo-large.png",
+            "sameAs": "https://www.abbisscadres.com/",
+        },
+        "datePosted": "<?=get_the_date(); ?>",
+        "validThrough": "2030-01-01T00:00",
+        "employmentType": "<?=get_field('employment_type'); ?>",
+        "jobLocation": {
+            "@type": "Place",
+            <?php
+            $loca = get_field('office');
+echo $loca[0]->description;
+?>
+        }
+        <?php
+        if ($baseSalary != '') {
+            ?>
+        ,
+        "baseSalary": {
+            "@type": "MonetaryAmount",
+            "currency": "GBP",
+            "value": {
+                "@type": "QuantitativeValue",
+                "value": <?=$baseSalary?> ,
+                "unitText": "<?=$per?>"
+            }
+        }
+        <?php
+        }
+?>
+    }
+</script>
 <?php
 get_footer();
 ?>
