@@ -21125,7 +21125,7 @@ footer .colophon .cb:hover {
   margin-top: 0.25rem !important;
 }
 
-label {
+label:not(.gfield_consent_label) {
   display: none;
 }
 
