@@ -21506,6 +21506,11 @@ label.gfield_consent_label {
 .cta_reviews__card:hover .button, .cta_reviews__card:hover body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .cta_reviews__card:hover button {
   color: var(--col-orange-400);
 }
+.cta_reviews__card--square {
+  aspect-ratio: 1;
+  align-content: end;
+  justify-content: center;
+}
 .cta_reviews__background {
   position: absolute;
   inset: 0;

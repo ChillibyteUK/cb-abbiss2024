@@ -18,6 +18,11 @@
             }
         }
     }
+    &__card--square {
+        aspect-ratio: 1;
+        align-content: end;
+        justify-content: center;
+    }
     &__background {
         position: absolute;
         inset: 0;

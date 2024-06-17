@@ -41,7 +41,10 @@ if ($menu_id) {
                 continue;
             }
             if ($block['blockName'] != 'acf/cb-hero') {
-                echo apply_filters('the_content', render_block($block));
+                $block_content = render_block($block);
+                $block_content = do_shortcode($block_content);
+                echo $block_content;
+                // echo apply_filters('the_content', render_block($block));
             }
         }
 ?>
