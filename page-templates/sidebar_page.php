@@ -37,6 +37,9 @@ if ($menu_id) {
             <div class=" col-md-9">
                 <?php
         foreach ($blocks as $block) {
+            if (isset($block['attrs']['data']['breakout']) && !empty($block['attrs']['data']['breakout'])) {
+                continue;
+            }
             if ($block['blockName'] != 'acf/cb-hero') {
                 echo render_block($block);
             }
@@ -44,6 +47,13 @@ if ($menu_id) {
 ?>
             </div>
         </div>
+        <?php
+        foreach ($blocks as $block) {
+            if (isset($block['attrs']['data']['breakout']) && $block['attrs']['data']['breakout'][0] === 'Yes') {
+                echo render_block($block);
+            }
+        }
+?>
     </div>
 </main>
 <?php
