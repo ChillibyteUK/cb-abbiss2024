@@ -35,3 +35,20 @@
 }
 
 
+.job_listing {
+    padding-top: var(--h-top);
+
+    &__spec {
+        position: sticky;
+        top: 2rem;
+        background-color: var(--col-grey-400);
+        padding: 1rem 1rem 1rem 1rem;
+        margin-bottom: 3rem;    
+    }
+
+    &__feature {
+        font-weight: var(--fw-400);
+        font-size: var(--fs-500);
+        margin-bottom: 0.5rem;
+    }
+}

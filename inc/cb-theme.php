@@ -149,6 +149,21 @@ function override_yoast_breadcrumb_trail($links)
         );
         array_splice($links, 1, -2, $breadcrumb);
     }
+    if (is_singular('careers')) {
+        $breadcrumb[] = array(
+            'url' => '/join-us/',
+            'text' => 'Join Us',
+        );
+        $breadcrumb[] = array(
+            'url' => '/join-us/join-abbiss-cadres/',
+            'text' => 'Join Abbiss Cadres',
+        );
+        $breadcrumb[] = array(
+            'url' => '/join-us/join-abbiss-cadres/careers/',
+            'text' => 'Current Vacancies',
+        );
+        array_splice($links, 1, -2, $breadcrumb);
+    }
 
     return $links;
 }
