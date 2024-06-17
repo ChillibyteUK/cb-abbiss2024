@@ -8,11 +8,32 @@ defined('ABSPATH') || exit;
 get_header();
 ?>
 <main id="main">
-    <h1>SIDEBAR</h1>
     <?php
-    the_post();
-the_content();
+    $content = get_the_content();
+$blocks = parse_blocks($content);
+
+foreach ($blocks as $block) {
+    if ($block['blockName'] == 'acf/cb-hero') {
+        echo apply_filters('the_content', render_block($block));
+    }
+}
 ?>
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-md-3">
+                SIDEBAR
+            </div>
+            <div class="col-md-9">
+                <?php
+        foreach ($blocks as $block) {
+            if ($block['blockName'] != 'acf/cb-hero') {
+                echo apply_filters('the_content', render_block($block));
+            }
+        }
+?>
+            </div>
+        </div>
+    </div>
 </main>
 <?php
 get_footer();
