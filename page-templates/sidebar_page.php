@@ -14,7 +14,7 @@ $blocks = parse_blocks($content);
 
 foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-hero') {
-        echo apply_filters('the_content', render_block($block));
+        echo wp_kses_post(render_block($block));
     }
 }
 ?>
