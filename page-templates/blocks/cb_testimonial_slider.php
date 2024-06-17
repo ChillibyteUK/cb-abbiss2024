@@ -34,9 +34,7 @@ $size = 30;
             if ($p->have_posts()) {
                 while($p->have_posts()) {
                     $p->the_post();
-                    // cbdump(get_field('logo', get_the_ID()));
-                    $logo_field = get_field('logo', get_the_ID());
-                    $image_id = $logo_field['ID'] ?? null;
+                    $image_id = get_field('logo', get_the_ID());
                     $image = $image_id ? wp_get_attachment_image($image_id, 'large', false, array('class' => 'testimonial_slider__logo')) : null;
                     if ($image ?? null) {
                         ?>
