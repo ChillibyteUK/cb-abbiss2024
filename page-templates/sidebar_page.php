@@ -41,7 +41,7 @@ if ($menu_id) {
                 continue;
             }
             if ($block['blockName'] != 'acf/cb-hero') {
-                echo render_block($block);
+                echo apply_filters('the_content', render_block($block));
             }
         }
 ?>
