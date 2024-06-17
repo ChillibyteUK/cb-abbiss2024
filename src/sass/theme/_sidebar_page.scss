@@ -1,0 +1,21 @@
+.sidebar_menu {
+    position: sticky;
+    top: 2rem;
+    background-color: var(--col-grey-400);
+    padding: 1rem;
+    ul {
+        list-style: none;
+        padding-inline-start: 0;
+    }
+    li {
+        border-top: 1px solid var(--col-grey-600);
+    }
+    a {
+        display: block;
+        font-weight: var(--fw-300) !important;
+        padding-block: 1rem;
+        &[aria-current] {
+            font-weight: var(--fw-400) !important;
+        }
+    }
+}

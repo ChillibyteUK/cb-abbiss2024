@@ -21133,6 +21133,28 @@ label {
   display: none;
 }
 
+.sidebar_menu {
+  position: sticky;
+  top: 2rem;
+  background-color: var(--col-grey-400);
+  padding: 1rem;
+}
+.sidebar_menu ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+.sidebar_menu li {
+  border-top: 1px solid var(--col-grey-600);
+}
+.sidebar_menu a {
+  display: block;
+  font-weight: var(--fw-300) !important;
+  padding-block: 1rem;
+}
+.sidebar_menu a[aria-current] {
+  font-weight: var(--fw-400) !important;
+}
+
 .hero {
   padding-top: var(--h-top);
   position: relative;

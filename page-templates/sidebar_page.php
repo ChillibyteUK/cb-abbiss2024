@@ -21,14 +21,20 @@ foreach ($blocks as $block) {
     <div class="container-xl">
         <div class="row">
             <div class="col-md-3">
-                <?php
+                <div class="sidebar_menu">
+                    <?php
             $menu_id = get_field('sidebar_menu');
+$menu = wp_get_nav_menu_object($menu_id);
 if ($menu_id) {
+    ?>
+                    <div class="h3"><?=$menu->name?></div>
+                    <?php
     wp_nav_menu(array('menu' => $menu_id));
 }
 ?>
+                </div>
             </div>
-            <div class="col-md-9">
+            <div class=" col-md-9">
                 <?php
         foreach ($blocks as $block) {
             if ($block['blockName'] != 'acf/cb-hero') {
