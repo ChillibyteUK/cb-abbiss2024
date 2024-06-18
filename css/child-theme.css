@@ -21257,6 +21257,7 @@ label.gfield_consent_label {
   align-self: center;
   text-align: center;
   text-wrap: balance;
+  margin-bottom: 0;
 }
 
 .solutions_nav .container-xl {
