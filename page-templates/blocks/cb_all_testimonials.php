@@ -1,4 +1,7 @@
 <?php
+
+$class = $block['className'] ?? '';
+
 $q = new WP_query(array(
     'post_type' => 'testimonials',
     'post_status' => 'publish',
@@ -6,6 +9,10 @@ $q = new WP_query(array(
 ));
 
 if ($q->have_posts()) {
+    ?>
+<section class="all_testimonials <?=$class?>">
+    <div class="container-xl">
+        <?php
     while ($q->have_posts()) {
         $q->the_post();
         $slug = $q->post_name;
@@ -33,6 +40,8 @@ if ($q->have_posts()) {
 <?php
     }
     ?>
+    </div>
+</section>
 <?php
 }
 ?>
