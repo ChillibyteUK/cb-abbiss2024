@@ -21008,6 +21008,18 @@ header .navbar {
   padding-top: 1rem;
   z-index: 9998;
 }
+header .navbar .nav-link {
+  color: var(--col-black);
+}
+header .navbar .nav-link:hover {
+  color: var(--col-orange-400);
+}
+header .navbar .nav-link[aria-current], header .navbar .current-menu-ancestor a {
+  font-weight: var(--fw-400);
+}
+header .navbar .dropdown-menu .dropdown-item[aria-current] {
+  color: var(--col-orange-400);
+}
 header .hidden {
   top: -115px;
 }

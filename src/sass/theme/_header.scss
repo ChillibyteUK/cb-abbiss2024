@@ -29,6 +29,18 @@ header {
         top: 0;
         padding-top: 1rem;
         z-index: 9998;
+        .nav-link {
+            color: var(--col-black);
+            &:hover {
+                color: var(--col-orange-400);
+            }
+        }
+        .nav-link[aria-current], .current-menu-ancestor a {
+            font-weight: var(--fw-400);
+        }
+        .dropdown-menu .dropdown-item[aria-current] {
+            color: var(--col-orange-400);
+        }
     }
 
     .hidden {
