@@ -21,6 +21,7 @@
         text-decoration: none;
         grid-template-rows: 1fr auto;
         min-height: 150px;
+        margin-bottom: 1rem;
         &::after {
             position: absolute;
             content: "\f019";

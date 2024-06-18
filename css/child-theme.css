@@ -21903,6 +21903,7 @@ label.gfield_consent_label {
   text-decoration: none;
   grid-template-rows: 1fr auto;
   min-height: 150px;
+  margin-bottom: 1rem;
 }
 .notes_brochures__card::after {
   position: absolute;

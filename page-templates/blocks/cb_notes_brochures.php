@@ -45,6 +45,14 @@ $br = new WP_Query(
                 <div class="notes_brochures__title"><?=get_the_title()?></div>
                 <div class="notes_brochures__date"><?=get_the_date()?></div>
             </a>
+            <?php
+            if ($section == 'corridor') {
+                echo '<div class="link-arrow-inline"><a href="/corridor/knowledge/insights/">View all Corridor insights</a></div>';
+            }
+            else {
+                echo '<div class="link-arrow-inline"><a href="/knowledge/insights/">View all insights</a></div>';
+            }
+            ?>
         </div>
             <?php
         }
@@ -61,6 +69,14 @@ $br = new WP_Query(
                 <div class="notes_brochures__title"><?=get_the_title()?></div>
                 <div class="notes_brochures__date"><?=get_the_date()?></div>
             </a>
+            <?php
+            if ($section == 'corridor') {
+                echo '<div class="link-arrow-inline"><a href="/corridor/knowledge/brochures/">View all Corridor brochures</a></div>';
+            }
+            else {
+                echo '<div class="link-arrow-inline"><a href="/knowledge/brochures/">View all brochures</a></div>';
+            }
+            ?>
         </div>
             <?php
         }
