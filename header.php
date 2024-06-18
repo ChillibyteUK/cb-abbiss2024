@@ -122,14 +122,14 @@ $home = strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false ? '/corridor/' :
     <header>
         <nav class="prenav px-0">
             <div class="d-flex w-100">
-                <div
+                <a href="/"
                     class="text-center flex-fill p-1 <?=$prenav_fb?>">
-                    <a href="/">For Businesses</a>
-                </div>
-                <div
+                    For Businesses
+                </a>
+                <a href="/corridor/"
                     class="text-center flex-fill p-1 <?=$prenav_co?>">
-                    <a href="/corridor/">For Professional Services</a>
-                </div>
+                    For Professional Services
+                </a>
             </div>
         </nav>
 

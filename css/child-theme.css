@@ -20977,14 +20977,10 @@ header .prenav a {
 }
 header .prenav .active {
   background-color: var(--col-black);
-}
-header .prenav .active a {
   color: var(--col-white);
 }
 header .prenav .inactive {
   background-color: var(--col-grey-400);
-}
-header .prenav .inactive a {
   color: var(--col-black);
 }
 header .prenav, header .navbar {
