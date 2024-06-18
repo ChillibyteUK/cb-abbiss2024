@@ -145,6 +145,15 @@ function acf_blocks()
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
+            'name'				=> 'cb_double_colour_cta',
+            'title'				=> __('CB Double Colour CTA'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_double_colour_cta.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
             'name'				=> 'cb_subscribe_cta',
             'title'				=> __('CB Subscribe CTA'),
             'category'			=> 'layout',

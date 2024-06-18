@@ -20719,8 +20719,10 @@ readers do not read off random characters that represent icons */
   --col-grey-900: #333333;
   --col-neutral: #F1F7F8;
   --col-green-400: #a4bf9d;
+  --col-green-600: #8db993;
   --col-orange-400: #ff783c;
   --col-beige-400: #e7cf9f;
+  --col-beige-600: #d5a762;
   --col-blue-400: #a8cede;
   --col-blue-500: #64a6c3;
   --fs-900: 72px;
@@ -20913,6 +20915,14 @@ strong {
 
 .bg-blue-500 {
   background-color: var(--col-blue-500);
+}
+
+.bg-beige-600 {
+  background-color: var(--col-beige-600);
+}
+
+.bg-green-600 {
+  background-color: var(--col-green-600);
 }
 
 .text-white {
@@ -21599,6 +21609,43 @@ label.gfield_consent_label {
   max-width: 80%;
 }
 .colour_cta .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+  z-index: -1;
+}
+
+.double_colour_cta__grid {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 992px) {
+  .double_colour_cta__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.double_colour_cta a {
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--col-black);
+}
+.double_colour_cta__card {
+  position: relative;
+  isolation: isolate;
+}
+.double_colour_cta__card:hover {
+  color: inherit;
+}
+.double_colour_cta__card:hover .overlay {
+  opacity: 1;
+}
+.double_colour_cta__card:hover .button, .double_colour_cta__card:hover body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .double_colour_cta__card:hover button {
+  color: var(--col-orange-400);
+}
+.double_colour_cta .overlay {
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.25);

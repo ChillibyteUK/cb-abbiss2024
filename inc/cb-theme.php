@@ -53,6 +53,16 @@ function widgets_init()
                 'slug' => 'blue-500',
                 'color' => '#64a6c3'
             ),
+            array(
+                'name' => 'Green 600',
+                'slug' => 'green-600',
+                'color' => '#8db993'
+            ),
+            array(
+                'name' => 'Beige 600',
+                'slug' => 'beige-600',
+                'color' => '#d5a762'
+            )
         )
     );
 }

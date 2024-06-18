@@ -54,3 +54,41 @@
         z-index: -1;
     }
 }
+
+.double_colour_cta {
+    &__grid {
+        display: grid;
+        gap:1rem;
+        @media (min-width:992px) {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    a {
+        padding: 1rem;
+        text-decoration: none;
+        color: var(--col-black);
+    }
+    &__card {
+        position: relative;
+        isolation: isolate;
+        &:hover {
+            color: inherit;
+            .overlay {
+                opacity: 1;
+            }
+            .button {
+                color: var(--col-orange-400);
+            }
+        }
+
+    }
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0 0 0 / 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition);
+        z-index: -1;
+    }
+}
