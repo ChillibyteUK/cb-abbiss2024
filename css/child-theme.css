@@ -21185,6 +21185,9 @@ label.gfield_consent_label {
 .sidebar_menu a[aria-current] {
   font-weight: var(--fw-400) !important;
 }
+.sidebar_menu li.current-page-ancestor a {
+  font-weight: var(--fw-400) !important;
+}
 
 .hero {
   padding-top: var(--h-top);
