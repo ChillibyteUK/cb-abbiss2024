@@ -1,11 +1,13 @@
 <?php
+$class = $block['className'] ?? 'pb-5';
+
 $linkLeft = get_field('link_left');
 $bgLeft = get_field('bg_left');
 
 $linkRight = get_field('link_right');
 $bgRight = get_field('bg_right');
 ?>
-<section class="double_colour_cta">
+<section class="double_colour_cta <?=$class?>">
     <div class="container-xl double_colour_cta__grid">
         <a href="<?=$linkLeft['url']?>" class="double_colour_cta__card bg-<?=$bgLeft?>">
             <div class="overlay"></div>
