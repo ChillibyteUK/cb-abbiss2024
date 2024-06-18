@@ -106,6 +106,15 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_notes_brochures',
+            'title'				=> __('CB Notes & Brochures'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_notes_brochures.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
 
         acf_register_block_type(array(
             'name'				=> 'cb_all_testimonials',

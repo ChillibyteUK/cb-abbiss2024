@@ -1,0 +1,68 @@
+{
+    "key": "group_6671a239c9526",
+    "title": "CB Notes & Brochures",
+    "fields": [
+        {
+            "key": "field_6671a23b6e0cc",
+            "label": "CB Notes & Brochures",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "66",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_6671a25261fc2",
+            "label": "Section",
+            "name": "section",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "for-businesses": "For Businesses",
+                "corridor": "Corridor"
+            },
+            "default_value": "for-businesses : For Businesses",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/cb-notes-brochures"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1718723578
+}
