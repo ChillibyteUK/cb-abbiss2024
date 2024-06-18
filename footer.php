@@ -19,7 +19,7 @@ defined('ABSPATH') || exit;
                 <div>We have helped clients meet their HR needs in over 70 countries across five continents.</div>
             </div>
             <div class="col-md-4 text-end my-auto">
-                <a class="button button-white" href="</about-us/international">Find out more</a>
+                <a class="button button-white" href="/about-us/international/">Find out more</a>
             </div>
         </div>
     </div>
