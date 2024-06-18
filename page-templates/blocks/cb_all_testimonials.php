@@ -30,7 +30,7 @@ if ($q->have_posts()) {
         <div class="text-right font-weight-bold">
             <?php
                     echo get_field('author', get_the_ID());
-        if (get_field('position') ?? null) {
+        if (get_field('position', get_the_ID()) ?? null) {
             echo ' - ' . get_field('position', get_the_ID());
         }
         ?>
