@@ -21223,8 +21223,27 @@ label.gfield_consent_label {
 
 .note {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+@media (min-width: 576px) {
+  .note {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .note {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .note {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .note {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .note__card {
   display: grid;
