@@ -5,7 +5,7 @@ defined('ABSPATH') || exit;
 
 require_once CB_THEME_DIR . '/inc/cb-utility.php';
 require_once CB_THEME_DIR . '/inc/cb-blocks.php';
-// require_once CB_THEME_DIR . '/inc/cb-blog.php';
+require_once CB_THEME_DIR . '/inc/cb-news.php';
 // require_once CB_THEME_DIR . '/inc/cb-careers.php';
 
 
