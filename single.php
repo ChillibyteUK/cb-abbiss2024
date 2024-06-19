@@ -79,20 +79,14 @@ while (have_posts()) {
                         <div class="h3"><?=$menu->name?></div>
                         <?php
         }
-        wp_nav_menu(array('menu' => $menu));
+        wp_nav_menu(array('menu' => $menu, 'walker' => new Custom_Walker_Nav_Menu() ));
     }
     ?>
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <?php
-        // if ($corridor != '') {
-        //     echo post_navigation($type, 'corridor');
-        // } else {
-        //     echo post_navigation($type);
-        // }
-    ?>
-                    <div class="border-top py-4">
+                    <?=cb_post_nav()?>
+                    <div class="border-top mt-4 py-4">
                         <?=get_the_date()?> |
                         <?=get_the_author_meta('first_name')?>
                         <?=get_the_author_meta('last_name')?>
@@ -143,86 +137,101 @@ while (have_posts()) {
         echo '</span>';
     }
     ?>
-                            </div><!-- .entry-meta -->
-                        </div><!-- .entry-header -->
-                        <div class="entry-footer border-top py-4">
-                            <h3 class="h3 pb-2">The author</h3>
-                            <div class="container">
-                                <div class="row <?=$bg?> p-4">
-                                    <div class="col-lg-2 mx-auto">
-                                        <?php
-                                        $user_id = get_the_author_meta('ID');
-    $author_image = get_field('photo', 'user_'.$user_id);
-    echo '<img src="' . esc_url($author_image['url']) . '" class="rounded-circle img-fluid"/>'; ?>
-                                    </div>
-                                    <div class="col-lg-10">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="h100 pb-2 border-bottom border-secondary">
-                                                    <?=get_the_author_meta('first_name')?>
-                                                    <?=get_the_author_meta('last_name')?>
-                                                    <br />
-                                                    <?=get_field('job_title', 'user_'.$user_id)?>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div
-                                                    class="text-right pb-2 author-icons h-100 border-bottom border-secondary">
-                                                    <?php
-                            if (get_the_author_meta('linkedin')) {
-                                ?>
-                                                    <a href="<?=get_the_author_meta('linkedin')?>"
-                                                        target="_blank"><span class="fa-stack fa-2x"><i
-                                                                class="fa fa-circle fa-stack-2x text-white"></i><i
-                                                                class="fa fa-linkedin fa-stack-1x text-primary"></i></span></a>
-                                                    <?php
-                            }
-    if (get_the_author_meta('twitter')) {
+                            </div>
+                        </div>
+                        <h3 class="pb-2">The author</h3>
+                        <div class="single_people__summary mb-5">
+                            <?php
+                            $user_id = get_the_author_meta('ID');
+    $author_name = get_the_author_meta('first_name') . ' ' . get_the_author_meta('last_name');
+    $author_image = get_field('photo', 'user_' . $user_id);
+    echo '<img src="' . esc_url($author_image['url']) . '" class="single_people__image" alt="' . $author_name . '">';
+    ?>
+                            <div class="single_people__name">
+                                <div class="h4 mb-1">
+                                    <?=$author_name?>
+                                </div>
+                                <?=get_field('job_title', 'user_'.$user_id)?>
+                            </div>
+                            <div class="single_people__links">
+                                <?php
+                    $contact = get_field('contact_details');
+    if (get_the_author_meta('linkedin', $user_id) != '') {
+
         ?>
-                                                    <a href="https://twitter.com/<?=get_the_author_meta('twitter')?>"
-                                                        target="_blank"><span class="fa-stack fa-2x"><i
-                                                                class="fa fa-circle fa-stack-2x text-white"></i><i
-                                                                class="fa fa-twitter fa-stack-1x text-primary"></i></span></a>
-                                                    <?php
+                                <a href="<?=get_the_author_meta('linkedin', $user_id)?>"
+                                    target="_blank"><span class="fa-stack fa-2x"><i
+                                            class="fa fa-circle fa-stack-2x text-white"></i><i
+                                            class="fa-brands fa-linkedin-in fa-stack-1x"></i></span></a>
+                                <?php
+    }
+    if (get_the_author_meta('twitter', $user_id) != '') {
+        ?>
+                                <a href="https://twitter.com/<?=get_the_author_meta('twitter', $user_id)?>"
+                                    target="_blank"><span class="fa-stack fa-2x"><i
+                                            class="fa fa-circle fa-stack-2x text-white"></i><i
+                                            class="fa-brands fa-x-twitter fa-stack-1x"></i></span></a>
+                                <?php
+    }
+    if (get_the_author_meta('user_email') != '') {
+        ?>
+                                <a
+                                    href="mailto:<?=get_the_author_meta('user_email', $user_id)?>"><span
+                                        class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x text-white"></i><i
+                                            class="fa-regular fa-envelope-open fa-stack-1x"></i></span></a>
+                                <?php
     }
     ?>
-                                                    <a
-                                                        href="mailto:<?=get_the_author_meta('user_email')?>"><span
-                                                            class="fa-stack fa-2x"><i
-                                                                class="fa fa-circle fa-stack-2x text-white"></i><i
-                                                                class="fa fa-envelope-open-o fa-stack-1x text-primary"></i></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <?php
-                        if (have_rows('specialisms', 'user_'.$user_id)) {
-                            while (have_rows('specialisms', 'user_'.$user_id)) {
-                                the_row(); ?>
-                                                <div class="border-bottom border-secondary py-2">
-                                                    <?=get_sub_field('specialism')?>
-                                                </div><?php
-                            }
-                        } ?>
-                                            </div>
-                                            <div class="col-lg-6 py-2">
-                                                D:
-                                                <?=get_field('direct_dial_phone', 'user_'.$user_id)?><br />
-                                                T:
-                                                <?=get_field('switchboard', 'user_'.$user_id)?><br />
-                                                F:
-                                                <?=get_field('fax_number', 'user_'.$user_id)?><br />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div><!-- .entry-footer -->
-                    </article><!-- #post-## -->
-                    <section class="border-top py-4">
+                            <div class="single_people__specialisms">
+                                <?php
+                        if (have_rows('specialisms', 'user_' . $user_id)) {
+                            ?>
+                                <ul class="single_people__list">
+                                    <?php
+                            while (have_rows('specialisms', 'user_' . $user_id)) {
+                                the_row(); ?>
+                                    <li><?=get_sub_field('specialism')?>
+                                    </li>
+                                    <?php
+                            }
+                        }
+    ?>
+                            </div>
+                            <div class="single_people__contact">
+                                <?php
+                                if (get_field('direct_dial_phone', 'user_'.$user_id)) {
+                                    ?>
+                                <div><span>D:</span>
+                                    <a
+                                        href="tel:<?=parse_phone(get_field('direct_dial_phone', 'user_'.$user_id))?>"><?=get_field('direct_dial_phone', 'user_'.$user_id)?></a>
+                                </div>
+                                <?php
+                                }
+    if (get_field('switchboard', 'user_'.$user_id)) {
+        ?>
+                                <div><span>T:</span>
+                                    <a
+                                        href="tel:<?=parse_phone(get_field('switchboard', 'user_'.$user_id))?>"><?=get_field('switchboard', 'user_'.$user_id)?></a>
+                                </div>
+                                <?php
+    }
+    if (get_field('fax_number', 'user_'.$user_id)) {
+        ?>
+                                <div><span>F:</span>
+                                    <?=get_field('fax_number', 'user_'.$user_id)?>
+                                </div>
+                                <?php
+    }
+    ?>
+                            </div>
+                        </div>
+                    </article>
+                    <section class="border-top py-4 also_by">
 
-                        <h3 class="h3 pb-2">Also by the author</h3>
+                        <h2 class="h3 pb-2">Also by
+                            <?=$author_name?>
+                        </h2>
                         <div class="row">
                             <?php
             $authors_posts = get_posts(array(  'post_type' => array('post','insights'), 'author' => $user_id, 'post__not_in' => array( $post->ID ), 'posts_per_page' => 3 ));
@@ -238,46 +247,33 @@ while (have_posts()) {
             $post_type = 'insights';
         } ?>
                             <div class="col-xl-4">
-                                <div
-                                    class="<?=$bg?> mb-4 preview-container">
-                                    <div class="row preview-title-container">
-                                        <div class="col-6">
-                                            <?=$post_type == 'post' ? 'N' : 'I'?>
-                                        </div>
-                                        <div class="col-6 text-right font-small">
-                                            <?=get_the_date('', $authors_post)?>
-                                        </div>
+                                <a class="<?=$bg?> also_by__card"
+                                    href="<?=get_the_permalink($authors_post->ID)?>">
+                                    <div class="overlay"></div>
+                                    <div class="also_by__icon">
+                                        <img src="<?=get_stylesheet_directory_uri()?>/img/<?=$icon?>"
+                                            alt="">
                                     </div>
-                                    <div class="row preview-content-container">
-                                        <div class="font-weight-bold font-large">
-                                            <?=$authors_post->post_title?>
-                                        </div>
+                                    <div class="also_by__date">
+                                        <?=get_the_date('', $authors_post)?>
                                     </div>
-                                    <div class="preview-overlay-link">
-                                        <a
-                                            href="<?=get_the_permalink($authors_post->ID)?>"></a>
-                                    </div>
-                                </div>
+                                    <h3 class="also_by__content">
+                                        <?=$authors_post->post_title?>
+                                    </h3>
+                                </a>
                             </div>
-                        </div>
-                        <!-- TODO: AUTHOR ARCHIVE a href="<?=get_author_posts_url($user_id)?>">VIEW
-                        ALL</a-->
-                        <?php
+                            <?php
     }
     ?>
+                        </div>
                     </section>
                     <div class="py-4">
-                        <?php /* post_navigation($type) */ ?>
+                        <?=cb_post_nav()?>
                     </div>
                     <?php
                             get_template_part('page-templates/blocks/cb_subscribe_cta');
     ?>
-</main><!-- #main -->
-</div><!-- .col main -->
-</div><!-- .row -->
-</div><!-- .container -->
-</div><!-- #single-wrapper -->
-</article>
+    </article>
 </main>
 <?php } // end of the loop.?>
 <?php get_footer();

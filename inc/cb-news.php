@@ -119,6 +119,66 @@ function get_all_authors()
     return $authors;
 }
 
+
+function get_parent_url()
+{
+
+    // Get the current URL
+    $current_url = get_the_permalink();
+
+    // Parse the URL
+    $parsed_url = parse_url($current_url);
+
+    // Get the path and remove the trailing slash if it exists
+    $path = rtrim($parsed_url['path'], '/');
+
+    // Get the parent path by removing the last part
+    $parent_path = substr($path, 0, strrpos($path, '/'));
+
+    // Reconstruct the parent URL
+    $parent_url = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $parent_path;
+
+    return $parent_url;
+}
+
+function cb_post_nav()
+{
+    ?>
+<div class="post_nav">
+    <?php
+    $prev_post_obj = get_adjacent_post('', '', true);
+    if ($prev_post_obj) {
+        $prev_post_ID   = isset($prev_post_obj->ID) ? $prev_post_obj->ID : '';
+        $prev_post_link     = get_permalink($prev_post_ID);
+        ?>
+    <a href="<?php echo $prev_post_link; ?>" rel="next"
+        class="post_nav__link post_nav__link--previous">Previous</a>
+    <?php
+    }
+
+    ?>
+    <a href="<?=get_parent_url()?>"
+        class="post_nav__link post_nav__link--all">All</a>
+    <?php
+
+    $next_post_obj  = get_adjacent_post('', '', false);
+    if ($next_post_obj) {
+        $next_post_ID   = isset($next_post_obj->ID) ? $next_post_obj->ID : '';
+        $next_post_link     = get_permalink($next_post_ID);
+        ?>
+    <a href="<?php echo $next_post_link; ?>" rel="next"
+        class="post_nav__link post_nav__link--next">Next</a>
+    <?php
+    }
+    ?>
+</div>
+<?php
+
+}
+
+
+/*-------------------------------------------------------<filter functions>--*/
+
 add_action('wp_ajax_newsfilter', 'filter_function'); // wp_ajax_{ACTION HERE}
 add_action('wp_ajax_nopriv_newsfilter', 'filter_function');
 

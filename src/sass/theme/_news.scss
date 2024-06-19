@@ -134,3 +134,80 @@ button.filtertoggle {
         height: 100px;
     }
 }
+
+.also_by {
+    &__card {
+        display: grid;
+        gap: 0.5rem;
+        grid-template-areas: "icon date" "content content";
+        grid-template-rows: 25px auto;
+        text-decoration: none;
+        position: relative;
+        color: var(--col-black) !important;
+        height: 100%;
+        padding: 1rem;
+        isolation: isolate;
+        &:hover {
+            .overlay {
+                opacity: 1;
+            }
+        }
+    }
+    &__icon {
+        grid-area: icon;
+        img {
+            height: 25px;
+        }
+    }
+    &__date {
+        grid-area: date;
+        justify-self: end;
+        font-size: var(--fs-200);
+    }
+    &__content {
+        grid-area: content;
+        font-size: var(--fs-600);
+        margin-bottom: 0;
+    }
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0 0 0 / 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition);
+        z-index: -1;
+    }
+}
+
+.post_nav {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    &__link {
+        display: grid;
+        gap: 0.5rem;
+        width: 65px;
+        text-align: center;
+        position: relative;
+        text-decoration: none;
+        color: var(--col-black);
+        font-weight: var(--fw-400);
+        &::before {
+            font-family: var(--ff-fa);
+            font-weight: 600;
+            font-size: var(--fs-500);
+            display: block;
+            color: var(--col-orange-400);
+        }
+        &--previous::before {
+            content: "\f104";
+        }
+        &--all::before {
+            content: "\f03a";
+        }
+        &--next::before {
+            content: "\f105";
+        }
+    }
+}

@@ -105,7 +105,7 @@ if ($contact['direct_dial_phone'] ?? null) {
     ?>
                         <div><span>D:</span>
                             <a
-                                href="tel:<?=$contact['direct_dial_phone']?>"><?=$contact['direct_dial_phone']?></a>
+                                href="tel:<?=parse_phone($contact['direct_dial_phone'])?>"><?=$contact['direct_dial_phone']?></a>
                         </div>
                         <?php
 }
@@ -113,7 +113,7 @@ if ($contact['switchboard'] ?? null) {
     ?>
                         <div><span>T:</span>
                             <a
-                                href="tel:<?=$contact['switchboard']?>"><?=$contact['switchboard']?></a>
+                                href="tel:<?=parse_phone($contact['switchboard'])?>"><?=$contact['switchboard']?></a>
                         </div>
                         <?php
 }
