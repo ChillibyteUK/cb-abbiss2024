@@ -21197,7 +21197,8 @@ label.gfield_consent_label {
 .sidebar_menu a[aria-current] {
   font-weight: var(--fw-400) !important;
 }
-.sidebar_menu li.current-page-ancestor a {
+.sidebar_menu li.current-page-ancestor a,
+.sidebar_menu li.current_page_parent a {
   font-weight: var(--fw-400) !important;
 }
 
@@ -21332,6 +21333,13 @@ button.filtertoggle.closed::after {
   color: var(--col-orange-400);
   font-weight: 600;
   margin-inline-start: 0.5rem;
+}
+
+.single-hero {
+  padding-top: var(--h-top);
+}
+.single-hero__icon {
+  height: 100px;
 }
 
 .hero {

@@ -127,3 +127,10 @@ button.filtertoggle {
         margin-inline-start: 0.5rem;
     }
 }
+
+.single-hero {
+    padding-top: var(--h-top);
+    &__icon {
+        height: 100px;
+    }
+}

@@ -24,7 +24,8 @@
             font-weight: var(--fw-400) !important;
         }
     }
-    li.current-page-ancestor {
+    li.current-page-ancestor,
+    li.current_page_parent {
         a {
             font-weight: var(--fw-400) !important;
         }

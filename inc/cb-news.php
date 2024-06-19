@@ -1,4 +1,57 @@
 <?php
+/**
+ *  Rename posts to news
+ */
+// Function to change "posts" to "news" in the admin side menu
+function change_post_menu_label()
+{
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'News Articles';
+    $submenu['edit.php'][5][0] = 'News Articles';
+    $submenu['edit.php'][10][0] = 'Add News Article';
+    $submenu['edit.php'][16][0] = 'Tags';
+    echo '';
+}
+add_action('admin_menu', 'change_post_menu_label');
+// Function to change post object labels to "news"
+function change_post_object_label()
+{
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'News Articles';
+    $labels->singular_name = 'News Article';
+    $labels->add_new = 'Add News Article';
+    $labels->add_new_item = 'Add News Article';
+    $labels->edit_item = 'Edit News Article';
+    $labels->new_item = 'News Article';
+    $labels->view_item = 'View News Article';
+    $labels->search_items = 'Search News Articles';
+    $labels->not_found = 'No News Articles found';
+    $labels->not_found_in_trash = 'No News Articles found in Trash';
+}
+add_action('init', 'change_post_object_label');
+
+function replace_admin_menu_icons_css()
+{
+    ?>
+<style>
+    #adminmenu #menu-posts .dashicons-admin-post:before {
+        content: '';
+        background-image: url('/wp-content/themes/cb-abbiss2024/img/icon-news.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.8;
+    }
+
+    #adminmenu #menu-posts .wp-menu-open .dashicons-admin-post:before {
+        opacity: 1;
+    }
+</style>
+<?php
+}
+
+add_action('admin_head', 'replace_admin_menu_icons_css');
 
 function oldest_post()
 {
