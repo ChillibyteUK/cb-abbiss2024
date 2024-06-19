@@ -2,12 +2,6 @@
 /**
  * The main template file
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
  * @package cb-abbiss2024
  */
 
@@ -30,109 +24,100 @@ foreach ($blocks as $block) {
     }
 }
 ?>
-<section
-    class="hero <?=$page?> <?=$class?>">
-    <?=wp_get_attachment_image($background_value, 'full', false, array('class' => 'hero__bg', 'alt' => 'Knowledge'))?>
-    <div class="container-xl hero__inner">
-        <img src="<?=get_stylesheet_directory_uri()?>/img/icon-news.svg"
-            class="hero__icon" alt="<?=get_the_title()?>">
-        <?php
-if (get_field('content') ?? null) {
-    ?>
-        <h1 class="hero__content">
-            <?=get_field('content')?>
-        </h1>
-        <?php
-}
+<main>
+    <section class="hero page-hero mb-4">
+        <?=wp_get_attachment_image($background_value, 'full', false, array('class' => 'hero__bg', 'alt' => 'Knowledge'))?>
+        <div class="container-xl hero__inner">
+            <img src="<?=get_stylesheet_directory_uri()?>/img/icon-news--wo.svg"
+                class="hero__icon" alt="<?=get_the_title()?>">
+            <h1 class="hero__content">
+                News
+            </h1>
+        </div>
+    </section>
+    <section class="breadcrumbs mb-4">
+        <div class="container-xl">
+            <?php
+        if (function_exists('yoast_breadcrumb')) {
+            // yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+            yoast_breadcrumb();
+        }
 ?>
-    </div>
-</section>
-<?php
-
-?><div>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;</div><?php
-
-echo 'BG: ' .  $background_value;
-
-?>
-<section class="section-wrap">
-    <div id="single-wrapper">
-        <div class="container" id="content">
-
-            <div class="row">
-                <div class="col-lg-8 offset-lg-4 col-xl-9 offset-xl-3">
+        </div>
+    </section>
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="sidebar_menu">
                     <?php
-                if (function_exists('yoast_breadcrumb')) {
-                    yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
-                }
+        $menu_id = 'Knowledge Hub';
+$menu = wp_get_nav_menu_object($menu_id);
+
+if ($menu_id) {
+    if ($menu->name === 'CORRIDOR') {
+        ?>
+                    <img src="<?=get_stylesheet_directory_uri()?>/img/icon-corridor-full.svg"
+                        class="w-75 mb-4" alt="CORRIDOR">
+                    <?php
+    } else {
+        ?>
+                    <div class="h3"><?=$menu->name?></div>
+                    <?php
+    }
+    wp_nav_menu(array('menu' => $menu));
+}
 ?>
                 </div>
             </div>
-            <div class="row">
-                <div class="d-none d-lg-block col-lg-4 col-xl-3 py-5" id="left-sidebar" role="complementary">
-                    <div class="sticky-top sticky-offset">
-                        <div class="nav-title"><a href="/knowledge/">Knowledge Hub</a></div>
-                        <ul class="top-page">
-                            <li><a href="/knowledge/news/" class="active">News</a></li>
-                            <li><a href="/knowledge/insights/">Insights</a></li>
-                            <li><a href="/knowledge/briefing-notes/">Briefing Notes</a></li>
-                            <li><a href="/knowledge/brochures/">Brochures</a></li>
-                            <!-- <li><a href="/knowledge/events/">Events</a></li> -->
-                            <!-- <li><a href="/knowledge/useful-links/">Useful Links</a></li> -->
-                        </ul>
+            <div class=" col-md-9">
+                <?=get_field('knowledge_hub_intro', 'options')?>
+                <div id="response" class="container">
+
+                    <div class="small pt-4 pb-2">
+                        <?=$wp_query->found_posts.' of '.$wp_query->found_posts.' posts'?>
                     </div>
-                </div>
-                <div class="col-lg-8 col-xl-9 content-area" id="primary">
-                    <main class="site-main" id="main" role="main">
-                        <div class="pt-4 mt-4 pb-4">
-                            <?=get_field('knowledge_hub_intro', 'options')?>
-                        </div>
-                        <div id="response" class="container">
 
-                            <div class="small pt-4 pb-2">
-                                <?=$wp_query->found_posts.' of '.$wp_query->found_posts.' posts'?>
-                            </div>
-
-                            <?php
+                    <?php
                 if (have_posts()) { ?>
-                            <?php
+                    <?php
                     while (have_posts()) {
                         the_post();
                         ?>
-                            <div class="row border-bottom">
-                                <div class="col-1 my-4 news-indicator">
-                                    <a
-                                        href="<?=get_permalink()?>"></a>
-                                </div>
-                                <div class="col-11 my-4">
-                                    <div class="small">
-                                        <?=get_the_date()?></div>
-                                    <div class="font-weight-bold py-2"><a
-                                            href="<?=get_permalink()?>"><?=get_the_title()?></a>
-                                    </div>
-                                    <div>
-                                        <?=wp_trim_words(get_the_content(), 30)?>
-                                    </div>
-                                </div>
+                    <div class="row border-bottom">
+                        <div class="col-1 my-4 news-indicator">
+                            <a href="<?=get_permalink()?>"></a>
+                        </div>
+                        <div class="col-11 my-4">
+                            <div class="small">
+                                <?=get_the_date()?>
                             </div>
-                            <?php
-                    }
-                    ?>
-                            <?php
-                } else {
-                    ?>
-                            <?php get_template_part('loop-templates/content', 'none'); ?>
-                            <?php
-                }
-?>
-                            <div class="pt-4">
-                                <?=understrap_pagination()?>
+                            <div class="font-weight-bold py-2"><a
+                                    href="<?=get_permalink()?>"><?=get_the_title()?></a>
+                            </div>
+                            <div>
+                                <?=wp_trim_words(get_the_content(), 30)?>
                             </div>
                         </div>
-                </div><!-- .row -->
-            </div><!-- #content -->
+                    </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                } else {
+                    ?>
+                    <?php get_template_part('loop-templates/content', 'none'); ?>
+                    <?php
+                }
+?>
+                    <div class="pt-4">
+                        <?=understrap_pagination()?>
+                    </div>
+                </div>
+            </div><!-- .row -->
+        </div><!-- #content -->
 
-        </div><!-- .section-wrap -->
-
+    </div><!-- .section-wrap -->
+</main>
 <?php
 
 get_footer();
