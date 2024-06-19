@@ -50,11 +50,20 @@ foreach ($blocks as $block) {
             <div class="col-md-3">
                 <div class="sidebar_menu">
                     <?php
-        $menu_id = 'Knowledge Hub';
+        if (strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false) {
+            $menu_id = 'Corridor Knowledge Hub';
+            $intro = get_field('corridor_knowledge_hub_intro', 'options');
+            $section = 'corridor';
+        } else {
+            $menu_id = 'Knowledge Hub';
+            $intro = get_field('knowledge_hub_intro', 'options');
+            $section = 'for-businesses';
+        }
+
 $menu = wp_get_nav_menu_object($menu_id);
 
 if ($menu_id) {
-    if ($menu->name === 'CORRIDOR') {
+    if (stripos($menu->name, 'corridor') !== false) {
         ?>
                     <img src="<?=get_stylesheet_directory_uri()?>/img/icon-corridor-full.svg"
                         class="w-75 mb-4" alt="CORRIDOR">
@@ -70,14 +79,21 @@ if ($menu_id) {
                 </div>
             </div>
             <div class=" col-md-9">
-                <?=get_field('knowledge_hub_intro', 'options')?>
+                <?=$intro?>
                 <div id="response" class=" post container-xl">
                     <?php
                                     $q = new WP_Query(
                                         array(
-                                                                                                                                                                                                                                                                                                                'post_type' => 'insights',
-                                                                                                                                                                                                                                                                                                                'posts_per_page' => -1,
-                                                                                                                                                                                                                                                                                                            )
+                                                                                                                    'post_type' => 'insights',
+                                                                                                                    'posts_per_page' => -1,
+                                                                                                                    'tax_query' => array(
+                                                                                                                        array(
+                                                                                                                            'taxonomy' => 'section',
+                                                                                                                            'field' => 'slug',
+                                                                                                                            'terms' => array($section)
+                                                                                                                        )
+                                                                                    )
+                                                                                                                )
                                     );
 ?>
                     <div class="small pb-4 post__count">

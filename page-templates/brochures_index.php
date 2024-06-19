@@ -54,9 +54,8 @@ foreach ($blocks as $block) {
         if (strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false) {
             $menu_id = 'Corridor Knowledge Hub';
             $intro = get_field('corridor_knowledge_hub_intro', 'options');
-            $section = 'corridor'
-        }
-        else {
+            $section = 'corridor';
+        } else {
             $menu_id = 'Knowledge Hub';
             $intro = get_field('knowledge_hub_intro', 'options');
             $section = 'for-businesses';
@@ -88,11 +87,11 @@ if ($menu_id) {
 'post_type' => 'brochures',
 'posts_per_page' => -1,
 'tax_query' => array(
-    array(
-        'taxonomy' => 'section',
-        'field' => 'slug',
-        'terms' => array($section)
-    )
+                                    array(
+                                        'taxonomy' => 'section',
+                                        'field' => 'slug',
+                                        'terms' => array($section)
+                                    )
 )
 )
                                 );
