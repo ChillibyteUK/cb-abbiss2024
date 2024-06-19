@@ -26,15 +26,15 @@ foreach ($blocks as $block) {
             $menu_id = get_field('sidebar_menu');
 $menu = wp_get_nav_menu_object($menu_id);
 if ($menu_id) {
-    if ($menu->name === 'CORRIDOR') {
+    if (stripos($menu->name, 'corridor') !== false) {
         ?>
-                    <img src="<?=get_stylesheet_directory_uri()?>/img/icon-corridor-full.svg" class="w-75 mb-4" alt="CORRIDOR">
-        <?php
-    }
-    else {
+                    <img src="<?=get_stylesheet_directory_uri()?>/img/icon-corridor-full.svg"
+                        class="w-75 mb-4" alt="CORRIDOR">
+                    <?php
+    } else {
         ?>
                     <div class="h3"><?=$menu->name?></div>
-        <?php
+                    <?php
     }
     wp_nav_menu(array('menu' => $menu_id));
 }
