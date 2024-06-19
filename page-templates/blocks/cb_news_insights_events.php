@@ -1,5 +1,5 @@
 <?php
-$section = get_field('section');
+$section = get_field('section') ?? null;
 ?>
 <section class="news_insights_events pb-5">
     <div class="container-xl">
@@ -13,9 +13,11 @@ $p = new WP_Query(
         'post_status' => 'publish',
         'posts_per_page' => 1,
         'tax_query' =>     array(
-            'taxonomy' => 'section',
-            'field' => 'slug',
-            'terms' => array($section)
+            array(
+                'taxonomy' => 'section',
+                'field' => 'slug',
+                'terms' => array($section)
+            )
         )
     )
 );
@@ -56,17 +58,19 @@ if ($section == 'corridor') {
                 <?php
                 $p = new WP_Query(
                     array(
-                                        'post_type' => 'insights',
-                                        'post_status' => 'publish',
-                                        'posts_per_page' => 2,
-                                        'tax_query' =>     array(
-                                            'taxonomy' => 'section',
-                                            'field' => 'slug',
-                                            'terms' => array($section)
-                                        )
-                                    )
+'post_type' => 'insights',
+'post_status' => 'publish',
+'posts_per_page' => 2,
+'tax_query' =>     array(
+array(
+                                                    'taxonomy' => 'section',
+                                                    'field' => 'slug',
+                                                    'terms' => array($section)
+)
+)
+)
                 );
-                
+
 while ($p->have_posts()) {
     $p->the_post();
     ?>

@@ -1,10 +1,10 @@
 {
     "key": "group_666abab4b087f",
-    "title": "CB News Insights Events",
+    "title": "CB News Insights",
     "fields": [
         {
             "key": "field_666abab594e57",
-            "label": "CB News Insights Events",
+            "label": "CB News Insights",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -36,7 +36,7 @@
             },
             "choices": {
                 "corridor": "Corridor",
-                "for-business": "For Business"
+                "for-businesses": "For Businesses"
             },
             "default_value": "",
             "return_format": "value",
@@ -64,5 +64,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718270974
+    "modified": 1718808967
 }

@@ -14,9 +14,11 @@ $p = new WP_Query(
         'post_status' => 'publish',
         'posts_per_page' => 3,
         'tax_query' =>     array(
-            'taxonomy' => 'section',
-            'field' => 'slug',
-            'terms' => array($section)
+            array(
+                'taxonomy' => 'section',
+                'field' => 'slug',
+                'terms' => array($section)
+            )
         )
     )
 );
