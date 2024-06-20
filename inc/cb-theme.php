@@ -175,8 +175,10 @@ function override_yoast_breadcrumb_trail($links)
         array_splice($links, 1, -2, $breadcrumb);
     }
 
-    if (is_singular('post')) {
-        if (check_corridor_cookie() == 'Corridor') {
+
+
+    if (check_corridor_cookie() == 'Corridor') {
+        if (is_singular('post')) {
             $breadcrumb[] = array(
                 'url' => '/corridor/',
                 'text' => 'CORRIDOR',
@@ -191,6 +193,34 @@ function override_yoast_breadcrumb_trail($links)
                     $link['url'] = '/corridor/knowledge/news/';
                 }
             }
+        }
+        if (is_singular('insights')) {
+            $breadcrumb[] = array(
+                'url' => '/corridor/',
+                'text' => 'CORRIDOR',
+            );
+            $breadcrumb[] = array(
+                'url' => '/corridor/knowledge/',
+                'text' => 'Knowledge Hub',
+            );
+            array_splice($links, 1, -2, $breadcrumb);
+            foreach ($links as &$link) {
+                if ($link['text'] == 'Insights') {
+                    $link['url'] = '/corridor/knowledge/insights/';
+                }
+            }
+        }
+    } else {
+        if (is_singular('insights')) {
+            $breadcrumb[] = array(
+                'url' => '/knowledge/',
+                'text' => 'Knowledge Hub',
+            );
+            $breadcrumb[] = array(
+                'url' => '/knowledge/insights/',
+                'text' => 'Insights',
+            );
+            array_splice($links, 1, -2, $breadcrumb);
         }
     }
 

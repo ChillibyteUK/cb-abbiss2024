@@ -65,7 +65,7 @@ if (check_corridor_cookie() == 'Corridor' || strpos($_SERVER['REQUEST_URI'], '/c
     $intro = get_field('knowledge_hub_intro', 'options');
     $section = 'for-businesses';
     ?>
-                    <div class="h3"><?=$menu->name?></div>
+                    <div class="h3">Knowledge Hub</div>
                     <?php
 }
 $menu = wp_get_nav_menu_object($menu_id);

@@ -23,14 +23,22 @@ foreach ($blocks as $block) {
             <div class="col-md-3">
                 <div class="sidebar_menu">
                     <?php
+                    
             $menu_id = get_field('sidebar_menu');
 $menu = wp_get_nav_menu_object($menu_id);
 if ($menu_id) {
     if (stripos($menu->name, 'corridor') !== false) {
+        $name = $menu->name;
+        $name = str_ireplace('corridor', '', $name);
         ?>
                     <img src="<?=get_stylesheet_directory_uri()?>/img/icon-corridor-full.svg"
                         class="w-75 mb-4" alt="CORRIDOR">
                     <?php
+        if ($name != '') {
+            ?>
+                    <div class="h3"><?=$name?></div>
+                    <?php
+        }
     } else {
         ?>
                     <div class="h3"><?=$menu->name?></div>

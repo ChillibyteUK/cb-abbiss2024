@@ -5,6 +5,7 @@ $class = $block['className'] ?? 'mb-4';
 <section
     class="hero <?=$page?> <?=$class?>">
     <?=wp_get_attachment_image(get_field('background'), 'full', false, array('class' => 'hero__bg', 'alt' => get_the_title()))?>
+    <div class="overlay"></div>
     <div class="container-xl hero__inner">
         <?php
         if (get_field('icon') ?? null) {

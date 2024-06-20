@@ -116,10 +116,16 @@ if (get_field('gtm_property', 'options')) {
     <?php
 }
 
-$prenav_fb = strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false ? 'inactive' : 'active';
-$prenav_co = strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false ? 'active' : 'inactive';
+$prenav_fb = 'active';
+$prenav_co = 'inactive';
+$home = '/';
 
-$home = strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false ? '/corridor/' : '/';
+if (strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false || check_corridor_cookie() == 'Corridor') {
+    $prenav_fb = 'inactive';
+    $prenav_co = 'active';
+    $home = '/corridor/';
+}
+
 ?>
     <header>
         <nav class="prenav px-0">
@@ -163,6 +169,3 @@ wp_nav_menu(
         </nav>
 
     </header>
-    <?php
-echo '<h1>' . check_corridor_cookie() . '</h1>';
-?>
