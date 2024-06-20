@@ -173,6 +173,16 @@ function acf_blocks()
         ));
 
         acf_register_block_type(array(
+            'name'				=> 'cb_download_cards',
+            'title'				=> __('CB Download Cards'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_download_cards.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+
+        acf_register_block_type(array(
             'name'				=> 'cb_job_listings',
             'title'				=> __('CB Job Listings'),
             'category'			=> 'layout',
