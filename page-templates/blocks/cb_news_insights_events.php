@@ -5,8 +5,8 @@ $section = get_field('section') ?? null;
     <div class="container-xl">
         <div class="news_insights_events__grid">
             <div class="news_insights_events__news">
-                <h3 class="overline-title">News</h3>
-                <?php
+                <h2 class="h3 overline-title">News</h3>
+                    <?php
 $p = new WP_Query(
     array(
         'post_type' => 'post',
@@ -25,24 +25,25 @@ $p = new WP_Query(
 while ($p->have_posts()) {
     $p->the_post();
     ?>
-                <a href="<?=get_the_permalink()?>"
-                    class="news_insights_events__news_post bg-beige-400">
-                    <div class="overlay"></div>
-                    <div class="news_insights_events__content">
-                        <div class="news_insights_events__meta">
-                            <img src="<?=get_stylesheet_directory_uri()?>/img/icon-news.svg"
-                                class="icon-sm" alt="News Icon">
-                            <span
-                                class="fs-200"><?=get_the_date()?></span>
+                    <a href="<?=get_the_permalink()?>"
+                        class="news_insights_events__news_post bg-beige-400">
+                        <div class="overlay"></div>
+                        <div class="news_insights_events__content">
+                            <div class="news_insights_events__meta">
+                                <img src="<?=get_stylesheet_directory_uri()?>/img/icon-news.svg"
+                                    class="icon-sm" alt="News Icon">
+                                <span
+                                    class="fs-200"><?=get_the_date()?></span>
+                            </div>
+                            <h3 class="fs-500"><?=get_the_title()?>
+                            </h3>
+                            <div>
+                                <?= wp_strip_all_tags(wp_trim_words(get_the_content(), '20'));?>
+                            </div>
                         </div>
-                        <h3 class="fs-500"><?=get_the_title()?></h3>
-                        <div>
-                            <?= wp_strip_all_tags(wp_trim_words(get_the_content(), '20'));?>
-                        </div>
-                    </div>
-                    <?=get_the_post_thumbnail(get_the_ID(), 'large', array('class' => 'news_insights_events__image'))?>
-                </a>
-                <?php
+                        <?=get_the_post_thumbnail(get_the_ID(), 'large', array('class' => 'news_insights_events__image'))?>
+                    </a>
+                    <?php
 }
 
 
@@ -54,8 +55,8 @@ if ($section == 'corridor') {
 ?>
             </div>
             <div class="news_insights_events__insights">
-                <h3 class="overline-title">Insights</h3>
-                <?php
+                <h2 class="h3 overline-title">Insights</h3>
+                    <?php
                 $p = new WP_Query(
                     array(
 'post_type' => 'insights',
@@ -63,9 +64,9 @@ if ($section == 'corridor') {
 'posts_per_page' => 2,
 'tax_query' =>     array(
 array(
-                                                                                                    'taxonomy' => 'section',
-                                                                                                    'field' => 'slug',
-                                                                                                    'terms' => array($section)
+                                                                                                                    'taxonomy' => 'section',
+                                                                                                                    'field' => 'slug',
+                                                                                                                    'terms' => array($section)
 )
 )
 )
@@ -74,23 +75,24 @@ array(
 while ($p->have_posts()) {
     $p->the_post();
     ?>
-                <a href="<?=get_the_permalink()?>"
-                    class="news_insights_events__news_post bg-blue-400">
-                    <div class="overlay"></div>
-                    <div class="news_insights_events__content">
-                        <div class="news_insights_events__meta">
-                            <img src="<?=get_stylesheet_directory_uri()?>/img/icon-insights.svg"
-                                class="icon-sm" alt="Insights Icon">
-                            <span
-                                class="fs-200"><?=get_the_date()?></span>
+                    <a href="<?=get_the_permalink()?>"
+                        class="news_insights_events__news_post bg-blue-400">
+                        <div class="overlay"></div>
+                        <div class="news_insights_events__content">
+                            <div class="news_insights_events__meta">
+                                <img src="<?=get_stylesheet_directory_uri()?>/img/icon-insights.svg"
+                                    class="icon-sm" alt="Insights Icon">
+                                <span
+                                    class="fs-200"><?=get_the_date()?></span>
+                            </div>
+                            <h3 class="fs-500"><?=get_the_title()?>
+                            </h3>
+                            <div>
+                                <?= wp_strip_all_tags(wp_trim_words(get_the_content(), '20'));?>
+                            </div>
                         </div>
-                        <h3 class="fs-500"><?=get_the_title()?></h3>
-                        <div>
-                            <?= wp_strip_all_tags(wp_trim_words(get_the_content(), '20'));?>
-                        </div>
-                    </div>
-                </a>
-                <?php
+                    </a>
+                    <?php
 }
 if ($section == 'corridor') {
     echo '<a class="link-arrow-inline" href="/corridor/knowledge/insights/">View all Corridor insights</a>';
