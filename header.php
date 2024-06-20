@@ -91,15 +91,45 @@ if (is_front_page() || is_page('contact-us')) {
     </script>
     <?php
 }
+
+// check for hero images and preload
+/*
+<link rel="preload"
+    href="<?=wp_get_attachment_image_url(get_field('background'), 'full', false)?>"
+    as="image" fetchpriority="high" crossorigin>
+*/
+global $post;
+$content = $post->post_content;
+$blocks = parse_blocks($content);
+$hero_image_id = '';
+foreach ($blocks as $block) {
+    if ($block['blockName'] === 'acf/cb-hero') {
+        // Get the 'background' field
+        if (isset($block['attrs']['data']['background'])) {
+            $hero_image_id = $block['attrs']['data']['background'];
+        }
+        break;
+    }
+}
+if ($hero_image_id) {
+    ?>
+    <link rel="preload"
+        href="<?=wp_get_attachment_image_url($hero_image_id, 'full', false)?>"
+        as="image" fetchpriority="high" crossorigin>
+    <?php
+}
+
 ?>
     <?php wp_head(); ?>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#ffffff"> -->
+
+
 </head>
 
 <body <?php body_class(); ?>>
