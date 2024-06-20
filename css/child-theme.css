@@ -20731,6 +20731,7 @@ readers do not read off random characters that represent icons */
   --fs-600: 24px;
   --fs-500: 18px;
   --fs-400: 18px;
+  --fs-350: 17px;
   --fs-300: 15px;
   --fs-200: 15px;
   --fs-100: 12px;
@@ -21010,6 +21011,7 @@ header .navbar {
 }
 header .navbar .nav-link {
   color: var(--col-black);
+  font-size: var(--fs-350);
 }
 header .navbar .nav-link:hover {
   color: var(--col-orange-400);

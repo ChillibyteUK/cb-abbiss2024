@@ -31,6 +31,7 @@ header {
         z-index: 9998;
         .nav-link {
             color: var(--col-black);
+            font-size: var(--fs-350);
             &:hover {
                 color: var(--col-orange-400);
             }
