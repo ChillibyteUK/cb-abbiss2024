@@ -31,7 +31,7 @@ while ($p->have_posts()) {
                     <div class="news_insights_events__content">
                         <div class="news_insights_events__meta">
                             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-news.svg"
-                                class="icon-sm" alt="News">
+                                class="icon-sm" alt="News Icon">
                             <span
                                 class="fs-200"><?=get_the_date()?></span>
                         </div>
@@ -63,9 +63,9 @@ if ($section == 'corridor') {
 'posts_per_page' => 2,
 'tax_query' =>     array(
 array(
-                                                                                    'taxonomy' => 'section',
-                                                                                    'field' => 'slug',
-                                                                                    'terms' => array($section)
+                                                                                                    'taxonomy' => 'section',
+                                                                                                    'field' => 'slug',
+                                                                                                    'terms' => array($section)
 )
 )
 )
@@ -80,7 +80,7 @@ while ($p->have_posts()) {
                     <div class="news_insights_events__content">
                         <div class="news_insights_events__meta">
                             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-insights.svg"
-                                class="icon-sm" alt="Insight">
+                                class="icon-sm" alt="Insights Icon">
                             <span
                                 class="fs-200"><?=get_the_date()?></span>
                         </div>
