@@ -13,7 +13,7 @@ $l = get_field('link');
                     <?=wp_get_attachment_image(get_field('background'), 'full', false, array('class' => 'cta_reviews__background'))?>
                     <div class="overlay"></div>
                     <img src="<?=get_field('icon')?>"
-                        class="cta_reviews__icon">
+                        class="cta_reviews__icon" alt="">
                     <span
                         class="button button-white"><?=$l['title']?></span>
                 </a>
@@ -41,7 +41,7 @@ $size = 30;
             $p->the_post();
             // cbdump(get_field('logo', get_the_ID()));
             $image_id = get_field('logo', get_the_ID());
-            $image = $image_id ? wp_get_attachment_image($image_id, 'large', false, array('class' => 'testimonial_slider__logo')) : null;
+            $image = $image_id ? wp_get_attachment_image($image_id, 'large', false, array('class' => 'testimonial_slider__logo', 'alt' => get_the_title(get_the_ID()))) : null;
             if ($image ?? null) {
                 ?>
                             <div class="testimonial_slider__slide swiper-slide py-4">
