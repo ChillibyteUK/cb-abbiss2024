@@ -14,7 +14,7 @@ $link = wp_make_link_relative(get_permalink());
         <a class="solutions_nav__card <?=$active?>"
             href="/for-businesses/set-up-support/">
             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-supplementary-hr-services.svg"
-                alt="Set Up & Support">
+                alt="Set Up & Support Icon">
             <div>Set up &amp;<br>Support</div>
         </a>
         <?php
@@ -23,7 +23,7 @@ $active = $link == '/for-businesses/operational-support/' ? 'active' : '';
         <a class="solutions_nav__card <?=$active?>"
             href="/for-businesses/operational-support/">
             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-cogs.svg"
-                alt="Operational Support">
+                alt="Operational Support Icon">
             <div>Operational<br>Support</div>
         </a>
         <?php
@@ -32,7 +32,7 @@ $active = $link == '/for-businesses/managing-change/' ? 'active' : '';
         <a class="solutions_nav__card <?=$active?>"
             href="/for-businesses/managing-change/">
             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-steps.svg"
-                alt="Managing Change">
+                alt="Managing Change Icon">
             <div>Managing<br>Change</div>
         </a>
         <?php
@@ -41,7 +41,7 @@ $active = $link == '/for-businesses/global-mobility/' ? 'active' : '';
         <a class="solutions_nav__card <?=$active?>"
             href="/for-businesses/global-mobility/">
             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-global-mobility.svg"
-                alt="Global Mobility">
+                alt="Global Mobility Icon">
             <div>Global<br>Mobility</div>
         </a>
         <?php
@@ -50,7 +50,7 @@ $active = $link == '/for-businesses/business-sales/' ? 'active' : '';
         <a class="solutions_nav__card <?=$active?>"
             href="/for-businesses/business-sales/">
             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-building.svg"
-                alt="Business Sales">
+                alt="Business Sales Icon">
             <div>Business<br>Sales</div>
         </a>
         <?php
@@ -59,7 +59,7 @@ $active = $link == '/for-businesses/disputes/' ? 'active' : '';
         <a class="solutions_nav__card <?=$active?>"
             href="/for-businesses/disputes/">
             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-disputes.svg"
-                alt="Dispute Resolution">
+                alt="Dispute Resolution Icon">
             <div>Dispute<br>Resolution</div>
         </a>
     </div>

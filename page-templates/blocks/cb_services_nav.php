@@ -16,7 +16,7 @@ $link = wp_make_link_relative(get_permalink());
         <a class="services_nav__card <?=$active?>"
             href="<?=$section?>/communications/">
             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-communications.svg"
-                alt="Communications">
+                alt="Communications Icon">
             <div>Communications</div>
         </a>
         <?php
@@ -25,7 +25,7 @@ $active = $link == $section . '/people-consulting/' ? 'active' : '';
         <a class="services_nav__card <?=$active?>"
             href="<?=$section?>/people-consulting/">
             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-people-consulting.svg"
-                alt="People Consulting">
+                alt="People Consulting Icon">
             <div>People<br>Consulting</div>
         </a>
         <?php
@@ -34,7 +34,7 @@ $active = $link == $section . '/law-tax/' ? 'active' : '';
         <a class="services_nav__card <?=$active?>"
             href="<?=$section?>/law-tax/">
             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-law.svg"
-                alt="Law & Tax">
+                alt="Law & Tax Icon">
             <div>Law<br>&amp; Tax</div>
         </a>
     </div>
