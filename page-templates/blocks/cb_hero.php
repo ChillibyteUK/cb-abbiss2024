@@ -2,6 +2,9 @@
 $page = is_front_page() ? 'front-hero' : 'page-hero';
 $class = $block['className'] ?? 'mb-4';
 ?>
+<link rel="preload"
+    href="<?=wp_get_attachment_image_url(get_field('background'), 'full', false)?>"
+    as="image" fetchpriority="high" crossorigin>
 <section
     class="hero <?=$page?> <?=$class?>">
     <?=wp_get_attachment_image(get_field('background'), 'full', false, array('class' => 'hero__bg', 'alt' => get_the_title()))?>
