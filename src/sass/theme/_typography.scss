@@ -66,10 +66,10 @@ h1, .h1 {
 h2, .h2 {
     font-size: clamp(1.5rem, 10vw, 2rem);
 }
-.h3 {
+h3, .h3 {
     font-size: clamp(1.2rem, 10vw, 1.5rem);
 }
-.h4 {
+h4, .h4 {
     font-size: clamp(1.1rem, 10vw, 1.2rem);
 }
 
