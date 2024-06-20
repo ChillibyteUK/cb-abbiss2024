@@ -10,6 +10,8 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
+session_start();
+
 $container = get_theme_mod('understrap_container_type');
 ?>
 <!DOCTYPE html>
@@ -143,6 +145,9 @@ $home = strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false ? '/corridor/' :
                         class="fa fa-navicon"></i></button>
                 <?php
                 $menu = strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false ? 'primary_nav_co' : 'primary_nav_fb';
+if (check_corridor_cookie() == 'Corridor') {
+    $menu = 'primary_nav_co';
+}
 wp_nav_menu(
     array(
         'theme_location'  => $menu,
@@ -158,3 +163,6 @@ wp_nav_menu(
         </nav>
 
     </header>
+    <?php
+echo '<h1>' . check_corridor_cookie() . '</h1>';
+?>

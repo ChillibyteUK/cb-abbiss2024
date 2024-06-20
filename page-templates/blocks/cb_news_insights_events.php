@@ -63,9 +63,9 @@ if ($section == 'corridor') {
 'posts_per_page' => 2,
 'tax_query' =>     array(
 array(
-                                                    'taxonomy' => 'section',
-                                                    'field' => 'slug',
-                                                    'terms' => array($section)
+                                                                                    'taxonomy' => 'section',
+                                                                                    'field' => 'slug',
+                                                                                    'terms' => array($section)
 )
 )
 )

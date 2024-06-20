@@ -50,30 +50,28 @@ foreach ($blocks as $block) {
             <div class="col-md-3">
                 <div class="sidebar_menu">
                     <?php
-if (strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false) {
+
+if (check_corridor_cookie() == 'Corridor' || strpos($_SERVER['REQUEST_URI'], '/corridor/') !== false) {
     $menu_id = 'Corridor Knowledge Hub';
     $intro = get_field('corridor_knowledge_hub_intro', 'options');
     $section = 'corridor';
+    ?>
+                    <img src="<?=get_stylesheet_directory_uri()?>/img/icon-corridor-full.svg"
+                        class="w-75 mb-4" alt="CORRIDOR">
+                    <div class="h3">Knowledge Hub</div>
+                    <?php
 } else {
     $menu_id = 'Knowledge Hub';
     $intro = get_field('knowledge_hub_intro', 'options');
     $section = 'for-businesses';
+    ?>
+                    <div class="h3"><?=$menu->name?></div>
+                    <?php
 }
 $menu = wp_get_nav_menu_object($menu_id);
 
-if ($menu_id) {
-    if (stripos($menu->name, 'corridor') !== false) {
-        ?>
-                    <img src="<?=get_stylesheet_directory_uri()?>/img/icon-corridor-full.svg"
-                        class="w-75 mb-4" alt="CORRIDOR">
-                    <?php
-    } else {
-        ?>
-                    <div class="h3"><?=$menu->name?></div>
-                    <?php
-    }
-    wp_nav_menu(array('menu' => $menu));
-}
+wp_nav_menu(array('menu' => $menu, 'walker' => new Custom_Walker_Nav_Menu() ));
+
 ?>
                 </div>
             </div>

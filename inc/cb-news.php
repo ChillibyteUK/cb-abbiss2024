@@ -156,8 +156,10 @@ function cb_post_nav()
     <?php
     }
 
+    $allNews = check_corridor_cookie() == 'Corridor' ? '/corridor/knowledge/news/' : '/knowledge/news/';
     ?>
-    <a href="<?=get_parent_url()?>"
+
+    <a href="<?=$allNews?>"
         class="post_nav__link post_nav__link--all">All</a>
     <?php
 

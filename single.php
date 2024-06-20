@@ -65,22 +65,22 @@ while (have_posts()) {
                 <div class="col-md-3">
                     <div class="sidebar_menu">
                         <?php
-            $menu_id = 'Knowledge Hub';
-    $menu = wp_get_nav_menu_object($menu_id);
-
-    if ($menu_id) {
-        if ($menu->name === 'CORRIDOR') {
-            ?>
+                        if (check_corridor_cookie() == 'Corridor') {
+                            $menu_id = 'Corridor Knowledge Hub';
+                            ?>
                         <img src="<?=get_stylesheet_directory_uri()?>/img/icon-corridor-full.svg"
                             class="w-75 mb-4" alt="CORRIDOR">
+                        <div class="h3">Knowledge Hub</div>
                         <?php
-        } else {
-            ?>
-                        <div class="h3"><?=$menu->name?></div>
+                        } else {
+                            $menu_id = 'Knowledge Hub';
+                            ?>
+                        <div class="h3">Knowledge Hub</div>
                         <?php
-        }
-        wp_nav_menu(array('menu' => $menu, 'walker' => new Custom_Walker_Nav_Menu() ));
-    }
+                        }
+    $menu = wp_get_nav_menu_object($menu_id);
+
+    wp_nav_menu(array('menu' => $menu, 'walker' => new Custom_Walker_Nav_Menu() ));
     ?>
                     </div>
                 </div>

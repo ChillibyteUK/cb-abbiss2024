@@ -175,6 +175,25 @@ function override_yoast_breadcrumb_trail($links)
         array_splice($links, 1, -2, $breadcrumb);
     }
 
+    if (is_singular('post')) {
+        if (check_corridor_cookie() == 'Corridor') {
+            $breadcrumb[] = array(
+                'url' => '/corridor/',
+                'text' => 'CORRIDOR',
+            );
+            $breadcrumb[] = array(
+                'url' => '/corridor/knowledge/',
+                'text' => 'Knowledge Hub',
+            );
+            array_splice($links, 1, -2, $breadcrumb);
+            foreach ($links as &$link) {
+                if ($link['text'] == 'News') {
+                    $link['url'] = '/corridor/knowledge/news/';
+                }
+            }
+        }
+    }
+
     return $links;
 }
 
@@ -219,5 +238,31 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
     }
 }
 
+// Session cookie stuff
+function set_corridor_cookie()
+{
+    if (is_page()) { // only run on pages
+        if (strpos($_SERVER['REQUEST_URI'], 'corridor') !== false) {
+            setcookie('corridor_flag', 'true', time() + 3600, "/"); // Set for 1 hour
+        } else {
+            setcookie('corridor_flag', 'false', time() + 3600, "/"); // Set for 1 hour
+        }
+    }
+}
+
+add_action('wp', 'set_corridor_cookie');
+
+function check_corridor_cookie()
+{
+    if (is_single()) { // Check if the current page is a single post
+        if (isset($_COOKIE['corridor_flag']) && $_COOKIE['corridor_flag'] == 'true') {
+            // Logic to present different navigation
+            return 'Corridor';
+        } else {
+            // Default navigation
+            return 'Default';
+        }
+    }
+}
 
 ?>
