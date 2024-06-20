@@ -46,6 +46,7 @@ $size = 30;
                 ?>
                                 <div class="testimonial_slider__slide swiper-slide py-4">
                                     <?=$image?>
+                                    <div class="swiper-lazy-preloader"></div>
                                     <div class="testimonial_slider__excerpt">
                                         <?=wp_trim_words(get_field('testimonial', get_the_ID()), $size)?>
                                     </div>
