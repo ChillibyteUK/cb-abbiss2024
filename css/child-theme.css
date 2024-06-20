@@ -22180,7 +22180,11 @@ button.filtertoggle.closed::after {
 .download_cards__grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+}
+@media (min-width: 992px) {
+  .download_cards__grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .download_cards__card {
   display: grid;

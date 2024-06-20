@@ -85,7 +85,6 @@ while (have_posts()) {
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <?=cb_post_nav()?>
                     <div class="border-top mt-4 py-4">
                         <?=get_the_date()?> |
                         <?=get_the_author_meta('first_name')?>
@@ -267,9 +266,6 @@ while (have_posts()) {
     ?>
                         </div>
                     </section>
-                    <div class="py-4">
-                        <?=cb_post_nav()?>
-                    </div>
                     <?php
                             get_template_part('page-templates/blocks/cb_subscribe_cta');
     ?>
