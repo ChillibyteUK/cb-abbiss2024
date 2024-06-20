@@ -85,7 +85,7 @@ while (have_posts()) {
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <div class="border-top mt-4 py-4">
+                    <div class="border-top small py-4">
                         <?=get_the_date()?> |
                         <?=get_the_author_meta('first_name')?>
                         <?=get_the_author_meta('last_name')?>
