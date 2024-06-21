@@ -10,9 +10,8 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-if (strpos($_SERVER['REQUEST_URI'], '/corridor/') == false || check_corridor_cookie() != 'Corridor') {
-
-    echo 'COOKIE: ' . check_corridor_cookie();
+/*
+if (strpos($_SERVER['REQUEST_URI'], '/corridor/') === false && (!isset($_COOKIE['corridor_flag']) || $_COOKIE['corridor_flag'] != 'Corridor')) {
     ?>
 <div class="bottom-cta py-4">
     <div class="container-xl">
@@ -28,7 +27,24 @@ if (strpos($_SERVER['REQUEST_URI'], '/corridor/') == false || check_corridor_coo
     </div>
 </div>
 <?php
-}
+} else {
+*/
+?>
+<div class="bottom-cta py-4">
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="h5">International reach</div>
+                <div>We have helped clients meet their HR needs in over 70 countries across five continents.</div>
+            </div>
+            <div class="col-md-4 text-end my-auto">
+                <a class="button button-white" href="/about-us/international/">Find out more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+// }
 ?>
 <footer>
     <div class="container-xl pt-5">
