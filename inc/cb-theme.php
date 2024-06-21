@@ -295,4 +295,69 @@ function check_corridor_cookie()
     }
 }
 
+// Insights Authors
+// Add the author column to the list table
+function add_insights_author_column($columns)
+{
+    $columns['author'] = __('Author');
+    return $columns;
+}
+add_filter('manage_insights_posts_columns', 'add_insights_author_column');
+
+// Display the author name in the column
+function display_insights_author_column($column, $post_id)
+{
+    if ($column === 'author') {
+        $author_id = get_post_field('post_author', $post_id);
+        $author = get_the_author_meta('display_name', $author_id);
+        echo esc_html($author);
+    }
+}
+add_action('manage_insights_posts_custom_column', 'display_insights_author_column', 10, 2);
+
+// Make the author column sortable
+function make_insights_author_column_sortable($columns)
+{
+    $columns['author'] = 'author';
+    return $columns;
+}
+add_filter('manage_edit-insights_sortable_columns', 'make_insights_author_column_sortable');
+
+// Modify the query to sort by author
+function sort_insights_by_author($query)
+{
+    if (!is_admin()) {
+        return;
+    }
+
+    $orderby = $query->get('orderby');
+
+    if ($orderby === 'author') {
+        $query->set('orderby', 'author');
+    }
+}
+add_action('pre_get_posts', 'sort_insights_by_author');
+
+// Make the author column sortable
+function make_post_author_column_sortable($columns)
+{
+    $columns['author'] = 'author';
+    return $columns;
+}
+add_filter('manage_edit-post_sortable_columns', 'make_post_author_column_sortable');
+
+// Modify the query to sort by author
+function sort_posts_by_author($query)
+{
+    if (!is_admin()) {
+        return;
+    }
+
+    $orderby = $query->get('orderby');
+
+    if ($orderby === 'author') {
+        $query->set('orderby', 'author');
+    }
+}
+add_action('pre_get_posts', 'sort_posts_by_author');
 ?>

@@ -166,6 +166,9 @@ foreach ($authors as $a) {
     if ($a['post_count'] < 1) {
         continue;
     }
+    if ($a['name'] == 'chillibyte') {
+        continue;
+    }
     echo '<option value="' . $a['id'] . '">' . $a['name'] . '</option>'; // ID of the category as the value of an option
 }
 echo '</select>';

@@ -219,6 +219,9 @@ $n = explode(' ', get_the_title());
         }
     }
 </script>
+<?php
+if ($contact['message'] ?? null) {
+    ?>
 <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -229,10 +232,13 @@ $n = explode(' ', get_the_title());
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <?=do_shortcode('[gravityform id="8" title="false" description="false" ajax="true" field_values="c=' . get_the_title() . '"]')?>
+                <?=do_shortcode('[gravityform id="8" title="false" description="false" ajax="true" field_values="email=' . $contact['email_address'] . '"]')?>
             </div>
         </div>
     </div>
 </div>
-<?php get_footer();
+<?php
+}
+
+get_footer();
 ?>

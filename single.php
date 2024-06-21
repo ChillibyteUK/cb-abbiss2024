@@ -174,10 +174,9 @@ while (have_posts()) {
     }
     if (get_the_author_meta('user_email') != '') {
         ?>
-                                <a
-                                    href="mailto:<?=get_the_author_meta('user_email', $user_id)?>"><span
+                                <span type="button" data-bs-toggle="modal" data-bs-target="#modal"><span
                                         class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x text-white"></i><i
-                                            class="fa-regular fa-envelope-open fa-stack-1x"></i></span></a>
+                                            class="fa-regular fa-envelope-open fa-stack-1x"></i></span></span>
                                 <?php
     }
     ?>
@@ -226,6 +225,10 @@ while (have_posts()) {
                             </div>
                         </div>
                     </article>
+                    <?php
+            $authors_posts = get_posts(array(  'post_type' => array('post','insights'), 'author' => $user_id, 'post__not_in' => array( $post->ID ), 'posts_per_page' => 3 ));
+    if ($authors_posts) {
+        ?>
                     <section class="border-top py-4 also_by">
 
                         <h2 class="h3 pb-2">Also by
@@ -233,7 +236,7 @@ while (have_posts()) {
                         </h2>
                         <div class="row">
                             <?php
-            $authors_posts = get_posts(array(  'post_type' => array('post','insights'), 'author' => $user_id, 'post__not_in' => array( $post->ID ), 'posts_per_page' => 3 ));
+
     foreach ($authors_posts as $authors_post) {
         if ($authors_post->post_type == 'post') {
             $icon = 'icon-news.svg';
@@ -263,14 +266,30 @@ while (have_posts()) {
                             </div>
                             <?php
     }
-    ?>
+        ?>
                         </div>
                     </section>
                     <?php
-                            get_template_part('page-templates/blocks/cb_subscribe_cta');
+    }
+    get_template_part('page-templates/blocks/cb_subscribe_cta');
     ?>
     </article>
 </main>
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="h5 modal-title" id="modalLabel">Contact
+                    <?=$author_name?>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <?=do_shortcode('[gravityform id="8" title="false" description="false" ajax="true" field_values="email=' . get_the_author_meta('user_email') . '"]')?>
+            </div>
+        </div>
+    </div>
+</div>
 <?php } // end of the loop.?>
 <?php get_footer();
 ?>
