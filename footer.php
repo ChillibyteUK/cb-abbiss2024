@@ -10,7 +10,10 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-?>
+if (strpos($_SERVER['REQUEST_URI'], '/corridor/') == false || check_corridor_cookie() != 'Corridor') {
+
+    echo 'COOKIE: ' . check_corridor_cookie();
+    ?>
 <div class="bottom-cta py-4">
     <div class="container-xl">
         <div class="row">
@@ -24,6 +27,9 @@ defined('ABSPATH') || exit;
         </div>
     </div>
 </div>
+<?php
+}
+?>
 <footer>
     <div class="container-xl pt-5">
         <div class="row g-4 pb-5">
