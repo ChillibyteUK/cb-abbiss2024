@@ -21695,6 +21695,11 @@ button.filtertoggle.closed::after {
 .news_insights_events__news_post .news_insights_events__content {
   padding: 1rem;
 }
+.news_insights_events__news_post .news_insights_events__content--noimage {
+  display: grid;
+  grid-template-rows: 2rem auto auto;
+  height: 100%;
+}
 .news_insights_events__news_post .icon-sm {
   width: 25px;
   height: 25px;
@@ -21718,6 +21723,9 @@ button.filtertoggle.closed::after {
   aspect-ratio: 16/9;
   -o-object-fit: cover;
   object-fit: cover;
+}
+.news_insights_events__news_post .news_insights_events__excerpt {
+  align-self: end;
 }
 .news_insights_events__meta {
   display: flex;

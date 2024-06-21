@@ -28,7 +28,7 @@ while ($p->have_posts()) {
                 <a href="<?=get_the_permalink()?>"
                     class="news_insights_events__news_post bg-beige-400">
                     <div class="overlay"></div>
-                    <div class="news_insights_events__content">
+                    <div class="news_insights_events__content news_insights_events__content--noimage">
                         <div class="news_insights_events__meta">
                             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-news.svg"
                                 class="icon-sm" alt="News Icon">
@@ -36,7 +36,7 @@ while ($p->have_posts()) {
                                 class="fs-200"><?=get_the_date()?></span>
                         </div>
                         <h3 class="fs-500"><?=get_the_title()?></h3>
-                        <div>
+                        <div class="news_insights_events__excerpt">
                             <?= wp_strip_all_tags(wp_trim_words(get_the_content(), '20'));?>
                         </div>
                     </div>

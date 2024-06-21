@@ -16,6 +16,11 @@
 
         .news_insights_events__content {
             padding: 1rem;
+            &--noimage {
+                display: grid;
+                grid-template-rows: 2rem auto auto;
+                height: 100%;
+            }
         }
         .icon-sm {
             width: 25px;
@@ -40,6 +45,10 @@
             width: 100%;
             aspect-ratio: 16 / 9;
             object-fit: cover;
+        }
+
+        .news_insights_events__excerpt {
+            align-self: end;
         }
 
     }
