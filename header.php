@@ -115,7 +115,7 @@ if ($hero_image_id) {
     ?>
     <link rel="preload"
         href="<?=wp_get_attachment_image_url($hero_image_id, 'full', false)?>"
-        as="image" fetchpriority="high" crossorigin>
+        as="image" fetchpriority="high">
     <?php
 }
 
