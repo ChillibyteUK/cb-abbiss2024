@@ -288,20 +288,7 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
         $classes = empty($item->classes) ? array() : (array) $item->classes;
 
         // Ensure News item doesn't get the current_page_parent class
-        if (is_singular('insights')) {
-            if (trailingslashit($item->url) === trailingslashit(home_url('/knowledge/news/'))) {
-                $classes = array_diff($classes, ['current_page_parent']);
-            } else {
-                $current_url = get_permalink($post->ID);
-                $item_url = trailingslashit($item->url);
-                
-                // Check if the current post URL starts with the item's URL
-                if (strpos(trailingslashit($current_url), $item_url) === 0) {
-                    $classes[] = 'current_page_parent';
-                }
-            }
-        }
-        if (is_singular('briefing_notes')) {
+        if (is_singular('insights') || is_singular('briefing_notes') || is_singular('brochures')) {
             if (trailingslashit($item->url) === trailingslashit(home_url('/knowledge/news/'))) {
                 $classes = array_diff($classes, ['current_page_parent']);
             } else {
