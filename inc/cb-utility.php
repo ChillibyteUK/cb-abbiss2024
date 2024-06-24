@@ -257,12 +257,12 @@ add_action('send_headers', 'enable_strict_transport_security_hsts_header');
 // REMOVE TAG AND COMMENT SUPPORT
 
 // Disable Tags Dashboard WP
-// add_action('admin_menu', 'my_remove_sub_menus');
-
 function my_remove_sub_menus()
 {
     remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag');
 }
+add_action('admin_menu', 'my_remove_sub_menus', 999);
+
 // Remove tags support from posts
 function myprefix_unregister_tags()
 {
