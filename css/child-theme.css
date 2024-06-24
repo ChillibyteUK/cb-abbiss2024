@@ -21263,39 +21263,17 @@ label.gfield_consent_label {
 .note__card:hover::after {
   color: var(--col-orange-400);
 }
-.note__card::before {
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  background-color: var(--col-white);
-  border-radius: 100%;
-  content: "";
-  right: 1rem;
-  bottom: 1rem;
-}
-.note__card::after {
-  position: absolute;
-  content: "\f019";
-  font-weight: 600;
-  font-family: var(--ff-fa);
-  color: var(--col-black);
-  right: 1rem;
-  bottom: 1rem;
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  padding-inline-start: 0;
-  transition: color var(--transition);
-}
 .note__title {
   color: var(--col-black) !important;
   font-weight: var(--fw-400);
   font-size: var(--fs-600);
 }
+.note__img {
+  display: flex;
+}
 .note__thumb {
   box-shadow: 2px 2px 5px 0 #666;
+  margin-inline: auto;
 }
 .note .overlay {
   position: absolute;
@@ -22324,6 +22302,75 @@ ul:not([class]) {
 }
 ul:not([class]) li {
   margin-bottom: 0.5rem;
+}
+
+.dl_panel {
+  display: grid;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  position: relative;
+  isolation: isolate;
+}
+.dl_panel.dl_panel--briefing_notes {
+  background-color: var(--col-blue-400);
+  color: var(--col-white);
+}
+.dl_panel.dl_panel--brochures {
+  background-color: var(--col-beige-400);
+  color: var(--col-black);
+}
+.dl_panel:hover .overlay {
+  opacity: 1;
+}
+.dl_panel:hover .dl_panel__inner::after {
+  color: var(--col-orange-400);
+}
+@media (min-width: 768px) {
+  .dl_panel {
+    grid-template-columns: auto 1fr;
+  }
+}
+.dl_panel__inner {
+  padding: 1rem 2rem;
+  z-index: 2;
+  position: relative;
+}
+.dl_panel__inner::after {
+  position: absolute;
+  content: "\f019";
+  font-family: var(--ff-fa);
+  font-weight: 600;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--col-white);
+  color: var(--col-black);
+  transition: color var(--transition);
+  display: grid;
+  place-content: center;
+  border-radius: 100vw;
+  bottom: 1rem;
+  right: 2rem;
+}
+.dl_panel__image {
+  display: flex;
+  padding: 1rem 2rem;
+  background-color: var(--col-grey-600);
+  position: relative;
+  isolation: isolate;
+}
+.dl_panel__image img {
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+  margin-inline: auto;
+}
+.dl_panel .overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity var(--transition);
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .has-blue-color,

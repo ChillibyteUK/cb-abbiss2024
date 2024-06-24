@@ -52,40 +52,18 @@
                 color: var(--col-orange-400);
             }
         }
-        &::before {
-            position: absolute;
-            width: 2rem;
-            height: 2rem;
-            background-color: var(--col-white);
-            border-radius: 100%;
-            content: "";
-            right: 1rem;
-            bottom: 1rem;
-        }
-        &::after {
-            position: absolute;
-            content: "\f019";
-            font-weight: 600;
-            font-family: var(--ff-fa);
-            color: var(--col-black);
-            right: 1rem;
-            bottom: 1rem;
-            display: grid;
-            align-content: center;
-            justify-content: center;
-            width: 2rem;
-            height: 2rem;
-            padding-inline-start: 0;
-            transition: color var(--transition);
-        }
     }
     &__title {
         color: var(--col-black) !important;
         font-weight: var(--fw-400);
         font-size: var(--fs-600);
     }
+    &__img {
+        display: flex;
+    }
     &__thumb {
         box-shadow: 2px 2px 5px 0 #666;
+        margin-inline: auto;
     }
     .overlay {
         position: absolute;

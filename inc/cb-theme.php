@@ -210,6 +210,36 @@ function override_yoast_breadcrumb_trail($links)
                 }
             }
         }
+        if (is_singular('briefing_notes')) {
+            $breadcrumb[] = array(
+                'url' => '/corridor/',
+                'text' => 'CORRIDOR',
+            );
+            $breadcrumb[] = array(
+                'url' => '/corridor/knowledge/',
+                'text' => 'Knowledge Hub',
+            );
+            $breadcrumb[] = array(
+                'url' => '/corridor/knowledge/briefing-notes/',
+                'text' => 'Briefing Notes',
+            );
+            array_splice($links, 1, -2, $breadcrumb);
+        }
+        if (is_singular('brochures')) {
+            $breadcrumb[] = array(
+                'url' => '/corridor/',
+                'text' => 'CORRIDOR',
+            );
+            $breadcrumb[] = array(
+                'url' => '/corridor/knowledge/',
+                'text' => 'Knowledge Hub',
+            );
+            $breadcrumb[] = array(
+                'url' => '/corridor/knowledge/brochures/',
+                'text' => 'Brochures',
+            );
+            array_splice($links, 1, -2, $breadcrumb);
+        }
     } else {
         if (is_singular('insights')) {
             $breadcrumb[] = array(
@@ -222,6 +252,29 @@ function override_yoast_breadcrumb_trail($links)
             );
             array_splice($links, 1, -2, $breadcrumb);
         }
+        if (is_singular('briefing_notes')) {
+            $breadcrumb[] = array(
+                'url' => '/knowledge/',
+                'text' => 'Knowledge Hub',
+            );
+            $breadcrumb[] = array(
+                'url' => '/knowledge/briefing-notes/',
+                'text' => 'Briefing Notes',
+            );
+            array_splice($links, 1, -2, $breadcrumb);
+        }
+        if (is_singular('brochures')) {
+            $breadcrumb[] = array(
+                'url' => '/knowledge/',
+                'text' => 'Knowledge Hub',
+            );
+            $breadcrumb[] = array(
+                'url' => '/knowledge/brochures/',
+                'text' => 'Brochures',
+            );
+            array_splice($links, 1, -2, $breadcrumb);
+        }
+
     }
 
     return $links;
@@ -236,6 +289,19 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
 
         // Ensure News item doesn't get the current_page_parent class
         if (is_singular('insights')) {
+            if (trailingslashit($item->url) === trailingslashit(home_url('/knowledge/news/'))) {
+                $classes = array_diff($classes, ['current_page_parent']);
+            } else {
+                $current_url = get_permalink($post->ID);
+                $item_url = trailingslashit($item->url);
+                
+                // Check if the current post URL starts with the item's URL
+                if (strpos(trailingslashit($current_url), $item_url) === 0) {
+                    $classes[] = 'current_page_parent';
+                }
+            }
+        }
+        if (is_singular('briefing_notes')) {
             if (trailingslashit($item->url) === trailingslashit(home_url('/knowledge/news/'))) {
                 $classes = array_diff($classes, ['current_page_parent']);
             } else {

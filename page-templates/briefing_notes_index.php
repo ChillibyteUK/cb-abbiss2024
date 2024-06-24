@@ -82,19 +82,19 @@ if ($menu_id) {
             <div class=" col-md-9">
                 <?=$intro?>
                 <?php
-                                $q = new WP_Query(
-                                    array(
-'post_type' => 'briefing_notes',
-'posts_per_page' => -1,
-'tax_query' => array(
-                                    array(
-                                        'taxonomy' => 'section',
-                                        'field' => 'slug',
-                                        'terms' => array($section)
-                                    )
-)
-)
-                                );
+                $q = new WP_Query(
+                    array(
+                        'post_type' => 'briefing_notes',
+                        'posts_per_page' => -1,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'section',
+                                'field' => 'slug',
+                                'terms' => array($section)
+                            )
+                        )
+                    )
+                );
 ?>
                 <div class="small pb-4 post__count">
                     <?=$q->found_posts.' briefing notes'?>
@@ -107,11 +107,11 @@ if ($q->have_posts()) { ?>
     while ($q->have_posts()) {
         $q->the_post();
         $pdf = get_field('pdf_file');
-        $url = $pdf['url'];
+        // $url = $pdf['url'];
+        $url = get_the_permalink();
         $filename = $pdf['filename'];
         ?>
-                    <a class="note__card" href="<?=$url?>"
-                        download="<?=$filename?>">
+                    <a class="note__card" href="<?=$url?>">
                         <div class="overlay"></div>
                         <div class="note__title">
                             <?=get_the_title()?>
