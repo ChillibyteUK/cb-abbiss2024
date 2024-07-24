@@ -46,7 +46,7 @@ a.anchor {
 main a:not([class]) {
   text-decoration: none;
   font-weight: var(--fw-400);
-  color: var(--col-black);
+  color: var(--col-blue-600);
   &:hover {
     color: var(--col-orange-400);
   }

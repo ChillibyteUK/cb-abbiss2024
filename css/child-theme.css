@@ -20725,6 +20725,7 @@ readers do not read off random characters that represent icons */
   --col-beige-600: #d5a762;
   --col-blue-400: #a8cede;
   --col-blue-500: #64a6c3;
+  --col-blue-600: #36728c;
   --fs-900: 72px;
   --fs-800: 56px;
   --fs-700: 40px;
@@ -22277,7 +22278,7 @@ a.anchor {
 main a:not([class]) {
   text-decoration: none;
   font-weight: var(--fw-400);
-  color: var(--col-black);
+  color: var(--col-blue-600);
 }
 main a:not([class]):hover {
   color: var(--col-orange-400);
