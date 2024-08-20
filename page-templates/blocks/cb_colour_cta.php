@@ -1,10 +1,9 @@
 <?php
 $class = $block['className'] ?? 'pb-5';
 $l = get_field('link');
-$bg = get_field('background');
+$bg = get_field('background') ?: 'grey-500';
 $text = $bg != '' ? 'text-white' : '';
-
-var_dump($block);
+$text = $bg == 'grey-500' ? '' : $text;
 ?>
 <section class="colour_cta <?=$class?>">
     <div class="container-xl">
