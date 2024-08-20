@@ -3,6 +3,8 @@ $class = $block['className'] ?? 'pb-5';
 $l = get_field('link');
 $bg = get_field('background');
 $text = $bg != '' ? 'text-white' : '';
+
+var_dump($block);
 ?>
 <section class="colour_cta <?=$class?>">
     <div class="container-xl">
