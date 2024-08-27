@@ -54,9 +54,9 @@ main a:not([class]) {
 
 main .menu-item a,
 .people__links a {
-  color: var(--col-grey-500);
+  color: var(--col-black) !important;
   &:hover {
-    color: var(--col-orange-400);
+    color: var(--col-orange-400) !important;
   }
 }
 

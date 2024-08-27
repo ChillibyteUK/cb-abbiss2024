@@ -22286,11 +22286,11 @@ main a:not([class]):hover {
 
 main .menu-item a,
 .people__links a {
-  color: var(--col-grey-500);
+  color: var(--col-black) !important;
 }
 main .menu-item a:hover,
 .people__links a:hover {
-  color: var(--col-orange-400);
+  color: var(--col-orange-400) !important;
 }
 
 a.noline {
