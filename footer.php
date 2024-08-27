@@ -29,6 +29,7 @@ if (strpos($_SERVER['REQUEST_URI'], '/corridor/') === false && (!isset($_COOKIE[
 <?php
 } else {
 */
+/*
 ?>
 <div class="bottom-cta py-4">
     <div class="container-xl">
@@ -45,6 +46,7 @@ if (strpos($_SERVER['REQUEST_URI'], '/corridor/') === false && (!isset($_COOKIE[
 </div>
 <?php
 // }
+*/
 ?>
 <footer>
     <div class="container-xl pt-5">
