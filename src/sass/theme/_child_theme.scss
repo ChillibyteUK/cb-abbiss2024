@@ -51,6 +51,15 @@ main a:not([class]) {
     color: var(--col-orange-400);
   }
 }
+
+main .menu-item a,
+.people__links a {
+  color: var(--col-grey-500);
+  &:hover {
+    color: var(--col-orange-400);
+  }
+}
+
 a.noline {
   text-decoration: none;
 }
