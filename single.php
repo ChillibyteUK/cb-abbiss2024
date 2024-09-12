@@ -148,6 +148,7 @@ while (have_posts()) {
                                     'meta_value' => 'Abbiss'
                                 ) );
                                 $users = $user_query->get_results();
+                                $user = $users[0];
                                 $user_id = $user->ID;
                                 echo 'IS CB';
                             }
