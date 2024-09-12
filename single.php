@@ -142,7 +142,6 @@ while (have_posts()) {
                         <div class="single_people__summary mb-5">
                             <?php
                             $f = get_the_author_meta('user_login');
-                            echo 'User login: ' . $f;
                             if ($f == 'chillibyte') {
                                 $user_query = new WP_User_Query( array( 
                                     'meta_key'   => 'first_name',
@@ -150,9 +149,11 @@ while (have_posts()) {
                                 ) );
                                 $users = $user_query->get_results();
                                 $user_id = $user->ID;
+                                echo 'IS CB';
                             }
                             else {
                                 $user_id = get_the_author_meta('ID');
+                                echo 'IS NOT CB';
                             }
     $author_name = get_the_author_meta('first_name',$user_id) . ' ' . get_the_author_meta('last_name',$user_id);
     $author_image = get_field('photo', 'user_' . $user_id);
