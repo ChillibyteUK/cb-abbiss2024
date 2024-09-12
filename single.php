@@ -150,11 +150,9 @@ while (have_posts()) {
                                 $users = $user_query->get_results();
                                 $user = $users[0];
                                 $user_id = $user->ID;
-                                echo 'IS CB';
                             }
                             else {
                                 $user_id = get_the_author_meta('ID');
-                                echo 'IS NOT CB';
                             }
     $author_name = get_the_author_meta('first_name',$user_id) . ' ' . get_the_author_meta('last_name',$user_id);
     $author_image = get_field('photo', 'user_' . $user_id);
