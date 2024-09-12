@@ -142,6 +142,7 @@ while (have_posts()) {
                         <div class="single_people__summary mb-5">
                             <?php
                             $f = get_the_author_meta('first_name');
+                            echo $f;
                             if ($f == 'Chilli') {
                                 $user_query = new WP_User_Query( array( 
                                     'meta_key'   => 'first_name',
