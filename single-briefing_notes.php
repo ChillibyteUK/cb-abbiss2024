@@ -112,8 +112,20 @@ while (have_posts()) {
                         <h3 class="pb-2">The author</h3>
                         <div class="single_people__summary mb-5">
                             <?php
-                            $user_id = get_the_author_meta('ID');
-    $author_name = get_the_author_meta('first_name') . ' ' . get_the_author_meta('last_name');
+                            $f = get_the_author_meta('user_login');
+                            if ($f == 'chillibyte') {
+                                $user_query = new WP_User_Query( array( 
+                                    'meta_key'   => 'first_name',
+                                    'meta_value' => 'Abbiss'
+                                ) );
+                                $users = $user_query->get_results();
+                                $user = $users[0];
+                                $user_id = $user->ID;
+                            }
+                            else {
+                                $user_id = get_the_author_meta('ID');
+                            }
+    $author_name = get_the_author_meta('first_name', $user_id) . ' ' . get_the_author_meta('last_name', $user_id);
     $author_image = get_field('photo', 'user_' . $user_id);
     echo '<img src="' . esc_url($author_image['url']) . '" class="single_people__image" alt="' . $author_name . '">';
     ?>
@@ -143,7 +155,7 @@ while (have_posts()) {
                                             class="fa-brands fa-x-twitter fa-stack-1x"></i></span></a>
                                 <?php
     }
-    if (get_the_author_meta('user_email') != '') {
+    if (get_the_author_meta('user_email', $user_id) != '') {
         ?>
                                 <span type="button" data-bs-toggle="modal" data-bs-target="#modal"><span
                                         class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x text-white"></i><i
