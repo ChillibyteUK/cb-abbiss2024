@@ -8,11 +8,16 @@ $class = $block['className'] ?? 'py-5';
             the_row();
             ?>
         <div class="two_col_lined__card">
+            <?php
+            if (get_sub_field('title') ?? null) {
+                ?>
             <h2 class="h4">
                 <?=get_sub_field('title')?>
             </h2>
-            <div><?=get_sub_field('content')?>
-            </div>
+                <?php
+            }
+            ?>
+            <div><?=get_sub_field('content')?></div>
         </div>
         <?php
         }
