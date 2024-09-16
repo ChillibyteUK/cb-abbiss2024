@@ -22040,7 +22040,7 @@ button.filtertoggle.closed::after {
 }
 
 .people_slider .container-xl {
-  border-top: 1px solid var(--col-grey-600);
+  border-top: 1px solid var(--col-grey-500);
   padding-block: 1rem;
 }
 .people_slider__slide {
