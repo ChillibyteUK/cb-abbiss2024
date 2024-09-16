@@ -22039,6 +22039,20 @@ button.filtertoggle.closed::after {
   color: var(--col-orange-400);
 }
 
+.people_slider .container-xl {
+  border-top: 1px solid var(--col-grey-900);
+  border-bottom: 1px solid var(--col-grey-900);
+  padding-block: 1rem;
+}
+.people_slider__slide {
+  padding: 1rem;
+  background-color: var(--col-beige-400);
+}
+.people_slider__image {
+  aspect-ratio: 1;
+  width: 100%;
+}
+
 .joblisting {
   border-bottom: 1px solid #ccc;
   display: grid;
