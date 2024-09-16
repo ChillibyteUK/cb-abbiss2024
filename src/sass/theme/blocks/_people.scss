@@ -121,8 +121,7 @@
 
 .people_slider {
     .container-xl {
-        border-top: 1px solid var(--col-grey-900);
-        border-bottom: 1px solid var(--col-grey-900);
+        border-top: 1px solid var(--col-grey-600);
         padding-block: 1rem;
     }
     &__slide {
@@ -132,5 +131,6 @@
     &__image {
         aspect-ratio: 1;
         width: 100%;
+        object-fit: cover;
     }
 }

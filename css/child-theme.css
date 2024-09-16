@@ -22040,8 +22040,7 @@ button.filtertoggle.closed::after {
 }
 
 .people_slider .container-xl {
-  border-top: 1px solid var(--col-grey-900);
-  border-bottom: 1px solid var(--col-grey-900);
+  border-top: 1px solid var(--col-grey-600);
   padding-block: 1rem;
 }
 .people_slider__slide {
@@ -22051,6 +22050,8 @@ button.filtertoggle.closed::after {
 .people_slider__image {
   aspect-ratio: 1;
   width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .joblisting {
