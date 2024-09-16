@@ -24,7 +24,7 @@
             </div>
             <div class="col-sm-8 col-md-9 col-lg-10">
                 <h2><?=get_field('title') ?? null?></h2>
-                <p><?=get_field('content') ?? null?></p>
+                <div><?=get_field('content') ?? null?></div>
                 <?php
                 $l = get_field('link') ?? null;
                 ?>
