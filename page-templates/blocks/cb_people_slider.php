@@ -1,5 +1,5 @@
 <section class="people_slider">
-    <div class="container-xl">
+    <div class="container-xl py-3 border-top">
         <div class="row g-4">
             <div class="col-sm-4 col-md-3 col-lg-2">
                 <div class="swiper people_slider__slider">

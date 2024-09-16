@@ -22039,10 +22039,6 @@ button.filtertoggle.closed::after {
   color: var(--col-orange-400);
 }
 
-.people_slider .container-xl {
-  border-top: 1px solid var(--col-grey-500);
-  padding-block: 1rem;
-}
 .people_slider__slide {
   padding: 1rem;
   background-color: var(--col-beige-400);
