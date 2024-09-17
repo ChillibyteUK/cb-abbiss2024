@@ -37,5 +37,14 @@ $active = $link == $section . '/law-tax/' ? 'active' : '';
                 alt="Law & Tax Icon">
             <div>Law<br>&amp; Tax</div>
         </a>
+        <?php
+$active = $link == $section . '/payroll-services/' ? 'active' : '';
+?>
+        <a class="services_nav__card <?=$active?>"
+            href="<?=$section?>/payroll-services/">
+            <img src="<?=get_stylesheet_directory_uri()?>/img/icon-compensation-benefits-star.svg"
+                alt="Payroll Icon">
+            <div>Payroll<br>Services</div>
+        </a>
     </div>
 </section>
