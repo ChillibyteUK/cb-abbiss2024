@@ -2,8 +2,11 @@
     .container-xl {
         display: grid;
         gap: 1rem;
+        @media (min-width:576px) {
+            grid-template-columns: repeat(2,1fr);
+        }
         @media (min-width:768px) {
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(4,1fr);
         }
     }
     &__card {
