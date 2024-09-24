@@ -21094,6 +21094,8 @@ footer form {
 }
 footer form input[type=submit] {
   padding: 0.6rem 3rem;
+  border: none;
+  width: 100%;
 }
 
 .gform_fields {
