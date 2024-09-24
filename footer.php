@@ -54,8 +54,6 @@ if (strpos($_SERVER['REQUEST_URI'], '/corridor/') === false && (!isset($_COOKIE[
             <div class="col-md-4">
                 <div class="menu-title">Information</div>
                 <?php wp_nav_menu(array('theme_location' => 'footer_menu_fb')); ?>
-                <div class="menu-title pb-0">Part of the</div>
-                <a href="https://www.celiaalliance.com/" target="_blank"><img src="<?=get_stylesheet_directory_uri()?>/img/celia-alliance-logo-01.png" width=340 height=73 title="Part of the Celia Alliance"></a>
             </div>
             <div class="col-md-3">
                 <div class="menu-title">Contact</div>
@@ -69,12 +67,15 @@ if (strpos($_SERVER['REQUEST_URI'], '/corridor/') === false && (!isset($_COOKIE[
                     <?=do_shortcode('[social_tw_icon]')?>
                     <?=do_shortcode('[social_in_icon]')?>
                 </div>
+                <div style="max-width:200px;max-height:115px;margin-top: 40px;"><div style="position: relative;padding-bottom: 59.1%;height: auto;overflow: hidden;"><iframe frameborder="0" scrolling="no" allowTransparency="true" src="https://cdn.yoshki.com/iframe/55849r.html" style="border:0px; margin:0px; padding:0px; backgroundColor:transparent; top:0px; left:0px; width:100%; height:100%; position: absolute;"></iframe></div></div>
             </div>
             <div class="col-md-5">
                 <div class="menu-title">Subscribe</div>
                 <p>Stay up to the minute on our latest news and insights</p>
                 <?=do_shortcode('[gravityform id="4" title="false"]')?>
-                <div style="max-width:200px;max-height:115px;margin-top: 40px;"><div style="position: relative;padding-bottom: 59.1%;height: auto;overflow: hidden;"><iframe frameborder="0" scrolling="no" allowTransparency="true" src="https://cdn.yoshki.com/iframe/55849r.html" style="border:0px; margin:0px; padding:0px; backgroundColor:transparent; top:0px; left:0px; width:100%; height:100%; position: absolute;"></iframe></div></div>
+                <div class="menu-title pt-5 pb-0">Part of the</div>
+                <a href="https://www.celiaalliance.com/" target="_blank"><img src="<?=get_stylesheet_directory_uri()?>/img/celia-alliance-logo-01.png" width=340 height=73 title="Part of the Celia Alliance"></a>
+
             </div>
         </div>
     </div>
