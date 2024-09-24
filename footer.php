@@ -71,6 +71,7 @@ if (strpos($_SERVER['REQUEST_URI'], '/corridor/') === false && (!isset($_COOKIE[
             <div class="col-md-5">
                 <div class="menu-title">Subscribe</div>
                 <p>Stay up to the minute on our latest news and insights</p>
+                <?=do_shortcode('[gravityform id="4" title="false"]')?>
             </div>
         </div>
     </div>
