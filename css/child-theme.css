@@ -21684,7 +21684,11 @@ button.filtertoggle.closed::after {
   font-size: var(--fs-600);
   font-style: italic;
   text-align: center;
-  padding-inline: 3rem;
+}
+@media (min-width: 768px) {
+  .testimonial_slider__excerpt {
+    padding-inline: 3rem;
+  }
 }
 
 .news_insights_events__grid {

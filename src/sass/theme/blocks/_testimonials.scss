@@ -17,6 +17,8 @@
         font-size: var(--fs-600);
         font-style: italic;
         text-align: center;
-        padding-inline: 3rem;
+        @media (min-width:768px) {
+            padding-inline: 3rem;
+        }
     }
 }
