@@ -110,8 +110,13 @@ label.gfield_consent_label {
     margin-bottom: 1rem;
 }
 
+.gform_button {
+    border: 1px solid var(--col-black);
+}
+
 @media (min-width:992px) {
-    .gfield_checkbox#input_9_17 {
+    .gfield_checkbox#input_9_17,
+    .gfield_checkbox#input_10_17 {
         -moz-columns: 2;
         columns: 2;
     }
