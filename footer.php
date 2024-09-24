@@ -54,6 +54,8 @@ if (strpos($_SERVER['REQUEST_URI'], '/corridor/') === false && (!isset($_COOKIE[
             <div class="col-md-4">
                 <div class="menu-title">Information</div>
                 <?php wp_nav_menu(array('theme_location' => 'footer_menu_fb')); ?>
+                <div class="menu-title pb-0">Part of the</div>
+                <a href="https://www.celiaalliance.com/" target="_blank"><img src="<?=get_stylesheet_directory_uri()?>/img/celia-alliance-logo-01.png" width=340 height=73 title="Part of the Celia Alliance"></a>
             </div>
             <div class="col-md-3">
                 <div class="menu-title">Contact</div>
