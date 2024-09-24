@@ -72,9 +72,9 @@ if (is_front_page() || is_page('contact-us')) {
             "logo": "https://abbisscadres.com/wp-content/uploads/2021/03/ac-logo-large.png",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "11 Ironmonger Lane",
+                "streetAddress": "4th Floor (South), 14 Austin Friars",
                 "addressLocality": "London",
-                "postalCode": "EC2V 8EY",
+                "postalCode": "EC2N 2HE",
                 "addressCountry": "United Kingdom"
             },
             "contactPoint": {
