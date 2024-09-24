@@ -27,7 +27,7 @@ $size = 30;
 
 ?>
 <div class="testimonial_slider <?=$class?>">
-    <div class="container-xl testimonial_slider__inner px-2 p-md-5">
+    <div class="container-xl testimonial_slider__inner px-2 py-5 p-md-5">
         <div class="swiper testimonial_slider__slider">
             <div class="swiper-wrapper pb-4">
                 <?php
