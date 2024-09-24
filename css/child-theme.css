@@ -20773,7 +20773,7 @@ readers do not read off random characters that represent icons */
   src: url("../fonts/jost-v15-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 html {
-  font-size: 18px;
+  font-size: var(--fs-400);
 }
 
 body {
