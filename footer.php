@@ -72,6 +72,7 @@ if (strpos($_SERVER['REQUEST_URI'], '/corridor/') === false && (!isset($_COOKIE[
                 <div class="menu-title">Subscribe</div>
                 <p>Stay up to the minute on our latest news and insights</p>
                 <?=do_shortcode('[gravityform id="4" title="false"]')?>
+                <div style="max-width:200px;max-height:115px;margin-top: 40px;"><div style="position: relative;padding-bottom: 59.1%;height: auto;overflow: hidden;"><iframe frameborder="0" scrolling="no" allowTransparency="true" src="https://cdn.yoshki.com/iframe/55849r.html" style="border:0px; margin:0px; padding:0px; backgroundColor:transparent; top:0px; left:0px; width:100%; height:100%; position: absolute;"></iframe></div></div>
             </div>
         </div>
     </div>
