@@ -7,7 +7,7 @@ $class = $block['className'] ?? 'py-5';
             <?php
         while (have_rows('cards')) {
             the_row();
-            $url = wp_get_attachment_url(get_field('file'));
+            $url = wp_get_attachment_url(get_sub_field('file'));
             ?>
             <a class="download_cards__card" href="<?=$url?>">
                 <div class="download_cards__title">
