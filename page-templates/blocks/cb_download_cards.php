@@ -9,7 +9,7 @@ $class = $block['className'] ?? 'py-5';
             the_row();
             $url = wp_get_attachment_url(get_sub_field('file'));
             ?>
-            <a class="download_cards__card" href="<?=$url?>">
+            <a class="download_cards__card" target="_blank" href="<?=$url?>">
                 <div class="download_cards__title">
                     <?=get_sub_field('card_title')?>
                 </div>
