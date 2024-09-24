@@ -12,7 +12,7 @@ if (isset($block['anchor'])) {
 ?>
 <section class="focus_panel <?=$class?>">
     <div class="container-xl p-5 bg-<?=$colour?>">
-        <div class="row">
+        <div class="row gy-4">
             <div
                 class="col-md-6 <?=$orderText?> d-flex flex-column justify-content-center align-items-start">
                 <?php
