@@ -199,8 +199,8 @@ if (get_field('user_id') != '') {
             "addressCountry": "GB",
             "addressLocality": "London",
             "addressRegion": "",
-            "postalCode": "EC2V 8EY",
-            "streetAddress": "11 Ironmonger Lane"
+            "postalCode": "EC2N 2HE",
+            "streetAddress": "4th Floor (South), 14 Austin Friars"
         },
         "email": "<?=$contact['email_address']?>",
         <?php
