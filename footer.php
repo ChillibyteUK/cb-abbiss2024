@@ -86,9 +86,7 @@ if (strpos($_SERVER['REQUEST_URI'], '/corridor/') === false && (!isset($_COOKIE[
                 Cadres LLP
             </div>
             <div class="col-md-6 order-1 order-md-2 d-flex align-items-center justify-content-md-end flex-wrap gap-1">
-                <a href="/privacy-policy/">Privacy</a> & <a href="/cookie-policy/">Cookie</a> Policy |
-                <a href="https://www.chillibyte.co.uk/" rel="nofollow noopener" target="_blank" class="cb"
-                    title="Digital Marketing by Chillibyte"></a>
+                <a href="/privacy-policy/">Privacy</a> & <a href="/cookie-policy/">Cookie</a> Policy
             </div>
         </div>
     </div>
