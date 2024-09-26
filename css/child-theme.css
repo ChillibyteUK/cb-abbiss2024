@@ -22281,6 +22281,21 @@ button.filtertoggle.closed::after {
   z-index: 1;
 }
 
+.subscribe_cta form {
+  display: grid;
+  gap: 0.5rem;
+}
+@media (min-width: 576px) {
+  .subscribe_cta form {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+.subscribe_cta form input[type=submit] {
+  padding: 0.6rem 3rem;
+  border: none;
+  width: 100%;
+}
+
 *,
 input,
 select,
