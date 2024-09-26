@@ -1,6 +1,3 @@
-<div class="py-4"></div>
-<?php
-/*
 <div class="container-xl">
     <div class="border-top mt-2 py-4">
         <div class="row m-0">
@@ -10,11 +7,9 @@
             </div>
             <div class="col-lg-4 text-lg-right my-auto px-0">
                 <div class="newsletter">
-                    <?=do_shortcode('[gravityform id="4" title="false" description="false" ajax="true"]')?>
+                    <?=do_shortcode('[gravityform id="12" title="false" description="false" ajax="true"]')?>
                 </div>
             </div>
         </div>
     </div>
 </div>
-*/
-?>
