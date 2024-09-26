@@ -73,9 +73,9 @@ if (strpos($_SERVER['REQUEST_URI'], '/corridor/') === false && (!isset($_COOKIE[
                 <div class="menu-title">Subscribe</div>
                 <p>Stay up to the minute on our latest news and insights</p>
                 <?=do_shortcode('[gravityform id="4" title="false"]')?>
-                <div class="menu-title pt-5 pb-0">Part of the</div>
-                <a href="https://www.celiaalliance.com/" target="_blank"><img src="<?=get_stylesheet_directory_uri()?>/img/celia-alliance-logo-01.png" width=340 height=73 title="Part of the Celia Alliance"></a>
-
+                <div class="mt-2">
+                    <a href="https://www.celiaalliance.com/" target="_blank"><img src="<?=get_stylesheet_directory_uri()?>/img/celia-member-logo--wo.svg" width=500 height=139 title="A member of the Celia Alliance"></a>
+                </div>
             </div>
         </div>
     </div>
