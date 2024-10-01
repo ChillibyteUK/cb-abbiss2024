@@ -1,3 +1,6 @@
+<div class="py-4"></div>
+<?php
+/*
 <div class="container-xl subscribe_cta">
     <div class="border-top mt-2 py-4">
         <div class="row m-0">
@@ -13,3 +16,5 @@
         </div>
     </div>
 </div>
+*/
+?>
