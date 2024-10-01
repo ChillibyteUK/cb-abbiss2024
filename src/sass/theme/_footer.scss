@@ -59,10 +59,10 @@ footer {
 
     form {
         display: grid;
-        gap: 0.5rem;
-        @media (min-width:576px) {
-            grid-template-columns: 2fr 1fr;
-        }
+        // gap: 0.5rem;
+        // @media (min-width:576px) {
+        //     grid-template-columns: 2fr 1fr;
+        // }
         input[type="submit"] {
             padding: 0.6rem 3rem;
             border: none;

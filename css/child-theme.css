@@ -21085,12 +21085,6 @@ footer .colophon .cb:hover {
 }
 footer form {
   display: grid;
-  gap: 0.5rem;
-}
-@media (min-width: 576px) {
-  footer form {
-    grid-template-columns: 2fr 1fr;
-  }
 }
 footer form input[type=submit] {
   padding: 0.6rem 3rem;
