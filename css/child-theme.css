@@ -21086,6 +21086,18 @@ footer .colophon .cb:hover {
 footer .gform_heading {
   display: none;
 }
+footer .gfield#field_4_2 {
+  margin-bottom: 0;
+}
+footer #input_4_2 {
+  display: grid;
+  gap: 0.5rem;
+}
+@media (min-width: 576px) {
+  footer #input_4_2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 footer form {
   display: grid;
 }

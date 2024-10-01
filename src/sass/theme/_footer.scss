@@ -60,6 +60,16 @@ footer {
     .gform_heading {
         display: none;
     }
+    .gfield#field_4_2 {
+        margin-bottom: 0;
+    }
+    #input_4_2 {
+        display: grid;
+        gap: 0.5rem;
+        @media (min-width:576px) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
     form {
         display: grid;
         // gap: 0.5rem;
