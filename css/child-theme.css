@@ -21083,6 +21083,9 @@ footer .colophon .cb {
 footer .colophon .cb:hover {
   opacity: 1;
 }
+footer .gform_heading {
+  display: none;
+}
 footer form {
   display: grid;
 }
