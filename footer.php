@@ -129,7 +129,9 @@ if (strpos($_SERVER['REQUEST_URI'], '/corridor/') === false && (!isset($_COOKIE[
 */
 ?>
 <?php wp_footer(); ?>
-
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/144469752.js"></script>
+<!-- End of HubSpot Embed Code -->
 </body>
 
 </html>
