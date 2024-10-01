@@ -2,13 +2,26 @@
     form {
         display: grid;
         gap: 0.5rem;
-        @media (min-width:576px) {
-            grid-template-columns: 2fr 1fr;
-        }
+        // @media (min-width:576px) {
+        //     grid-template-columns: 2fr 1fr;
+        // }
         input[type="submit"] {
             padding: 0.6rem 3rem;
             border: none;
             width: 100%;
+        }
+    }
+    .gform_heading {
+        display: none;
+    }
+    .gfield#field_12_2 {
+        margin-bottom: 0;
+    }
+    #input_12_2 {
+        display: grid;
+        gap: 0.5rem;
+        @media (min-width:576px) {
+            grid-template-columns: 1fr 1fr;
         }
     }
 }

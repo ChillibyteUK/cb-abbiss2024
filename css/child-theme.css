@@ -22294,15 +22294,25 @@ button.filtertoggle.closed::after {
   display: grid;
   gap: 0.5rem;
 }
-@media (min-width: 576px) {
-  .subscribe_cta form {
-    grid-template-columns: 2fr 1fr;
-  }
-}
 .subscribe_cta form input[type=submit] {
   padding: 0.6rem 3rem;
   border: none;
   width: 100%;
+}
+.subscribe_cta .gform_heading {
+  display: none;
+}
+.subscribe_cta .gfield#field_12_2 {
+  margin-bottom: 0;
+}
+.subscribe_cta #input_12_2 {
+  display: grid;
+  gap: 0.5rem;
+}
+@media (min-width: 576px) {
+  .subscribe_cta #input_12_2 {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 *,
