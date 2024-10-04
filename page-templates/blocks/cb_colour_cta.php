@@ -10,7 +10,6 @@ else {
     $target = null;
 }
 $bg = get_field('background') ?: 'grey-500';
-echo '<-- BG ' . $bg . ' -->';
 $text = $bg != '' ? 'text-white' : '';
 $text = $bg == 'grey-500' ? '' : $text;
 ?>
