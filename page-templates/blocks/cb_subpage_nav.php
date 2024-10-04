@@ -9,11 +9,6 @@
         'sort_order' => 'ASC'
     ));
 
-    echo '<!-- ';
-    foreach($child_pages as $c) {
-        echo '<li>' . $c['post_title'] . '</li>';
-    }
-    echo '-->';
 
             if (!empty($child_pages)) {
                 foreach ($child_pages as $page) {
