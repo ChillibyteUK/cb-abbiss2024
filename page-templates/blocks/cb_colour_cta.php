@@ -1,6 +1,6 @@
 <?php
 $class = $block['className'] ?? 'pb-5';
-$l = get_field('link');
+$l = get_field('link') ?? null;
 $bg = get_field('background') ?: 'grey-500';
 echo '<-- BG ' . $bg . ' -->';
 $text = $bg != '' ? 'text-white' : '';
