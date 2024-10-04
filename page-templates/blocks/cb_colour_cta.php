@@ -4,17 +4,20 @@ $l = get_field('link') ?? null;
 if (is_array($l) && isset($l['url'])) {
     $link =  $l['url'];
     $target = $l['target'];
+    $warn = '';
 }
 else {
     $link = null;
     $target = null;
+    echo '<!-- NO CTA LINK -->';
+    $warn = 'border border-danger';
 }
 $bg = get_field('background') ?: 'grey-500';
 $text = $bg != '' ? 'text-white' : '';
 $text = $bg == 'grey-500' ? '' : $text;
 ?>
 <section class="colour_cta <?=$class?>">
-    <div class="container-xl">
+    <div class="container-xl <?=$warn?>">
         <a href="<?=$link?>"
             target="<?=$target?>"
             class="colour_cta__card bg-<?=$bg?> <?=$text?>">
