@@ -12,9 +12,13 @@ $sibling_pages = get_pages(array(
    'child_of' => $parent_id,
    'parent' => $parent_id,
    'sort_column' => 'post_title',
-   'sort_order' => 'ASC'
+   'sort_order' => 'ASC',
+   'hierarchical' => 0,
 ));
 
+usort($sibling_pages, function ($a, $b) {
+    return strcmp($a->post_title, $b->post_title);
+});
 
 if (!empty($sibling_pages)) {
     foreach ($sibling_pages as $page) {
