@@ -5,8 +5,8 @@
     $child_pages = get_pages(array(
         'child_of' => get_the_ID(),
         'parent' => get_the_ID(),
-        'sort_column' => 'title', // Optional: you can sort by title or date as well
-        'sort_order' => 'ASC' // Optional: ASC for ascending order, DESC for descending order
+        'sort_column' => 'post_title',
+        'sort_order' => 'ASC'
     ));
 
             if (!empty($child_pages)) {

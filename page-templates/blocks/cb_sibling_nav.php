@@ -11,7 +11,7 @@ $parent_id = $post->post_parent ? $post->post_parent : $post->ID;
 $sibling_pages = get_pages(array(
    'child_of' => $parent_id,
    'parent' => $parent_id,
-   'sort_column' => 'title',
+   'sort_column' => 'post_title',
    'sort_order' => 'ASC'
 ));
 
