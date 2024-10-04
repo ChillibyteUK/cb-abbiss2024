@@ -11,17 +11,17 @@ $link = wp_make_link_relative(get_permalink());
     class="services_nav <?=$bg?> <?=$class?> <?=$style?>">
     <div class="container-xl">
         <?php
-        $active = $link == $section . '/communications/' ? 'active' : '';
-?>
+        $active = $link == $section . '/law-tax/' ? 'active' : '';
+        ?>
         <a class="services_nav__card <?=$active?>"
-            href="<?=$section?>/communications/">
-            <img src="<?=get_stylesheet_directory_uri()?>/img/icon-communications.svg"
-                alt="Communications Icon">
-            <div>Communications</div>
+            href="<?=$section?>/law-tax/">
+            <img src="<?=get_stylesheet_directory_uri()?>/img/icon-law.svg"
+                alt="Law & Tax Icon">
+            <div>Law<br>&amp; Tax</div>
         </a>
         <?php
-$active = $link == $section . '/people-consulting/' ? 'active' : '';
-?>
+        $active = $link == $section . '/people-consulting/' ? 'active' : '';
+        ?>
         <a class="services_nav__card <?=$active?>"
             href="<?=$section?>/people-consulting/">
             <img src="<?=get_stylesheet_directory_uri()?>/img/icon-people-consulting.svg"
@@ -29,13 +29,13 @@ $active = $link == $section . '/people-consulting/' ? 'active' : '';
             <div>People<br>Consulting</div>
         </a>
         <?php
-$active = $link == $section . '/law-tax/' ? 'active' : '';
-?>
+        $active = $link == $section . '/communications/' ? 'active' : '';
+        ?>
         <a class="services_nav__card <?=$active?>"
-            href="<?=$section?>/law-tax/">
-            <img src="<?=get_stylesheet_directory_uri()?>/img/icon-law.svg"
-                alt="Law & Tax Icon">
-            <div>Law<br>&amp; Tax</div>
+            href="<?=$section?>/communications/">
+            <img src="<?=get_stylesheet_directory_uri()?>/img/icon-communications.svg"
+                alt="Communications Icon">
+            <div>Communications</div>
         </a>
     </div>
 </section>
