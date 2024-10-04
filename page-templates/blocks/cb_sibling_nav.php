@@ -9,11 +9,20 @@ $class = $block['className'] ?? 'py-5';
 $parent_id = $post->post_parent ? $post->post_parent : $post->ID;
 
 $sibling_pages = get_pages(array(
-   'child_of' => $parent_id,
+//    'child_of' => $parent_id,
    'parent' => $parent_id,
    'sort_column' => 'title',
    'sort_order' => 'ASC'
 ));
+
+?>
+<!-- 
+<pre>
+<?var_dump($sibling_pages);?>
+</pre>
+-->
+<?php
+
 
 if (!empty($sibling_pages)) {
     foreach ($sibling_pages as $page) {
