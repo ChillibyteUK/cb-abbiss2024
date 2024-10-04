@@ -2,6 +2,7 @@
 $class = $block['className'] ?? 'pb-5';
 $l = get_field('link');
 $bg = get_field('background') ?: 'grey-500';
+echo '<-- BG ' . $bg . ' -->';
 $text = $bg != '' ? 'text-white' : '';
 $text = $bg == 'grey-500' ? '' : $text;
 ?>
