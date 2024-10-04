@@ -21556,12 +21556,12 @@ button.filtertoggle.closed::after {
 }
 @media (min-width: 576px) {
   .services_nav .container-xl {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 768px) {
   .services_nav .container-xl {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .services_nav__card {
