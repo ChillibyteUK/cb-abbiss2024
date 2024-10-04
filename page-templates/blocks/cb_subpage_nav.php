@@ -9,7 +9,6 @@
         'sort_order' => 'ASC'
     ));
 
-    var_dump($child_pages);
 
             if (!empty($child_pages)) {
                 foreach ($child_pages as $page) {
