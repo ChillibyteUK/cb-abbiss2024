@@ -414,7 +414,9 @@ function sort_posts_by_author($query)
 }
 add_action('pre_get_posts', 'sort_posts_by_author');
 
-
+// AC Contact Us
+add_filter('gform_field_validation_9_3', 'custom_email_domain_validation', 10, 4); 
+// Corridor Contact Form
 add_filter('gform_field_validation_10_3', 'custom_email_domain_validation', 10, 4); 
 
 function custom_email_domain_validation($result, $value, $form, $field) {
