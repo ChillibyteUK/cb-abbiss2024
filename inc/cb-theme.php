@@ -413,4 +413,21 @@ function sort_posts_by_author($query)
     }
 }
 add_action('pre_get_posts', 'sort_posts_by_author');
+
+
+add_filter('gform_field_validation_10_3', 'custom_email_domain_validation', 10, 4); 
+
+function custom_email_domain_validation($result, $value, $form, $field) {
+    // domains to reject
+    $rejected_domains = array('gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com', 'aol.com', 'protonmail.com', 'zoho.com', 'btinternet.com', 'virginmedia.com', 'sky.com', 'talktalk.net', 'blueyonder.co.uk', 'ntlworld.com', 'gmx.co.uk', 'me.com', 'plus.com', 'hotmail.co.uk', 'live.co.uk', 'wanadoo.co.uk');
+
+    $email_parts = explode('@', $value);
+    $submitted_domain = array_pop($email_parts);
+    // Check if the domain is in the list of rejected domains
+    if (in_array(strtolower($submitted_domain), $rejected_domains)) {
+        $result['is_valid'] = false;
+        $result['message'] = 'Email addresses from ' . $submitted_domain . ' are not allowed. Please use a different email address.';
+    }
+    return $result;
+}
 ?>
