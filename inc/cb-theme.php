@@ -424,7 +424,7 @@ add_filter('gform_field_validation_4_1', 'custom_email_domain_validation', 10, 4
 function custom_email_domain_validation($result, $value, $form, $field)
 {
     // domains to reject
-    $rejected_domains = array('gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com', 'aol.com', 'protonmail.com', 'zoho.com', 'btinternet.com', 'virginmedia.com', 'sky.com', 'talktalk.net', 'blueyonder.co.uk', 'ntlworld.com', 'gmx.co.uk', 'me.com', 'plus.com', 'hotmail.co.uk', 'live.co.uk', 'wanadoo.co.uk');
+    $rejected_domains = array('gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com', 'aol.com', 'protonmail.com', 'zoho.com', 'btinternet.com', 'virginmedia.com', 'sky.com', 'talktalk.net', 'blueyonder.co.uk', 'ntlworld.com', 'gmx.co.uk', 'me.com', 'plus.com', 'hotmail.co.uk', 'live.co.uk', 'wanadoo.co.uk', 'mac.com');
 
     $email_parts = explode('@', $value);
     $submitted_domain = array_pop($email_parts);
